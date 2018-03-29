@@ -1,0 +1,435 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{booktabs}
+
+
+\begin{document}
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 7}
+\labtitle{Laplace transform}
+\makelabtitle
+
+\topic{Inverse Laplace transform}
+
+\begin{problem}
+Determine the inverse Laplace transform of
+\[\frac{s-1}{2s^{2}+4s+6}.\]
+\end{problem}
+
+\begin{problem}
+Determine ${\cal L}^{-1}\{ {\it F }\}$ 
+\begin{equation*}
+s^2 F(s) +sF(s)-6F(s) = \dfrac{s^2+4}{s^2+s}.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Find the inverse Laplace transform of 
+\[\tanh^{-1} (s).\]
+\end{problem}
+
+\topic{Solving IVP using LT}
+\begin{problem}
+Solve the given initial value problem using the method of Laplace transforms
+\begin{equation*}
+y^{\prime \prime} - y^{\prime}-2y =0 ; \quad y(0)=-2, \quad y^{\prime}(0) = 5.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Solve for $Y(s)$, the Laplace transform of the solution $y(t)$ to the given initial value problem
+\begin{equation*}
+y^{\prime \prime} +4y = g(t) ; \quad y(0)=-1, \quad y^{\prime}(0) = 0,
+\end{equation*}
+where
+\begin{equation*}
+g(t) = \bigg\{ \begin{array}{ccc}
+t, \quad t<2 \\
+5, \quad t>2
+\end{array}.
+\end{equation*}
+\end{problem}
+
+% 
+% \begin{problem}
+% Find solutions to the given initial value problem
+% \begin{equation*}
+% y^{\prime \prime} +ty^{\prime}-y = 0 ; \quad y(0)=0, \quad y^{\prime}(0) = 3.
+% \end{equation*}
+% \end{problem}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+\begin{preamble}
+ 
+\begin{formulaitem}
+\item Definition and properties of \textbf{Laplace Transform. }
+% \begin{table}[h]
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{10pt}
+\begin{center}
+\begin{tabular}{|l|}
+\hline
+$\mathcal{L}\{f\}(s)=F(s)=\int_{0}^{\infty}f(t)e^{-st}dt$\\
+$\mathcal{L}\{f+g\}=F(s)+G(s)$ \\
+$\mathcal{L}\{cf\}=cF(s)$ \\
+$\mathcal{L}\{e^{at}f\}=F(s-a)$ \\
+$\mathcal{L}\{f'\}=sF(s)-f(0)$ \\
+$\mathcal{L}\{f''\}=s^{2}F(s)-sf(0)-f'(0)$ \\
+$\mathcal{L}\{t^{n}f\}=(-1)^{n}\frac{d^{n}}{ds^{n}}F(s)$ \\ 
+\hline
+\end{tabular}
+\end{center}
+% \caption{Definition and properties of Laplace Transform.}
+% \end{table}
+
+\item Brief \textbf{table of Laplace Transforms}.
+% \begin{table}[h]
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{10pt}
+\begin{center}
+\begin{tabular}{|ll|}
+\hline
+$f(t)$ & $F(s)=\mathcal{L}\{f\}(s)$ \\
+\hline
+$1$ & $\frac{1}{s}$ \\
+$e^{at}$ & $\frac{1}{s-a} \quad s>a$\\
+$t^{n}$ & $\frac{n!}{s^{n+1}}$ \\
+$\sin bt$ & $\frac{b}{s^{2}+b^{2}}$ \\
+$\cos bt$ & $\frac{s}{s^{2}+b^{2}}$ \\
+$e^{at}t^{n}$ & $\frac{n!}{(s-a)^{n+1}} \quad s>a$ \\
+$e^{at}\sin bt$ & $\frac{b}{(s-a)^{2}+b^{2}} \quad s>a$ \\
+$e^{at}\cos bt$ & $\frac{s-a}{(s-a)^{2}+b^{2}} \quad s>a$ \\
+\hline 
+\end{tabular}
+\end{center}
+% \caption{Brief table of Laplace Transforms.}
+% \end{table}
+
+\item \textbf{Laplace transform of an IVP}. Let the IVP
+\[ay''+by' +cy = f(t),\quad y(0)=y_{0}, \quad y'(0)=y'_{0}.\]
+Then the Laplace transform of the solution $y(t)$ is
+\[Y(s)= \underbrace{\frac{(as+b)y_{0}+ay'_{0}}{as^{2}+bs+c}}_{\text{initial conditions}}+\underbrace{\frac{F(s)}{as^{2}+bs+c}}_{\text{particular sol.}}.\]
+
+\end{formulaitem}
+
+
+\end{preamble}
+
+\newpage
+
+
+
+
+\begin{problem}
+Determine the inverse Laplace transform of
+\[\frac{s-1}{2s^{2}+4s+6}.\]
+\end{problem}
+\begin{solution}
+We focus on the denominator. The first attempt in inverse Laplace transforms is to factorize the denominator. However, in this case $2s^{2}+4s+6$ has complex roots. The next attempt is to complete squares to get something of the form $(s-a)^{2}+b^{2}$.
+\[2s^{2}-4s +6 = 2(s^{2}+2s+3)=2((s+1)^{2}+2)=2((s+1)^{2}+(\sqrt{2})^{2}).\]
+The $2$ in front of the polynomial is nothing but a constant. 
+Now, we rewrite the numerator so we have terms of the form \[c\frac{s-a}{(s-a)^{2}+b^{2}},\qquad\text{and}\qquad c\frac{b}{(s-a)^{2}+b^{2}}.\]
+That is
+\begin{align*}
+\mathcal{L}^{-1}\left\{\frac{s-1}{2s^{2}+4s+6}\right\}&= \mathcal{L}^{-1}\left\{\frac{s+1-2}{2((s+1)^{2}+(\sqrt{2})^{2})}\right\}\\
+&=\mathcal{L}^{-1}\left\{\frac{1}{2}\frac{s+1}{(s+1)^{2}+(\sqrt{2})^{2}}+ \frac{-\sqrt{2}}{2}\frac{\sqrt{2}}{(s+1)^{2}+(\sqrt{2})^{2}}\right\}.
+\end{align*}
+Thus, it follows from the table of Laplace transforms that
+\[\boxed{\mathcal{L}^{-1}\left\{\frac{s-1}{2s^{2}+4s+6}\right\}=\frac{1}{2}e^{-t}\cos\sqrt{2}t-\frac{\sqrt{2}}{2}e^{-t}\sin\sqrt{2}t}.\]
+\end{solution}
+
+
+
+
+\begin{problem}
+Determine ${\cal L}^{-1}\{ {\it F }\}$ 
+\begin{equation*}
+s^2 F(s) +sF(s)-6F(s) = \dfrac{s^2+4}{s^2+s}.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Isolating $F(s)$
+\begin{eqnarray*}
+s^2 F(s) +sF(s)-6F(s) & = & \dfrac{s^2+4}{s^2+s} \\
+F(s)(s^2+s-6) & = & \dfrac{s^2+4}{s^2+s} \\
+F(s) & = & \left(\dfrac{1}{s^2+s-6}\right) \left(\dfrac{s^2+4}{s^2+s}\right) \\
+ & = &  \dfrac{s^2+4}{s(s+1)(s+3)(s-2)}\\
+ & = &  \dfrac{A}{s} + \dfrac{B}{s+1} + \dfrac{C}{s+3} + \dfrac{D}{s-2} \\
+\end{eqnarray*}
+If we combine these fractions under the same denominator, we have:
+\begin{eqnarray*}
+F(s)=\dfrac{A(s+1)(s+3)(s-2)+B(s)(s+3)(s-2)+C(s)(s+1)(s-2)+D(s)(s+1)(s+3)}{s(s+1)(s+3)(s-2)}  \\
+\end{eqnarray*}
+Collecting all the powers of s we find:
+\begin{eqnarray*}
+F(s)=\dfrac{s^3 (A+B+C+D) + s^2 (2A+B-C+4D) + s(-5A-6B-2C+3D)-6A }{s(s+1)(s+3)(s-2)}  \\
+\end{eqnarray*}
+
+This implies that:
+\begin{eqnarray}
+A+B+C+D & = & 0 \\
+2A+B-C+4D & = & 1\\
+-5A-6B-2C+3D & = & 0\\
+-6A & = & 4
+\end{eqnarray}
+
+In Matrix form we have:
+\begin{equation*}
+ \left[ \begin {array}{ccccc} 1&1&1&1&0\\ \noalign{\medskip}2&1&-1&4&1
+\\ \noalign{\medskip}-5&-6&-2&3&0\\ \noalign{\medskip}-6&0&0&0&4
+\end {array} \right]
+\end{equation*}
+Which upon reducing, we obtain:
+\begin{equation*}
+ \left[ \begin {array}{ccccc} 1&0&0&0&- \dfrac{2}{3}\\ \noalign{\medskip}0&1&0&0
+&\dfrac{5}{6}\\ \noalign{\medskip}0&0&1&0&-{\dfrac {13}{30}}
+\\ \noalign{\medskip}0&0&0&1&{\dfrac {4}{15}}\end {array} \right]
+\end{equation*}
+
+Hence ,
+\begin{eqnarray*}
+F(s)  & = & -\dfrac{2}{3} \dfrac{1}{s} +\dfrac{5}{6}\dfrac{1}{s+1} -\dfrac{13}{30} \dfrac{1}{s+3} + \dfrac{4}{15}\dfrac{1}{s-2} \\
+\end{eqnarray*}
+
+Taking the inverse Laplace transform, we have:
+\begin{equation}
+\boxed{f(t) = {\cal L}^{-1}\{ {\it F }\} = -\dfrac{2}{3} + \dfrac{5}{6} e^{-t} -\dfrac{13}{30} e^{-3t} + \dfrac{4}{15} e^{2t}}.
+\end{equation}
+\end{solution}
+
+
+
+
+\begin{problem}
+Find the inverse Laplace transform of 
+\[\tanh^{-1} (s).\]
+\end{problem}
+\begin{solution}
+In problems of inverse Laplace transform of trigonometric or trascendental functions that are not in the table, usually one of its derivatives is a fraction. In this case
+\[(\tanh^{-1}s)'=\frac{1}{1-s^{2}},\]
+which looks like the Laplace transform of $\sinh$. For this problem we will use the property
+\[\mathcal{L}\{t^{n}f(t)\}=(-1)^{n}F^{(n)}(s).\]
+Let $F(s)=\tanh^{-1}(s)$, then
+\[-F'(s)=-\frac{1}{1-s^{2}}=\frac{1}{s^{2}-1}.\]
+Using the property
+\[tf(t) =\mathcal{L}^{-1}\left\{\frac{1}{s^{2}-1}\right\}=\sinh t.\]
+Isolating $f(t)$, we have
+\[\boxed{f(t)=\frac{\sinh t}{t}}\]
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the given initial value problem using the method of Laplace transforms
+\begin{equation*}
+y^{\prime \prime} - y^{\prime}-2y =0 ; \quad y(0)=-2, \quad y^{\prime}(0) = 5.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Applying a Laplace transform on both sides, we obtain:
+\begin{equation*}
+{\cal L}^{}\{ y^{\prime \prime} \} -{\cal L}^{}\{ y^{\prime } \} - 2 {\cal L}^{}\{ y \} =0
+\end{equation*}
+\begin{equation*}
+\left(s^2 Y(s) - s y(0)-y^{\prime}(0)\right) -\left(sY(s)-y(0)\right) - 2 Y(s) =0
+\end{equation*}
+\begin{equation*}
+s^2 Y(s) + 2s -5 -sY(s)-2 - 2 Y(s) =0
+\end{equation*}
+Isolating $Y(s)$, we obtain:
+
+\begin{equation*}
+Y(s) = \dfrac{-2s+7}{s^2-s-2} = \dfrac{-2s+7}{(s+1)(s-2)}
+\end{equation*}
+
+We will now have to decompose $\dfrac{-2s+7}{(s+1)(s-2)}$ into partial fractions:
+
+\begin{eqnarray*}
+\dfrac{-2s+7}{(s+1)(s-2)} & = & \dfrac{A}{s+1} + \dfrac{B}{s-2} \\
+ & = & \dfrac{A(s-2)+B(s+1)}{(s+1)(s-2)}  \\
+  & = & \dfrac{s(A+B)+(-2A+B)}{(s+1)(s-2)}
+\end{eqnarray*}
+
+Hence, we have:
+
+\begin{eqnarray*}
+A+B & = & -2 \\
+-2A+B & = & 7
+\end{eqnarray*}
+Solving this system, we find $A=-3$ and $B=1$.
+Hence,
+
+\begin{equation*}
+Y(s) = -\dfrac{3}{s+1} + \dfrac{1}{s-2}
+\end{equation*}
+
+Taking the inverse Laplace transform, we find
+
+\begin{equation*}
+\boxed{y(t)= -3 e^{-t} +e^{2t}}.
+\end{equation*}
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve for $Y(s)$, the Laplace transform of the solution $y(t)$ to the given initial value problem
+\begin{equation*}
+y^{\prime \prime} +4y = g(t) ; \quad y(0)=-1, \quad y^{\prime}(0) = 0,
+\end{equation*}
+where
+\begin{equation*}
+g(t) = \bigg\{ \begin{array}{ccc}
+t, \quad t<2 \\
+5, \quad t>2
+\end{array}
+\end{equation*}
+\end{problem}
+\begin{solution}
+Applying a Laplace transform on both sides, we obtain:
+
+\begin{equation*}
+{\cal L}^{}\{ y^{\prime \prime} \} +4 {\cal L}^{}\{ y \} = {\cal L}^{}\{ g(t) \}
+\end{equation*}
+To evaluate ${\cal L}\{g(t)\}$ we need to write $g(t)$ in term of unit step functions,
+
+\[g(t)=t+(5-t)u(t-2)\]
+
+We know ${\cal L}\{f(t-a)u(t-a)\}=F(s)e^{-as}$, but $(5-t)u(t-2)$ does not have that exact form. To solve this we evaluate
+
+\[h(t)=5-t, \quad \Rightarrow \quad h(t+2)=5-(t+2)=3-t,\] 
+
+take Laplace transform
+\[{\cal L}\{h(t+2)\}= {\cal L}\{3-t\}=\frac{3}{s}-\frac{1}{s^{2}},\quad \Rightarrow \quad {\cal L}\{h(t)u(t-2)\}=\left( \frac{3}{s}-\frac{1}{s^{2}} \right)e^{-2s}.\]
+
+and simply write
+
+\[G(s)=\frac{1}{s^{2}}+ \left( \frac{3}{s}-\frac{1}{s^{2}} \right)e^{-2s}.\]
+
+
+% There is no easy way to evaluate ${\cal L}^{}\{ g(t) \} $. We need to resort to the definition:
+
+% \begin{eqnarray*}
+% {\cal L}^{}\{ g(t)\} &  =  & \int_{0}^{\infty} e^{-st}g(t) {\rm d}t\\
+% & = & \int_{0}^{2} e^{-st}t {\rm d}t + \int_{2}^{\infty} 5 e^{-st} {\rm d}t \\
+% & = & \left[ -\dfrac{t}{s} e^{-st} \right]_{0}^{2} +\dfrac{1}{s}  \int_{0}^{2} e^{-st} {\rm d}t + 5 \left[ -\dfrac{1}{s} e^{-st} \right]_{2}^{\infty}\\
+% & = & \left[ -\dfrac{t}{s} e^{-st} \right]_{0}^{2} +\dfrac{1}{s} \left[ -\dfrac{1}{s} e^{-st} \right]_{0}^{2} + 5 \left[ -\dfrac{1}{s} e^{-st} \right]_{2}^{\infty}\\
+% & = &  -\dfrac{2}{s} e^{-2s} -\dfrac{1}{s^2}(e^{-2s}-1) + \dfrac{5}{s} e^{-2s} \\
+% & = &  \dfrac{3e^{-2s}}{s} -\dfrac{e^{-2s}}{s^2} + \dfrac{1}{s^2} \\
+% \end{eqnarray*}
+Putting all of this together we have
+
+\begin{equation*}
+s^2 Y(s) - s y(0)-y^{\prime}(0) +4 Y(s) = \frac{1}{s^{2}}+ \left( \frac{3}{s}-\frac{1}{s^{2}} \right)e^{-2s}
+\end{equation*}
+
+
+\begin{equation*}
+s^2 Y(s) + s +4 Y(s) =\frac{1}{s^{2}}+ \frac{3s-1}{s^{2}} e^{-2s}
+\end{equation*}
+Isolating $Y(s)$, we obtain:
+
+\begin{equation*}
+\boxed{Y(s) = \dfrac{3e^{-2s}}{s(s^2+4)} -\dfrac{e^{-2s}}{s^2(s^2+4)} + \dfrac{1}{s^2(s^2+4)} -\dfrac{s}{s^2+4}}.
+\end{equation*}
+\end{solution}
+
+
+
+
+
+% \begin{problem}
+% Find solutions to the given initial value problem
+% \begin{equation*}
+% y^{\prime \prime} +ty^{\prime}-y = 0 ; \quad y(0)=0, \quad y^{\prime}(0) = 3,
+% \end{equation*}
+% \end{problem}
+% \begin{solution}
+% Applying a Laplace transform on both sides, we obtain:
+% 
+% 
+% \begin{equation*}
+% {\cal L}\{ y^{\prime \prime} \} +{\cal L}\{ ty^{\prime} \}- {\cal L}\{ y \} = 0
+% \end{equation*}
+% \begin{equation*}
+% \left(s^2 Y(s) - s y(0)-y^{\prime}(0)\right) -\dfrac{{\rm d}}{{\rm d}s} {\cal L}\{y^{\prime} \} -  Y(s) =0
+% \end{equation*}
+% 
+% \begin{equation*}
+% \left(s^2 Y(s) - s y(0)-y^{\prime}(0)\right) -\dfrac{{\rm d}}{{\rm d}s} \left( sY(s)-y(0)\right) -  Y(s) =0
+% \end{equation*}
+% 
+% \begin{equation*}
+% s^2 Y(s) -3 - sY^{\prime}(s) - Y(s) -  Y(s) =0
+% \end{equation*}
+% 
+% We can rearange this equation in the following way:
+% \begin{equation*}
+% Y^{\prime}(s) +\left(\dfrac{2}{s}-s\right) Y(s) =-\dfrac{3}{s}
+% \end{equation*}
+% 
+% This is a first order ODE for $Y^{\prime}(s)$.
+% The integrating factor for this ODE is
+% 
+% \begin{equation*}
+% I(s) = \exp\left(\int \frac{2}{s}-s {\rm d} s\right) = \exp\left(2\ln(s) -\dfrac{s^2}{2} \right) = s^2 e^{-s^2/2}
+% \end{equation*}
+% Hence:
+% \begin{equation*}
+% (s^2 e^{-s^2/2}Y(s))^{\prime} =-3 s \, e^{-s^2/2}
+% \end{equation*}
+% 
+% \begin{eqnarray*}
+% Y(s) & = & 3\dfrac{e^{s^2/2}}{s^2} \int -s e^{-s^2/2} {\rm d}s + C\dfrac{e^{s^2/2}}{s^2}\\
+%  & = &  3\dfrac{e^{s^2/2}}{s^2} e^{-s^2/2} + C\dfrac{e^{s^2/2}}{s^2} \\
+%   & = &  \dfrac{3}{s^2} + C\dfrac{e^{s^2/2}}{s^2} \\
+% \end{eqnarray*}
+% Since we require that $ \lim_{s \to \infty} Y(s) =0$, $C=0$.
+% 
+% Hence:
+% \begin{equation}
+% Y(s) =\dfrac{3}{s^2}
+% \end{equation}
+% Taking the inverse Laplace transform, we obtain:
+% 
+% \begin{equation}
+% \boxed{y(t) = 3{\cal L}^{-1} \left\{\dfrac{1}{s^2} \right\} = 3t}.
+% \end{equation}
+% \end{solution}
+
+
+
+\end{document}

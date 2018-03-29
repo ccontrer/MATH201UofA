@@ -1,0 +1,980 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab extra}
+\labtitle{Midterm review}
+\makelabtitle
+
+
+
+
+
+\topic{Homogeneous first-order}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+\frac{dy}{dx}=\frac{x^{2}+3y^{2}}{2xy}, \quad x>0. 
+\end{equation*}
+\end{problem}
+
+
+\topic{Exact equations}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+2xy dx+(x^{2}-y^{2})dy=0. 
+\end{equation*}
+\end{problem}
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+ydx + (2x - y e^{y}) dy = 0.
+\end{equation*}
+\end{problem}
+
+
+\topic{Integrating factor}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     xy'+(x+1)y=3x^{2}e^{-x}.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Find values of $\lambda$ for which the differential equation of exact and solve
+\[\dfrac{dy}{dt}=\frac{\lambda y e^{t}+ 2ty}{2y+e^{t}-t^{2}}.\]
+\end{problem}
+
+
+% \begin{problem}
+% Solve the following problem
+% \begin{equation*}
+%      (x+y+1)dx+(y-x-3)dy=0.
+% \end{equation*}
+% \end{problem}
+
+
+\topic{Bernoulli}
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+ x y' + y = 2 y^{2}x \ln x.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     \frac{dy}{dx}=\frac{(1+x)y-6y^{3}}{2x}.
+\end{equation*}
+\end{problem}
+
+
+\topic{Undertermined coefficients}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     y''-4y'+13y=3e^{2x}\sin 3x.
+\end{equation*}
+\end{problem}
+
+
+
+\begin{problem}
+Solve the following initial value problem
+\begin{equation*}
+     y''+3y'+2y=4x+2e^{-x}, \quad y(0)=4, \quad y'(0)=0.
+\end{equation*}
+\end{problem}
+
+
+\topic{Variation of parameters}
+\begin{problem}
+Find a general solution to differential equation
+\begin{equation*}
+y^{\prime \prime} + y = \sec(t)
+\end{equation*}
+\end{problem}
+
+
+
+\topic{Cauchy-Euler}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     x^{2}y''-3xy'+4y=x+2.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}     
+     x^{2}y''+3xy'+y=5x^{-1}\ln x.
+\end{equation*}
+\end{problem}
+
+
+
+% \begin{problem}
+% Solve the following problem
+% \begin{equation*}
+%      x^{2}y''-xy'+y=6x\ln x.
+% \end{equation*}
+% \end{problem}
+% 
+% 
+% 
+% \begin{problem}
+% Solve the following problem
+% \begin{equation*}
+%      x^{2}y''+xy'+y=2\sin(\ln x).
+% \end{equation*}
+% \end{problem}
+% 
+% 
+\topic{Reduction of order formula}
+\begin{problem}
+Find a second solution to the problem given the solution $y_{1}(t)=t$
+\begin{equation*}
+t^{2}y''-t(t+2)y'+(t+2)y=0, \quad t>0.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Find a general solution to the problem given the first solution to the homogeneous part $y_{1}(t)=e^{-x}$
+\begin{equation*}
+y''+(\tan x +2)y'+(\tan x+1)y=e^{-x}\cos x.
+\end{equation*}
+\end{problem}
+% 
+% 
+
+\topic{Mechanical Vibrations}
+\begin{problem}
+A 2-Kg mass is attached to a spring with stiffness $k = 50$N/m. The mass is displaced $1/4$ m to the left of the equilibrium point and given a velocity of $1$m/sec to the left. Neglecting damping, find the equation of motion of the mass along with the amplitude, period, phase and frequency. How long after release does the mass pass through the equilibrium position?
+\end{problem}
+
+
+\begin{problem}
+An 8-Kg mass is attached to a spring hanging from the ceiling and allowed to come to rest. Assume that the spring constant is 40 N/m and the damping constant is 3 N-sec/m. At time $t=0$, an external force of $2\sin(2t +\pi/4)N$ is applied to the system. Determine the amplitude and frequency of the steady-state solution.
+\end{problem}
+% 
+% 
+
+
+
+\topic{Power series solution}
+
+
+\begin{problem}{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$, and the minimum radius of convergence}
+\begin{equation*}
+(x^2+1)y^{\prime \prime} - x y^{\prime} + y =0.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =x^2.
+\end{equation*}
+\end{problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+
+\begin{preamble}
+\textbf{Formulas to remember}
+
+\begin{formulaitem}
+
+\item \textsl{Integrating factor.} $y'+p(x) = q(x)$
+\[\boxed{I(x)=e^{\int p(x)dx}, \qquad y(x)=\frac{1}{I(x)}\left[ \int I(x)q(x)dx + C \right]}\]
+
+\item The \textsl{method of undetermined coefficients} is limited to certain functions $g(t)$ and second-order with constant coefficients equations \[ay''+by'+cy=g(t),\] since it requires guessing the particular solution. However, we need less effort and calculations than the more general methods for non-homogeneous equations (e.g. variation of parameters). Here is a simple table of common problems where the method is useful.
+
+\begin{center}
+\begin{tabular}{|c|c|p{3cm}|}
+\hline
+$g(t)$ & $y_{p(t)}$ & Comments \\
+\hline \hline
+$ C t^{m} $ & $ A_{m}t^{m} + \cdots A_{1}t + A_{0} $ &  \\ \hline
+$ C \cos(\beta t) $ or $C\sin(\beta t)$ & $ A \cos(\beta t) + B \sin(\beta t) $ &  \\ \hline
+$ C t^{m} e^{\rho t}$ & $ t^{s}(\underbrace{A_{m}t^{m}+\cdots A_{1}t + A_{0}}_{p_{m(t)}})e^{\rho t} $ & {\scriptsize $s=0,1,2$ ($\rho$ not root, single, double)} \\ \hline
+$ C t^{m} e^{\alpha t}\cos(\beta t)$ or $\sin$ & $ t^{s}p_{m}(t)e^{\alpha t}\cos(\beta t) + t^{s}\underbrace{q_{m}(t)}_{\neq p_{m}}e^{\alpha t}\sin(\beta t) $ &  {\scriptsize $s=0,1$ ($\alpha+i \beta$ is not root, is root) and $p_{m}$ and $q_{m}$ are polinomials (see previous row)}\\ \hline
+$ C \cosh(\beta t) $ or $C\sinh(\beta t)$ & $ A \cosh(\beta t) + B \sinh(\beta t)$ & {\scriptsize  If $\pm1$ are not roots} \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{Be carefull!}. When $r=0$ is a root, we have $e^{0t}=1$. That means, for example, that $C t^{m}$ is actually a $C t^{m}e^{rt}$ case and you have to multiple by $t^s$.
+
+\item \textsl{Variation of parameters.} $y''+p(t)y'+q(t)y=f(t)$. Given $y_{1}(t)$ and $y_{2}(t)$ solution of the homogeneous eqn.
+\[\boxed{W_{[y_{1}, y_{2}]}(t)=\left| \begin{array}{cc}y_{1}(t) & y_{2}(t) \\ y'_{1}(t) & y'_{2}(t) \end{array} \right| \neq 0 , \quad v_{1}(t)=-\int \frac{f(t)y_{2}(t)}{W_{[y_{1}, y_{2}]}(t)}dt , \quad v_{2}(t)= \int \frac{f(t)y_{1}(t)}{W_{[y_{1}, y_{2}]}(t)}dt}\]
+
+\item \textsl{Reduction of order.} $y''+p(t)y'+q(t)y=0$. Given a first solution $y_{1}(t)$
+\[\boxed{y_{2}(t)=y_{1}(t)\int\frac{e^{-\int p(t) dt}}{(y_{1}(t))^{2}}dt}\]
+
+\item \textsl{The Cauchy-Euler equation} \[a x^{2}y'' +bxy' + c y = f(x),\] changes to the second-order with constant coefficients equation \[az'' +(b-a)z'+cz=f(e^{t}),\] after applying the change of variable \[x = e^{t} \quad \Rightarrow \quad z(t) = y(e^{t}).\]
+\textbf{Note:} if $f(x)=0$, a shortcut (no change of variable) is to write the solution 
+\begin{align*}
+\text{Case 1:} \quad y(x)&=C_{1}x^{r_{1}}+C_{2}x^{r_{2}}, \quad \text{if}\quad r_{1}\neq r_{2}, \\
+\text{Case 2:} \quad y(x)&=C_{1}x^{r_{1}}+C_{2}x^{r_{1}}\ln (x), \quad \text{if}\quad r_{1}= r_{2}, \\
+\text{Case 3:} \quad y(x)&=C_{1}x^{\alpha}\cos(\beta \ln (x) )+C_{2}x^{\alpha}\sin(\beta \ln (x) ), \quad \text{if}\quad r_{1}, r_{2} = \alpha \pm i \beta,
+\end{align*}
+where $r_{1}$ and $r_{2}$ are the roots of \[ar^{2}+(b-a)r+c=0.\]
+
+
+\end{formulaitem}
+
+
+\end{preamble}
+
+% \begin{solution}
+% B
+% \end{solution}
+% \begin{equation*}\begin{split}
+%      
+% \end{split}\end{equation*}
+
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+\frac{dy}{dx}=\frac{x^{2}+3y^{2}}{2xy}, \quad x>0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+This looks like a first order homogeneous, so we try the change of variable $u=\frac{y}{x}$. 
+\[\frac{dy}{dx}=\frac{x^{2}(1+3\left(\frac{y}{x}\right)^{2})}{2x^{2}\left(\frac{y}{x}\right)}= \frac{1+3\left(\frac{y}{x}\right)^{2}}{2\left(\frac{y}{x}\right)}.\]
+Then,
+\[u=\frac{y}{x} \Rightarrow y= x u \Rightarrow y' = x u' + u,\]
+and
+\[xu' + u = \frac{1+3u^{2}}{2u}\Rightarrow x u' = \frac{1+u^{2}}{2u},\]
+which is a separable equation. Then,
+\[\int\frac{2u}{1+u^{2}}du = \int \frac{1}{x}dx \Rightarrow_{v=1+u^{2}}\int \frac{1}{v}dv = \int \frac{1}{x}dx \Rightarrow \ln |1+u^{2}|=\ln|x|+C_{1} \Rightarrow 1+u^{2}=Cx,\]
+\[\Rightarrow u(x)=\pm \sqrt{Cx-1}.\]
+Finally,
+\[\boxed{y(x) = \pm x \sqrt{Cx-1}}.\]
+\end{solution}
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+2xy dx+(x^{2}-y^{2})dy=0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+This equation is exact since,
+\[M(x,y)=2xy,\,\, N(x,y)= x^{2}-y^{2} \Rightarrow \partial_{y}M(x,y)= 2x = \partial_{x}N(x,y). \]
+Thus, 
+\[F(x,y)= \int M(x,y) dx = x^{2}y + g(y),\]
+and
+\[\partial_{y}F(x,y)=x^{2}+g'(y) = x^{2}-y^{2} = N(x,y) \Rightarrow g'(y) = -y^{2} \Rightarrow g(y)= -\frac{1}{3}y^{3}-C.\]
+Hence,
+\[\boxed{F(x,y)=x^{2}y-\frac{1}{3}y^{3}=C}\]
+\end{solution}
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+ydx + (2x - y e^{y}) dy = 0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Note that the equation is not separable and not exact
+\[M _{y} = 1 \neq = N_{ x} = 2 .\]
+To find the integrating factor we first compute either
+\[M_{ y} - N_{ x} N ,\]
+to create an integrating factor depending only on $x$ (i.e., $\mu( x )$), or
+\[\frac{N_{ x} - M_{ y}}{ M} ,\]
+to create an integrating factor depending only on $y$ (i.e., $\mu ( y )$).
+Take, for example,
+\[\frac{N_{ x} - M_{ y}}{ M} = \frac{2 - 1}{ y} = \frac{1}{y}.\]
+Since this function depends only on $y$ we can define the following integrating factor 
+\[\mu( y ) = e^{ \int \frac{N_{ x} - M_{ y}}{ M} dy }= e^{ \int \frac{ dy}{ y}} = y.\]
+Multiplying both sides of the equation by $\mu ( y ) = y$ , we get
+\[y^{ 2} dx + (2 xy - y^{ 2} e^{ y} ) dy = 0 .\]
+Note that this new equation is exact.  Now we apply the method for exact equations
+\[F ( x,y ) = \int M ( x,y ) \partial x = Z\int y^{ 2} \partial x = xy 2 + h ( y ) .\]
+and
+\[\partial_{ y} F ( x,y ) = 2 xy + h'( y ) = 2 xy - y^{ 2} e^{ y} = N ( x,y ) \Rightarrow h'( y ) = - y^{ 2} e^{ y} ,\]
+which after integration by parts gives,
+\[ h ( y ) = ( - y^{ 2} + 2 y - 2) e^{y} +C.\]
+Finally,
+\[\boxed{F ( x,y ) = xy^{ 2} + ( - y^{ 2} + 2 y - 2) e^{ y} = C }.\]
+\end{solution}
+
+
+\begin{problem}
+Find values of $\lambda$ for which the differential equation of exact and solve
+\[\dfrac{dy}{dt}=\frac{\lambda y e^{t}+ 2ty}{2y+e^{t}-t^{2}}.\]
+\end{problem}
+\begin{solution}
+Rewrite the equation in the form
+\[(\lambda y e^{t}+ 2ty)dt - (2y+e^{t}-t^{2})dy-=0.\]
+Then,
+\[M(t,y)= \lambda y e^{t} + 2ty,\quad \Rightarrow \quad \partial_{y}M(t,y)=  \lambda e^{t} + 2t, \]
+and
+\[N(t,y)=-2y-e^{t}+t^{2},\quad \Rightarrow \quad \partial_{t}N(t,y)= -e^{t} +2 t.\]
+Clearly, the equation is exact if $\lambda  = -1$.
+
+Thus, 
+\[F(t,y)= \int M(t,y) \partial t = \int (-ye^{t}+2ty) \partial t = -ye^{t} +t^{2}y + C(y),\]
+and
+\[\partial_{y}F(t,y)= -e^{t} +t^{2} + C'(y) = N(x,y) \quad \Rightarrow  \quad C'(y) = -2y \Rightarrow C(y)= - y^{2} + C.\]
+Hence,
+\[\boxed{F(x,y)= -ye^{t} + t^{2}y  - y^{2} + C = 0}\]
+\end{solution}
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     xy'+(x+1)y=3x^{2}e^{-x}.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Using integrating factor, but first we put the equation in the standard form
+\[y' + \left(1+\frac{1}{x}\right)y = 3xe^{-x}.\]
+Then,
+\[I(x)=e^{\int \left(1+\frac{1}{x}\right)dx}=e^{x+\ln|x|}=xe^{x},\]
+and
+\[y(x)=\frac{1}{xe^{x}}\left[\int xe^{x}3xe^{-x}dx + C\right]=\frac{1}{xe^{x}}\left[3\int x^{2}dx + C\right]=\frac{1}{xe^{x}}\left[x^{2}+C\right]\]
+\[\Rightarrow \boxed{y(x)=x^{2}e^{-x}+Cx^{-1}e^{-x}}.\]
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+ x y' + y = 2 y^{2}x \ln x.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Divide over $x$ to put the equation in the standard form
+\[y' + \frac{1}{x}y = 2 \ln (x) y^{2},\]
+which is a Bernoulli equation. Here we try the change of variable $z=y^{1-n}=y^{1-2}=y^{-1}$, 
+\[z=\frac{1}{y} \Rightarrow z'=-\frac{y'}{y^{2}},\]
+thus, dividing by $y^{2}$ and substituting into the equation  
+\begin{equation*}\begin{split}
+     \frac{y'}{y^{2}} + \frac{1}{x}\frac{1}{y} = 2 \ln x \\
+     \Rightarrow -z'+\frac{1}{x}z=2\ln x\\
+     \Rightarrow z' -\frac{1}{x}z = -2\ln x.
+\end{split}\end{equation*}
+This last equation can be solved using integrating factor. Thus,
+\[I(x)=e^{\int -\frac{1}{x}dx}=e^{-\ln |x|}=x^{-1},\]
+and 
+\begin{eqnarray*}
+     z(x) =x\left[ \int -\frac{1}{x}2\ln x dx + C\right] = -x \ln^{2} x + x C , 
+\end{eqnarray*}
+where \[\int \frac{2\ln x}{x} dx =_{u=\ln^{2}x \Rightarrow du = \frac{2\ln x}{x}dx} =  \int du = u = \ln^{2} x.\]
+Finally,
+\[\boxed{y(x)=\frac{1}{-x\ln^{2} x + C x}}.\]
+\textbf{Note}: Say you forgot what is a Bernoulli equation and the change of variable. Try leaving the RHS only dependent on $x$ and see if a change of variable will do the job. Dividing over $xy^{2}$ we have,
+\[\frac{y'}{y^{2}}+\frac{1}{x}\frac{1}{y}=2\ln x.\]
+Here we note that the change of variable $z(x)=\frac{1}{y(x)}$ will work
+\[z=\frac{1}{y} \Rightarrow z'=-\frac{y'}{y^{2}},\]
+which is exactly the change of variable for the Bernoulli equation.
+\end{solution}
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     \frac{dy}{dx}=\frac{(1+x)y-6y^{3}}{2x}.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Write the equation in the standard form
+\[y'-\frac{1}{2}\left(\frac{1}{x}+1\right)y=-\frac{3}{x}y^{3},\]
+which is a Bernoulli equation. The change of variable is then,
+\[u = y^{1-3}=y^{-2}\Rightarrow u'=-2 y^{-3}y' \,\,\text{ and }\,\, y = \pm u^{-1/2}.\]
+Dividing the equation over $y^{3}$ and using the substitution
+\begin{gather*}
+y^{-3}y'-\frac{1}{2}\left(\frac{1}{x}+1\right)y^{-2}=-\frac{3}{x} \\
+-\frac{1}{2}u' - \frac{1}{2} \left(\frac{1}{x}+1\right)u=-\frac{3}{x}. \\
+u' + \left(\frac{1}{x}+1\right)u=\frac{6}{x}.
+\end{gather*}
+This equation can be solved using integrating factor,
+\[I(x)=e^{\int\left(\frac{1}{x}+1\right)dx}=e^{\ln|x|+x}=xe^{x},\]
+then
+\[u(x)= \frac{1}{x e^{x}}\left[\int xe^{x}\frac{6}{x}dx + C\right]= \frac{6}{x}+\frac{C}{xe^{x}}.\]
+Going back to $y(x)$,
+\[\boxed{y(x)= \pm\left(\frac{6}{x}+\frac{C}{xe^{x}}\right)^{-1/2}}.\]
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     y''-4y'+13y=3e^{2x}\sin 3x.
+\end{equation*}
+\end{problem}
+\begin{solution}
+The auxiliary equation for this ODE is 
+\begin{equation}
+r^2 -4r +13 =0, \quad  \Rightarrow \quad r= 2 \pm i 3.
+\end{equation}
+Hence the homogeneous solution to this ODE is given by:
+\begin{equation}
+y_{h}(x) = C_{1} e^{2 x} \cos 3x  + C_{2} e^{2x}\sin 3x
+\end{equation}
+Since $e^{2x}\sin 3x$ appears in the non-homogeneous part and the homogeneous solution we have to multiply our particular solution guess by $x$. Hence, we make the following guess:
+\begin{eqnarray*}
+y_{p}(x) & = & (Ax\cos3x+Bx\sin3x)e^{2x} \\
+y'_{p}(x) & = & (A\cos3x+B\sin3x+(2A+3B)x\cos 3x + (-3A +2B)x \sin 3x)e^{2x} \\
+y''_{p}(x) & = & [(4A+6B)\cos3x+(-6A+4B)\sin 3x \\ & & + (-5A+12B)x\cos 3x + (-12A -5B)x \sin 3x]e^{2x}.
+\end{eqnarray*}
+Since we needed to multiply by $x$ our particular solution, we know the terms $x\cos (3x) e^{2x}$ and $x\sin (3x) e^{2x}$ won't give any information about $A$ and $B$ (the $x$ is the important part). So, we look only at the coefficients multiplying $\cos(3x)e^{2x}$ and $\sin(3x)e^{2x}$. Using the equation (only focusing in this coefficients)
+\begin{equation*} \begin{split}
+\cos(3x)e^{2x}:& \quad  4A +6B -4A = 0 \\
+\sin(3x)e^{2x}:& \quad  -6A +4B -4B = 3.
+\end{split}
+\end{equation*}
+This can only be true if $A = -1/2$ and $B=0$. Hence, 
+$$y_{p}(t) = -\frac{1}{2}xe^{2x}\cos3x,$$ 
+is the particular solution to this equation, and
+\[\boxed{y(t) = C_{1} e^{2 x} \cos 3x  + C_{2} e^{2x}\sin 3x -\frac{1}{2}xe^{2x}\cos3x}\]
+is the general solution. \\
+\textbf{Note}: If you see you can use undetermined coefficients, don't bother trying variation of parameters. Most of the times the former is easier and faster. 
+\end{solution}
+
+
+
+\begin{problem}
+Solve the following initial value problem
+\begin{equation*}
+     y''+3y'+2y=4x+2e^{-x}, \quad y(0)=4, \quad y'(0)=0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+The auxiliary equation for this ODE is 
+\begin{equation}
+r^2 +3r +2 =0, \quad  \Rightarrow \quad r= -1 , \, -2.
+\end{equation}
+Hence the homogeneous solution is
+\begin{equation}
+y_{h}(x) = C_{1} e^{- x} + C_{2} e^{-2x}.
+\end{equation}
+To not confuse ourselves we will solve the non-homogeneous part in two steps. First $4x$, and then $2e^{-x}$.\\
+1.) To solve 
+\[ y''+3y'+2y=4x\]
+our guess is (note that $r=0$ is not a root)
+\begin{eqnarray*}
+y_{p_{1}}(x) & = & Ax +B \\
+y'_{p_{1}}(x) & = & A \\
+y''_{p_{1}}(x) & = & 0.
+\end{eqnarray*}
+Using the equation we have
+\begin{equation*} \begin{split}
+ 2A = 4 \\
+ 3A + 2B = 0
+\end{split}.
+\end{equation*}
+The solution to this system is $A = 2$ and $B=-3$. Hence, 
+$$y_{p_{1}}(t) = 2x -3,$$ 
+is the particular solution to this first equation.\\
+2.) To solve 
+\[ y''+3y'+2y=2e^{-x}\]
+we note that $r=-1$ is a single root. Thus, our guess is 
+\begin{eqnarray*}
+y_{p_{2}}(x) & = & Axe^{x} \\
+y'_{p_{2}}(x) & = & Ae^{-x} - Axe^{-x} \\
+y''_{p_{2}}(x) & = & -2Ae^{-x} + Axe^{-x}.
+\end{eqnarray*}
+Recall that we can omit the $xe^{-x}$ term and look only at the coefficients multiplying the term $e^{-x}$ 
+\begin{equation*} \begin{split}
+ -2A + 3A = 2 \Rightarrow A = 2.
+\end{split}.
+\end{equation*}
+Hence, 
+$$y_{p_{2}}(t) = 2xe^{x},$$ 
+is the particular solution to this second equation.\\
+The general solution is 
+\[{y(x)=C_{1} e^{- x} + c_{2} e^{-2x} +2x -3 +2xe^{-x}}\]
+and 
+\[y'_{h}(x)=-C_{1} e^{- x} -2 C_{2} e^{-2x} + 2 + 2 e^{-x} -2xe^{-x}.\]
+Using the initial condition we have
+\begin{equation*}
+\begin{split}
+C_{1}+C_{2} -3=4\\
+-C_{1}-2C_{2}+4=0
+\end{split}
+\end{equation*}
+with solution $C_{1}=10$, $C_{2}=-3$, thus
+\[\boxed{y(x)=10 e^{- x} -3 e^{-2x} +2x -3 +2xe^{-x}}\]
+is the solution to the initial value problem.
+\end{solution}
+
+
+
+\begin{problem}
+Find a general solution to differential equation
+\begin{equation*}
+y^{\prime \prime} + y = \sec(t)
+\end{equation*}
+\end{problem}
+\begin{solution}
+The auxiliary equation for this ODE is :
+\begin{equation*}
+r^2 +1 =0 \quad \Rightarrow \quad r = \pm i
+\end{equation*}
+Our homogeneous solution is then given by:
+\begin{equation*}
+y_{h}(t) = C_{1} \cos(t) + C_{2} \sin(t)
+\end{equation*}
+The Wronskian of these two solutions is:
+\begin{equation*}
+W[y_{1},y_{2}](t) = \left| \begin{array}{cc} \cos(t) & \sin(t) \\
+-\sin(t) & \cos(t) \end{array} \right| = \cos(t)^2 + \sin(t)^2 =1;
+\end{equation*}
+
+To find a particular solution to this equation, we will make the following guess:
+\begin{equation*}
+y_{p}(t) = C_{1}(t) \cos(t) + C_{2}(t) \sin(t)
+\end{equation*}
+We can find the coefficients $C_{1}(t)$ and $C_{2}(t)$ using variation of parameters formulas with $g(t) = \sec(t)$.
+Hence:
+\begin{eqnarray*}
+C_{1}(t) & = & - \int \dfrac{g(t) y_{2}(t)}{W[y_{1},y_{2}](t)} {\rm d} t \\
+& = & - \int \dfrac{\sec(t) \sin(t)}{1} {\rm d} t \\
+& = & - \int \tan(t) {\rm d} t \\
+& = & \ln|\cos(t)| \\
+\end{eqnarray*}
+\begin{eqnarray*}
+C_{2}(t) & = &  \int \dfrac{g(t) y_{1}(t)}{W[y_{1},y_{2}](t)} {\rm d} t \\
+& = &  \int \dfrac{\sec(t) \cos(t)}{1} {\rm d} t \\
+& = & \int 1 {\rm d} t \\
+& = & t \\
+\end{eqnarray*}
+Putting all these results together, we obtain our particular solution:
+\begin{equation*}
+y_{p}(t) = \ln|\cos(t)| \cos(t) + t \sin(t)
+\end{equation*}
+Hence, the general solution is given by:
+\begin{equation*}
+\boxed{y(t) = y_{h}(t) + y_{p}(t) = C_{1} \cos(t) + C_{2} \sin(t)+ \ln|\cos(t)| \cos(t) + t \sin(t)}
+\end{equation*}
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     x^{2}y''-3xy'+4y=x+2.
+\end{equation*}
+\end{problem}
+\begin{solution}
+This is a Cauchy-Euler equation. There are two ways of solving this equations, the one we are going to use now is easier and faster but it only works for homogeneous equations ($g(x)=0$) or very simple cases of non-homogeneous equations. Otherwise, it is very difficult to make a good guess for the particular solution.\\
+Assume, for some $r$ a solution of the form 
+\[y(x)=x^{r}\Rightarrow y'(x)=rx^{r-1}\Rightarrow y''(x)=r(r-1)x^{r-2}.\]
+Then the auxiliary equation becomes
+\[r^{2}-4r+4=0 \quad \Rightarrow r = 2,\]
+and the homogeneous solution is
+\[y_{h}(x)=C_{1}x^{2}+C_{2}x^{2}\ln x.\]
+(Recall that in Cauchy-Euler equations, in case of repeated roots we multiply by $\ln x$ instead of $x$.)\\
+For the particular solution our guess is
+\begin{eqnarray*}
+y_{p}(x) & = & Ax + B \\
+y'_{p}(x) & = & A \\
+y''_{p}(x) & = & 0.
+\end{eqnarray*}
+In this case (Cauchy-Euler equation as opposed to standard form) we have substitute $y$ and all its derivatives into the equation 
+\begin{equation*} \begin{split}
+ -3Ax + 4 A x +4B = x+2,
+\end{split}
+\end{equation*}
+where $A=1$ and $B =1/2$. Hence, 
+$$y_{p}(t) = x + \frac{1}{2}$$ 
+is the particular solution.\\
+Finally 
+\[\boxed{y(x)=C_{1} x^{2}+ C_{2}x^{2}\ln x + x +\frac{1}{2}}.\]
+is the general solution.
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}     
+     x^{2}y''+3xy'+y=5x^{-1}\ln x.
+\end{equation*}
+\end{problem}
+\begin{solution}
+This is a Cauchy-Euler equation. We will use the second way since the the term since the non-homogeneous part seems too difficult to guess.\\
+We do the following change of variable
+\[x = e^{t} \Rightarrow t=\ln x, \quad z(t) = y(e^{t})\Rightarrow z' = xy', \quad z''-z'=x^{2}y''.\]
+Hence, our equation becomes
+\[z''+2z'+z=5te^{-t}.\]
+The auxiliary equation for this ODE is 
+\begin{equation}
+r^2 +2r +1 =0, \quad  \Rightarrow \quad r= -1.
+\end{equation}
+Thus, the homogeneous solution is
+\begin{equation}
+z_{h}(t) = C_{1} e^{- t} + C_{2} te^{-t}.
+\end{equation}
+For the particular solutions, note that $r=-1$ is a double root, hence our guess is 
+\begin{eqnarray*}
+z_{p}(t) & = & t^{2}(At+B)e^{-t} = (At^{3}+Bt^{2})e^{-t} \\
+z'_{p}(t) & = & (-At^{3}+(3A-B)t^{2}+2Bt)e^{-t} \\
+z''_{p}(t) & = & (At^{3}+(-6A+B)t^{2}+(6A-4B)t+2B)e^{-t}.
+\end{eqnarray*}
+Recall that we can omit the $t^{3}e^{-t}$ and $t^{2}e^{-t}$ terms and look only at the coefficients multiplying the terms $te^{-t}$ and $e^{-t}$ 
+\begin{equation*} \begin{split}
+te^{-t}:& \quad  6A -4B +4B = 5 \\
+e^{-t}:& \quad  2B =0,
+\end{split}
+\end{equation*}
+with solution $A=5/6$ and $B=0$. Hence, 
+$$z_{p}(t) = \frac{5}{6}t^{3}e^{-t},$$ 
+is the particular solution.\\
+The general solution is 
+\[z(t)=  C_{1} e^{- t} + C_{2} te^{-t} +\frac{5}{6}t^{3}e^{-t}.\]
+Finally, going back to $y(x)$,
+\[\boxed{y(x)=C_{1}x^{-1}+C_{2}x^{-1}\ln x +\frac{5}{6}x^{-1}\ln^{3}x},\]
+is the solution to the original equation.
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Find a second solution to the problem given the solution $y_{1}(t)=t$
+\begin{equation*}
+t^{2}y''-t(t+2)y'+(t+2)y=0, \quad t>0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+First, we need to write the equation in the standard form
+\[y''-\left( 1 + \tfrac{2}{t} \right) y + \left(\tfrac{1}{t} + \tfrac{2}{t}\right) y=0.\]
+We need a solution of the form $y_{2}(t)=y_{1}(t)v(t)$. If we substitute 
+$$y_{2}(t)=y_{1}(t)v(t), \quad y_{2}'(t)=y_{1}'v + y_{1}v' \quad y_{2}''(t)=y_{1}''v + 2y_{1}'v'+ y_{1}v'',$$
+in the differential equation, we find the reduction of order formula 
+\[y_{2}(t)=y_{1}(t)\int \frac{e^{-\int p(t)dt}}{y_{1}^{2}(t)}dt = t\int \frac{e^{\int \left( 1 + \tfrac{2}{t} \right)dt}}{t^2}dt= t\int \frac{t^2e^{t}}{t^2}dt=te^{t}.\]
+Thus, a general solution is 
+\[\boxed{y(t) = C_{1}t + C_{2}te^{t}}.\]
+\end{solution}
+
+
+
+\begin{problem}
+Find a general solution to the problem given the first solution to the homogeneous part $y_{1}(t)=e^{-x}$
+\begin{equation*}
+y''+(\tan x +2)y'+(\tan x+1)y=e^{-x}\cos x.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Here we use reduction of order to find the second homogeneous solution, and then apply variation of parameters to find the particular solution.
+
+According to the reduction of order formula a second solution is give by
+\begin{equation*}
+y_{2}(x)=e^{-x}\int \frac{e^{-\int(\tan x + 2)dx}}{e^{-2x}}dx = e^{-x}\int \frac{e^{\ln|\cos x|}e^{-2x}}{e^{-2x}}dx=-e^{-x}\sin x.
+\end{equation*}
+Thus, an homogeneous solution is
+\[y_{h}(x)=C_{1}e^{-x}+C_{2}e^{-x}\sin x.\]
+
+The particular solution has the form
+\[y_{p}(x)=v_{1}(x)e^{-x}+v_{2}(x)e^{-x}\sin x,\]
+The Wronskian is
+\begin{equation*}
+W[y_{1},y_{2}](x) = \left| \begin{array}{cc} e^{-x} & e^{-x}\sin x \\
+-e^{-x} & e^{-x}(-\sin x +\cos x) \end{array} \right| = -e^{-2x}\cos x \neq 0, \quad \text{for} \quad x \neq n\pi +\tfrac{\pi}{2}.
+\end{equation*}
+Then,
+\begin{equation*}
+v_{1}(x) = - \int \dfrac{e^{-x}\sin x e^{-x}\cos x}{e^{-2x}\cos x}dx =\cos x,
+\end{equation*}
+\begin{equation*}
+v_{2}(x) =  \int \dfrac{e^{-x} e^{-x}\cos x}{e^{-2x}\cos x}dx =x.
+\end{equation*}
+Finally,
+\[\boxed{y(x)=C_{1}e^{-x}+C_{2}e^{-x}\sin x + e^{-x}\cos x  + xe^{-x}\sin x.}\]
+\end{solution}
+% 
+
+
+
+\begin{problem}
+A 2-Kg mass is attached to a spring with stiffness $k = 50$N/m. The mass is displaced $1/4$ m to the left of the equilibrium point and given a velocity of $1$m/sec to the left. Neglecting damping, find the equation of motion of the mass along with the amplitude, period, phase and frequency. How long after release does the mass pass through the equilibrium position? If $F(t)=\cos(ct)$ is an external force, for what values of $c$ is the system at resonance?
+\end{problem}
+\begin{solution}
+
+The equation governing this motion is $$mx''+bx'+kx=F_{\text{ext}},$$
+where $m$ is the mass of the object, $b$ is the damping constant and $k$ is the spring constant. Then, with the initial conditions the equation to solve is
+\begin{equation*}
+m x''(t) + k x(t) = 0, \quad x(0) = -1/4 , \quad x^{\prime}(0) = -1.
+\end{equation*}
+
+This is a second degree ODE with constant coefficients. The auxiliary equation is given by:
+\begin{equation*}
+m r^2 +k =0, \quad \Rightarrow \quad r = 0 \pm i \sqrt{\dfrac{k}{m}} = 0 \pm i \sqrt{\dfrac{50}{2}} = 0 \pm 5 i.
+\end{equation*}
+Thus, the solution have the form
+\begin{eqnarray*}
+x(t) & = & C_{1} \cos(5 t) + C_{2} \sin(5 t), \\
+x^{\prime}(t) & = & - 5 C_{1} \sin(5 t) + 5 C_{2} \cos(5 t).
+\end{eqnarray*}
+From this we can see that \textit{angular frequency} of our mass is $$\boxed{\omega = 5 \text{rad/s}}$$.
+
+Using initial conditions we obtain
+\begin{eqnarray*}
+-1/4 & = & C_{1}  \\
+-1 & = &  5 C_{2} .
+\end{eqnarray*}
+Hence, the equation of motion is given by
+\begin{equation*}
+x(t) =  -\dfrac{1}{4} \cos(5 t) -\dfrac{1}{5} \sin(5 t)
+\end{equation*}
+
+The \textit{amplitude} of our system can be found by
+\begin{equation*}
+\boxed{A =  \sqrt{\left(C_{1}\right)^2 + \left(C_{2}\right)^2} = \sqrt{\left(-\dfrac{1}{4}\right)^2 + \left(-\dfrac{1}{5}\right)^2} = \dfrac{\sqrt{41}}{20}} \approx 0.32017 m.
+\end{equation*}
+
+The \textit{phase} of our system is given by
+\begin{equation*}
+\tan(\phi) =  \dfrac{C_{1}}{C_{2}} = \dfrac{-\dfrac{1}{4}}{-\dfrac{1}{5}} = \dfrac{5}{4}, \quad \Rightarrow \quad \boxed{\phi = (\arctan(5/4) - \pi) } \approx -2.2455 \text{rad}
+\end{equation*}
+
+With these, I can rewrite my equation of motion in the following way
+\begin{equation*}
+\boxed{x(t) =  A \sin ( \omega t + \phi) = \frac{\sqrt{41}}{20}\sin(5t + \arctan(5/4)-\pi)}.
+\end{equation*}
+
+The \textit{period} of our system is inversely proportional to the angular frequency, that is
+\begin{equation*}
+\boxed{T =  \dfrac{2\pi}{\omega} = \dfrac{2\pi}{5} \approx 1.2566s}.
+\end{equation*}
+
+The \textit{frequency} is given by the inverse of the period
+\begin{equation*}
+\boxed{f =  \dfrac{1}{T} = \dfrac{5}{2\pi} \approx 0.79578s^{-1}}.
+\end{equation*}
+To find the first time the mass will cross the equilibrium position,  we have to isolate for $t$ in this equation.
+
+\begin{equation*}
+0 =  A \sin ( 5t + \phi) \quad \Rightarrow \quad 5t + \phi =0 \quad \Rightarrow \quad \boxed{t  = -\dfrac{\phi}{5} = \dfrac{\pi - \arctan(5/4)}{5} \approx 0.44911s}.
+\end{equation*}
+
+For an external force $F(t)=\cos(ct)$ and $b=0$, the system at resonance simply when the external frequency $c$ is equal to the angular frequency (\textit{undamped resonance motion})
+\[\boxed{c = \omega = 5}.\]
+This will be true also for $F(t)=\sin(ct)$.
+\end{solution}
+
+
+
+
+
+\begin{problem}
+An 8-Kg mass is attached to a spring hanging from the ceiling and allowed to come to rest. Assume that the spring constant is 40 N/m and the damping constant is 3 N-sec/m. At time $t=0$, an external force of $2\sin(2t +\pi/4)N$ is applied to the system. Determine the amplitude and frequency of the steady-state solution.
+\end{problem}
+\begin{solution}
+The equation governing this motion is $$my''+by'+ky=F_{\text{ext}},$$ with $m=8$Kg, $b=3$N sec/m, and $k=40$ N/m (every constant is in the same system). The roots of the auxiliary equation are
+\[r=\frac{-3\pm \sqrt{9-4\cdot8\cdot 40}}{16}=\alpha \pm i \beta,\]
+with $\alpha < 0$. We don't need to compute $\beta$ since this is an underdamped motion and the homogeneous solution
+\[y_{h}(t)=e^{\alpha t}(C_{1}\cos(\beta t) +C_{2}\sin(\beta t)),\]
+decays exponentially. Thus, the steady-state solution (long-term) is the particular solution. Since $0+i2$ is not a root of the auxiliary equation, then the guess for the particular solution is,
+\begin{eqnarray*}
+y_{p}(t) & = & A \cos(2t) + B \sin(2t) ,\\
+y_{p}^{\prime}(t) &= &-2A \sin(2t) + 2B \cos(2t) ,\\
+y_{p}^{\prime \prime}(t) &= & -4A \cos(2t) - 4B \sin(2t).
+\end{eqnarray*}
+Substituting our guess into the equation, we obtain the following system
+\begin{equation*}\left\{
+\begin{array}{cc}
+8A + 6B &=\sqrt{2}\\
+-6A + 8B &=\sqrt{2}
+\end{array}\right. ,
+\end{equation*}
+which have solution $A=\frac{\sqrt{2}}{50}$ and $B=\frac{7\sqrt{2}}{50}$.
+Hence, the steady-state solution is $$y_{\text{st}}(t)\approx y_{p}(t) = \frac{\sqrt{2}}{50}\cos(2t)+ \frac{7\sqrt{2}}{50}\sin(2t),$$
+with amplitude and frequency 
+\[\boxed{A=\sqrt{C_{1}^{2}+C_{2}^{2}}=\sqrt{\frac{2}{50^{2}}+\frac{49\cdot 2}{50^{2}}}=\frac{1}{5}\text{m}}, \qquad \boxed{f=\frac{\omega}{2\pi}=\frac{2}{2\pi}=\frac{1}{2\pi}\text{sec}^{-1}}.\]
+\end{solution}
+
+
+
+
+%------------------------------------------------------------------------------
+
+\begin{problem}
+{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$, and the minimum radius of convergence}
+\begin{equation*}
+(x^2+1)y^{\prime \prime} - x y^{\prime} + y =0.
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+ We expand the solution $y(x)$ into the following power series about $x=0$.
+\begin{equation*}
+y(x) = \sum_{n=0}^{\infty} a_{n} x^n
+\end{equation*}
+Taking the first two derivatives, we have
+\begin{gather*}
+y^{\prime}(x) =  \sum_{n=1}^{\infty} n a_{n} x^{n-1}, \\
+y^{\prime \prime}(x) = \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2}.
+\end{gather*}
+Using the equation we have
+\begin{gather*}
+(x^2 + 1)\sum_{n=2}^{\infty}n(n-1)a_{n}x^{n-2} -x \sum_{n=1}^{\infty} na_{n}x^{n-1} + \sum_{n=0}^{\infty} a_{n}x^{n} = 0, \\
+\Rightarrow \sum_{n=2}^{\infty}n(n-1)a_{n}x^{n} + \underbrace{\sum_{n=2}^{\infty}n(n-1)a_{n}x^{n-2}}_{n-2\rightarrow n} - \sum_{n=1}^{\infty} na_{n}x^{n} + \sum_{n=0}^{\infty} a_{n}x^{n} = 0, \\
+\Rightarrow \sum_{n=2}^{\infty}n(n-1)a_{n}x^{n} + \sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^{n} - \sum_{n=1}^{\infty} na_{n}x^{n} + \sum_{n=0}^{\infty} a_{n}x^{n} = 0, \\
+\Rightarrow 2a_{2} + 6 a_{3}x - a_{1}x + a_{0} + a_{1}x + \sum_{n=2}^{\infty}[(n+2)(n+1)a_{n+2} + (n-1)^{2}a_{n}]x^{n} =0 \\
+\Rightarrow (2a_{2} + a_{0}) + 6 a_{3} x + \sum_{n=2}^{\infty}[(n+2)(n+1)a_{n+2} + (n-1)^{2}a_{n}]x^{n} =0.
+\end{gather*}
+Matching both side sides  of the equation
+\begin{equation*}
+\begin{array}{cccc}
+a_{0},a_{1}\in \mathbb{R}, & a_{2}=-\frac{1}{2}a_{0}, & a_{3}=0, & a_{n+2}=-\dfrac{(n-1)^{2}}{(n+2)(n+1)}a_{n},\,n\geq 2.
+\end{array}
+\end{equation*}
+Use the recursive relation to find the first terms
+\begin{align*}
+n=2, & \qquad a_{4}=-\dfrac{1}{4\cdot 3} a_{2} = \dfrac{1}{4\cdot 3\cdot 2}a_{0}\\
+n=3, & \qquad a_{5}=-\dfrac{2^{2}}{5\cdot 4} a_{3} = 0\\
+n=4, & \qquad a_{6}=-\dfrac{3^{2}}{6\cdot 5} a_{4} = -\dfrac{(3\cdot 1)^{2}}{6!}a_{0}\\
+\end{align*}
+
+Thus, the general solution is given by
+\begin{equation*}
+\boxed{y(x)=a_{0}\left( 1 - \frac{1}{2}x^{2} + \frac{1}{4!}x^{4} - \frac{3^{2}}{6!}x^{6}+\dots \right) + a_{1}x.}
+\end{equation*}
+
+To find the minimum radius of convergence, we write the equation in standard from
+\[y''-\frac{x}{x^{2}+1}y'+ \frac{1}{x^{2}+1}y = 0,\]
+where we can easly see that the only singularities are the zeros of the denominator $x^{2}+1=0$. Hence, $x=\pm i$ are the only singularities of the equation. The minimum radius of convergence is the distance between $x=0$ (the power series is about this point) and the closest singular point to it.
+\[d(0,\pm i) = \sqrt{(0-0)^{2}+(\pm 1-0)^{2}}=\sqrt{1} = 1.\]
+
+
+\end{solution}
+
+
+
+\begin{problem}
+{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =x^2.
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+We expand the solution $z(t)$ into the following power series about $x=0$.
+
+\begin{equation*}
+z(x) = \sum_{n=0}^{\infty} a_{n} x^n
+\end{equation*}
+Taking the first two derivatives, we have:
+
+\begin{eqnarray*}
+z^{\prime}(x) & = & \sum_{n=1}^{\infty} n a_{n} x^{n-1} \\
+z^{\prime \prime}(x) & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} \\
+\end{eqnarray*}
+
+Substituting these equations into our ODE (be aware of the $x^{2}$ term in the right hand side), we obtain:
+
+\begin{eqnarray*}
+x^{2} & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - x^2 \sum_{n=1}^{\infty} n a_{n} x^{n-1} - x \sum_{n=0}^{\infty} a_{n} x^n \\
+& = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & \sum_{n=-1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & (1)(2)a_{2} + (2)(3)a_{3}x - a_{0}x+ \sum_{n=1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=1}^{\infty} a_{n} x^{n+1} \\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ \sum_{n=1}^{\infty} \left[ (n+2)(n+3) a_{n+3}-n a_{n}-a_{n} \right] x^{n+1}\\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ [12 a_{4}-3a_{1}]x^{2} + \sum_{n=2}^{\infty} \left[ (n+2)(n+3) a_{n+3}-(n+1)a_{n} \right] x^{n+1}.
+\end{eqnarray*}
+Since this expression must be true for all $x$, we must have:
+
+\begin{eqnarray*}
+2a_{2} & = & 0, \\
+6a_{3} - a_{0} & = & 0, \\
+12 a_{4}-2a_{1} & = & 1, \\
+(n+2)(n+3) a_{n+3}-(n+1)a_{n} & = & 0, \quad n\geq 2.
+\end{eqnarray*}
+This leads to the following recurrence relation:
+
+\begin{eqnarray*}
+a_{2} & = & 0, \\
+a_{3} & = & \dfrac{a_{0}}{6}, \\
+a_{4} & = & \dfrac{1}{12} + \dfrac{2a_{1}}{12}, \\
+ a_{n+3} & = & \left(\dfrac{(n+1)}{(n+2)(n+3)}\right)a_{n}, \quad n\geq 2.
+\end{eqnarray*}
+
+Let's find the first coefficients
+
+\begin{eqnarray*}
+a_{0} & = & a_{0} \\
+a_{1} & = & a_{1}\\
+a_{2} & = & 0 \\
+a_{3} & = & \dfrac{a_{0}}{6}  \\
+a_{4} & = & \dfrac{1}{12} + \dfrac{a_{1}}{6} 
+\end{eqnarray*}
+
+Hence, the solution to the this ODE is given by:
+
+\begin{equation*}
+\boxed{y(x) = a_{0} + a_{1}x + \frac{a_{0}}{6}x^{3} + \left(\frac{1}{12} + \frac{a_{1}}{6}\right) x^{4}+\cdots}
+\end{equation*}
+Compare to the previous solution.
+
+\textbf{Extra work:} Note that we can find more terms
+\begin{eqnarray*}
+a_{5} & = & \dfrac{3}{4\cdot5}a_{2} = 0  \\
+a_{6} & = & \dfrac{4}{5\cdot6}a_{3} = \dfrac{4}{5\cdot 6\cdot 6}a_{0} = \dfrac{1}{45}a_{0}  \\
+a_{7} & = & \dfrac{5}{6\cdot7}a_{4} = \dfrac{5}{6\cdot 7\cdot 12} + \dfrac{5}{6\cdot 7\cdot 6}a_{1} = \dfrac{5}{504} + \dfrac{5}{252}a_{1} 
+\end{eqnarray*}
+in the separate this solution in terms of the homogeneous and particular solutions
+\begin{equation*}
+\boxed{y(x) = a_{0}\underbrace{\left(1+\frac{1}{6}x^{3}+ \frac{1}{45}x^{6} \cdots\right)}_{\text{1st lin. ind. sol.}} + a_{1}\underbrace{\left(x + \frac{1}{6}x^{4}+\frac{5}{252}x^{7}+\cdots\right)}_{\text{2nd lin. ind. sol.}} + \underbrace{\left(\frac{1}{12}x^{4}+ \frac{5}{504}x^{7}+\cdots\right)}_{\text{part. sol.}}.} 
+\end{equation*}
+\end{solution}
+
+
+\end{document}

@@ -1,0 +1,570 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 12}
+\labtitle{Heat and wave equation}
+\makelabtitle
+
+
+\topic{Heat equation with zero BC's.}
+\begin{problem}
+Solve the heat flow problem,
+\begin{equation*} 
+\begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = 3 \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& u(0,t) = u(\pi,t)=0, \qquad t>0, \\
+& u(x,0) = \sin(x)-6 \sin(4x), \qquad 0<x<\pi.
+\end{split}
+\end{equation*}
+\end{problem}
+
+
+
+
+\topic{Heat equation with zero derivative BC's.}
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& \dfrac{\partial u }{\partial x } (0,t) = \dfrac{\partial u }{\partial x } (1,t)=0, \qquad t>0, \\
+& u(x,0) = x(1-x), \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+
+\topic{Heat equation with non-zero BC's.}
+\begin{problem}
+Find a formal solution to the initial value problem,
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& u(0,t) = 0, \quad u(\pi,t)= 3\pi, \qquad t>0, \\
+& u(x,0) = 0, \qquad 0<x<\pi.
+\end{split}\end{equation*}
+\end{problem}
+
+
+\topic{Heat equation transient and steady state solution.}
+\begin{problem}
+Find a formal solution to the initial value problem,
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t) + 6 x -2, \qquad 0<x<1, \quad t>0, \\
+& u(0,t) = 0, \quad u(1,t)= -1, \qquad t>0, \\
+& u(x,0) = -x^{3}, \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+
+\topic{Heat equation special case.}
+\begin{problem}
+Solve the heat flow problem,
+\begin{equation*} 
+\begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t) -3u, \qquad 0<x<\pi, \quad t>0, \\
+& \dfrac{\partial u }{\partial x } (0,t) = \dfrac{\partial u }{\partial x } (\pi,t)=0, \qquad t>0, \\
+& u(x,0) = 2 + \cos x - 5 \cos 4x, \qquad 0<x<\pi.
+\end{split}
+\end{equation*}
+\end{problem}
+
+
+\topic{Wave equation}
+\begin{problem}
+Find a formal solution to the vibrating string problem governed by the given initial-boundary value problem
+\begin{equation*} \begin{array}{lr}
+\dfrac{ \partial^2 u }{\partial t^2} =  4 \dfrac{ \partial^2 u }{\partial x^2} , & 0<x<\pi, \quad t>0 \\
+ u(0,t)  =  u(\pi,t) =0,  & t>0 \\
+ u(x,0)  =  x^2(\pi-x), & 0<x<\pi \\
+ \frac{ \partial u }{\partial t}(x,0) =  \dfrac{(x-\pi)^3}{3}, & 0<x<\pi 
+\end{array}\end{equation*}
+\end{problem}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+\begin{preamble}
+\begin{formulaitem}
+
+\item The eigenvalue problem
+\begin{equation*}
+X^{\prime \prime} - \lambda X =0\,; \qquad  0<x<L \,, \qquad X(0)=0  \,,\qquad X(L) =0,
+\end{equation*}
+has eigenvalues and eigenfunctions
+\[\lambda_{n}=-\left( \frac{n\pi}{L}\right)^{2}, \quad X_{n}(x)=B_{n}\sin\left( \frac{n\pi x}{L} \right), \quad  n\geq 1.\]
+
+
+\item The eigenvalue problem
+\begin{equation*}
+X^{\prime \prime} - \lambda X =0\,; \qquad  0<x<L \,, \qquad X'(0)=0  \,,\qquad X'(L) =0,
+\end{equation*}
+has eigenvalues and eigenfunctions
+\[\lambda_{n}=-\left( \frac{n\pi}{L}\right)^{2}, \quad X_{n}(x)=B_{n}\cos\left( \frac{n\pi x}{L} \right), \quad  n\geq 0.\]
+
+\item For the heat equation with \textbf{non-zero boundary conditions and external force}
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha\dfrac{\partial^2 u}{\partial x^2}(x,t) + g(x), \qquad 0<x<L, \quad t>0, \\
+& u(0,t) = U_{1}, \quad u(L,t)= U_{2}, \qquad t>0, \\
+& u(x,0) = f(x), \qquad 0<x<L,
+\end{split}\end{equation*}
+we apply the change of variable
+\[u(x,t)=v(x)+w(x,t), \,\, \Rightarrow w(x,t)=u(x, t)-v(x),\]
+to arrive the zero BC's problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial w }{\partial t } (x,t) = \alpha\dfrac{\partial^2 w}{\partial x^2}(x,t), \qquad 0<x<L, \quad t>0, \\
+& w(0,t) = w(L,t)= 0, \qquad t>0, \\
+& w(x,0) = f(x) - v(x), \qquad 0<x<L,
+\end{split}\end{equation*}
+and the second order problem
+\begin{equation*} \begin{split}
+& v''(x) = -\tfrac{1}{\alpha}g(x) \qquad 0<x<L, \\
+& v(0) = U_{1}, \quad v(L)= U_{2}.
+\end{split}\end{equation*}
+We first solve for $v(x)$, then solve $w(x,t)$, and finally write the solution in terms of $u(x,t)$.
+
+If $g(x)=0$, then, clearly
+\[v(x)=(U_{2}-U_{1})\frac{x}{L}+U_{1}.\]
+
+The functions $w(x, t)$ and $v(x)$ are called \textbf{transient} and \textbf{steady state} solutions.
+
+\end{formulaitem}
+\end{preamble}
+
+
+
+\begin{problem}
+Solve the heat flow problem,
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = 3 \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& u(0,t) = u(\pi,t)=0, \qquad t>0, \\
+& u(x,0) = \sin(x)-6 \sin(4x), \qquad 0<x<\pi.
+\end{split}\end{equation*}
+\end{problem}
+
+\begin{solution}
+We suppose that the solution $u(x,t)$ can be written in the following way:
+\begin{eqnarray*}
+u(x,t) & = & X(x)T(t)\\
+\dfrac{\partial u }{\partial t }(x,t) & = & X(x)T^{\prime}(t) \\
+\dfrac{\partial^2 u}{\partial x^2}(x,t) & = & X^{\prime \prime}(x)T(t)
+\end{eqnarray*}
+Inserting this assumption into our PDE, we obtain:
+\begin{eqnarray*}
+X(x)T^{\prime}(t) & = & 3 X^{\prime \prime}(x)T(t) \\
+\Rightarrow \quad \dfrac{T^{\prime}(t)}{3T(t)} & = &  \dfrac{X^{\prime \prime}(x)}{X(x)}
+\end{eqnarray*}
+The only way this can be true is if they are both equal to some constant $\lambda$.
+Hence, we obtain two equations:
+\begin{eqnarray*}
+T^{\prime}(t) - 3\lambda T(t) & = & 0\\
+X^{\prime \prime}(x) - \lambda X(x) & = & 0
+\end{eqnarray*}
+Using our initial conditions $u(0,t)  =  u(\pi,t)=0$, we can see that for the $X(x)$ equation, we have: $X(0)=X(\pi)=0$.
+
+Solving the heat flow problem reduces now to solving the three following problems.
+
+\textsl{1.} We now know from previous labs that the eigenvalue problem
+\begin{eqnarray*}
+X^{\prime \prime}(x) - \lambda X(x) =0; & \quad & 0<x<\pi \\
+X(0)=0 & \quad & X(\pi) =0,
+\end{eqnarray*}
+has eigenvalues $$\lambda_{n} = -n^2, \quad n = 1,2 , \dots$$ with eigenfunctions $$X_{n}(x) = b_{n} \sin(nx),$$ for some arbitrary constants $b_{n}$.
+
+\textsl{2. } We can now find a Fourier series representation for the function $f(x)=\sin(x)-6 \sin(4x)$ in terms of these eigenfunctions $X_{n}(x)$
+\begin{eqnarray*}
+\sin(x)-6 \sin(4x) = \sum_{n=1}^{\infty} b_{n} \sin(nx).
+\end{eqnarray*}
+From this representation, it is obvious that we have the following values for the coefficients.
+\begin{equation*}
+b_{n} = \begin{cases}
+1 & n=1 \\
+-6  & n=4 \\
+0  & {\rm otherwise} \\
+\end{cases}
+\end{equation*}
+\textsl{3. } We can now solve the $T(t)$ equation by inserting the eigenvalue $ \lambda = -n^2$
+\begin{eqnarray*}
+T_{n}^{\prime}(t) + 3n^2 T_{n}(t) & = & 0.
+\end{eqnarray*}
+Solving this equation,we have:
+\begin{eqnarray*}
+T_{n}(t) & = & Ae^{-3n^2 t},
+\end{eqnarray*}
+for some constant $A$. However, we have to set $T_{n}(0)=1$ in order for our previous values of $b_{n}$ to still be valid. Clearly $A=1$.
+
+Using the three previous results, the solution to the heat flow problem is then given by
+\begin{eqnarray*}
+u(x,t) & = & \sum_{n=1}^{\infty}X_{n}(x)T_{n}(t) \\
+& = &\sum_{n=1}^{\infty}b_{n}\sin(nx)e^{-3n^2 t} \\
+& = & \sin(x)e^{-3t} - 6\sin(4x)e^{-48 t}
+\end{eqnarray*}
+In summary, the solution to the following heat flow problem:
+\begin{eqnarray*}
+\dfrac{\partial u }{\partial t } (x,t)  & = & 3 \dfrac{\partial^2 u}{\partial x^2}(x,t), \quad 0<x<\pi, \quad t>0, \\
+u(0,t) & = & u(\pi,t)=0, \quad t>0 \\
+u(x,0) & = & \sin(x)-6 \sin(4x)
+\end{eqnarray*}
+is given by
+\begin{eqnarray*}
+\boxed{u(x,t) = \sin(x)e^{-3t} - 6\sin(4x)e^{-48 t}}.
+\end{eqnarray*}
+\end{solution}
+
+
+
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& \dfrac{\partial u }{\partial x } (0,t) = \dfrac{\partial u }{\partial x } (1,t)=0, \qquad t>0, \\
+& u(x,0) = x(1-x), \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+\begin{solution}
+Using the separation of variables method
+\begin{eqnarray*}
+u(x,t) = X(x)T(t), \qquad
+\dfrac{\partial u }{\partial t }(x,t) = X(x)T^{\prime}(t), \qquad
+\dfrac{\partial^2 u}{\partial x^2}(x,t) = X^{\prime \prime}(x)T(t),
+\end{eqnarray*}
+in the partial differential equation
+\begin{eqnarray*}
+X(x)T^{\prime}(t) = \alpha X^{\prime \prime}(x)T(t) \quad 
+\Rightarrow \quad \dfrac{T^{\prime}(t)}{\alpha T(t)} = \dfrac{X^{\prime \prime}(x)}{X(x)} = \lambda.
+\end{eqnarray*}
+
+Then, solving the heat flow problem reduces now to solving the following three problems.
+
+\textsl{1.} The eigenvalue problem
+\begin{eqnarray*}
+X^{\prime \prime}(x) - \lambda X(x) =0, \quad 0<x<1; \qquad
+X'(0)=0, \quad & X'(1) =0,
+\end{eqnarray*}
+has eigenvalues 
+$$\lambda_{n} = -n^2\pi^{2}, \quad n = 0,1,2 , \dots$$ 
+with eigenfunctions 
+$$\boxed{X_{n}(x) = B_{n}\cos(n\pi x)},\quad n = 0,1,2 , \dots$$
+
+
+\textsl{2. } Using the eigenvalue $\lambda = -n^2\pi^{2}$ found in \textsl{1}, is easy to see that 
+\begin{eqnarray*}
+T_{n}^{\prime}(t) = - \alpha n^{2}\pi^{2} T_{n}(t),
+\end{eqnarray*}
+has solution
+\begin{eqnarray*}
+\boxed{T_{n}(t) = A_{n}e^{-\alpha n^{2}\pi^{2} t}},\quad n = 0,1,2 , \dots
+\end{eqnarray*}
+
+\textbf{Note.} The eigenfunction $X_{n}=\cos(n\pi x)$ implies that we need the Fourier \textsl{cosine} series.
+
+\textsl{3. } The Fourier cosine series representation for the function $f(x)=x(1-x)$ 
+\begin{eqnarray*}
+x(1-x) = \frac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos(n\pi x),
+\end{eqnarray*}
+has coefficients (see a previous lab notes)
+\begin{eqnarray*}
+\boxed{a_{0} = \frac{1}{3}, \quad a_{n} = \frac{2((-1)^{n+1}-1)}{n^{2}\pi^{2}}}, \quad n = 0,1,2,\dots
+\end{eqnarray*}
+
+Putting the three previous results together, the solution to the heat flow problem is then given by
+\begin{eqnarray*}
+\boxed{u(x,t) = \frac{1}{6} + \sum_{n=1}^{\infty}\frac{2((-1)^{n+1}-1)}{n^{2}\pi^{2}}e^{-\alpha n^{2}\pi^{2}t}\cos (n\pi x)}.
+\end{eqnarray*}
+
+
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Find a formal solution to the initial value problem,
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& u(0,t) = 0, \quad u(\pi,t)= 3\pi, \qquad t>0, \\
+& u(x,0) = 0, \qquad 0<x<\pi.
+\end{split}\end{equation*}
+\end{problem}
+
+\begin{solution}
+Note that we have non-zero boundary conditions. So, we apply the appropriate change of variable
+\[u(x,t)=v(x)+w(x, t)=3x + w(x,t),\]
+since
+\[v(x)=(3\pi-0)\frac{x}{\pi}+0=3x.\]
+
+Then, the new problem is to solve the alternate Heat equation \textsl{with zero boundary conditions}
+\begin{equation*} \begin{split}
+& \dfrac{\partial w }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& w(0,t) = 0, \quad w(\pi,t)= 0, \qquad t>0, \\
+& w(x,0) = -3x, \qquad 0<x<\pi.
+\end{split}\end{equation*}
+Now, we use separation of variables
+\[w(x,t)=X(x)T(t),\]
+\[\Rightarrow\, \frac{\partial w}{\partial t}(x,t)=X(x)T'(t),\quad \frac{\partial^{2} w}{\partial x^{2}}(x,t)=X''(x)T(t).\]
+Then 
+\[X(x)T'(t)=X''(x)T(t) \,\,\Rightarrow\,\, \frac{T'(t)}{T(t)}=\frac{X''(x)}{X(x)}=\lambda.\]
+Which becomes
+\[\begin{split}T'(t)-\lambda T(t)&=0 \\ X''(x)-\lambda X(x)&=0 \end{split}.\]
+
+\textsl{1. } First, we solve the second order eigenvalue problem for $X(x)$.
+\[X''(x)-\lambda X(x)=0, \qquad 0<x<\pi, \qquad  X(x)=X(\pi)=0.\]
+The boundary values come from setting zero boundary conditions in the Heat equation problem (we forced those boundary conditions). This eigenvalue problem has solution 
+\[\begin{split}
+  \lambda_{n}=-n^{2}, \,\, n=1, 2, \dots, \\
+  X_{n}(x)=b_{n}\sin(nx), \,\, n=1, 2, \dots.
+  \end{split}
+\]
+
+Note: the eigenvalues will be used in the other differential equation (eigenvalue problem) for $T(t)$, while the coefficients $b_{n}$ will be determined by the initial condition $w(x,0)=-3x$. 
+
+\textsl{2. } Now, for the first order eigenvalue problem
+\[T'(t)-\lambda T(t)=0, \quad T(0)=1,\]
+we use the $\lambda_{n}$ previously found (we can assume $T(0)=1$, but why?\footnote{$T_{n}(0)=1$ for convenience, since we had to determine the coefficients $b_{n}$, i.e, $w(x,0)=-3x=\sum T_{n}(0)X_{n}(x)= \sum \cancelto{1}{T_{n}(0)} b_{n}\sin(nx)$}). This leads to the first order differential equations
+\[T_{n}'(t) +n^{2} T_{n}(t)=0, \quad T_{n}(0)=1.\]
+Which has solution ($A=1$ from initial condition)
+\[T_{n}(t)=Ae^{-n^{2}t}=e^{-n^{2}t}.\]
+
+\textsl{3.} Since the eigen function are sine, we require
+\[-3x=\sum_{i=1}^{\infty}b_{n}\sin(nx),\]
+on $(0,\pi)$, which is the Fourier sine series of $-3x$. Thus, the coefficients are
+\begin{align*}
+b_{n}=\frac{2}{\pi}\int_{0}^{\pi}(-3x)\sin(nx)dx=-\frac{6}{\pi}\left[ -\frac{1}{n}x\cos(nx)|^{\pi}_{0} + \frac{1}{n^{2}}\sin(nx)|^{\pi}_{0} \right] = 6\frac{(-1)^{n}}{n}.
+\end{align*}
+
+
+\textsl{4. } The next step is to combine $X_{n}(x)$ and $T_{n}(t)$ as 
+\[w(x,t)=\sum_{i=1}^{\infty}X_{n}(x)T_{n}(t).\]
+Why $\textstyle \sum$? \footnote{Superposition principle!}. That is 
+\[w(x, t) = 6 \sum_{i=1}^{\infty}\frac{(-1)^{n}}{n}\sin(nx)e^{-n^{2}t}.\]
+Finally, changing back to $u(x,t)$
+\[\boxed{u(x, t) = 3x + 6 \sum_{i=1}^{\infty}\frac{(-1)^{n}}{n}\sin(nx)e^{-n^{2}t}}.\]
+\end{solution}
+
+
+\begin{problem}
+Find a formal solution to the initial value problem,
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t) + 6 x -2, \qquad 0<x<1, \quad t>0, \\
+& u(0,t) = 0, \quad u(1,t)= -1, \qquad t>0, \\
+& u(x,0) = -x^{3}, \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+\begin{solution}
+Note that the non-zero boundary conditions and the external force $6x-2$ imply we nee to use the change of variable
+\[u(x,t)=w(x,t)+v(x).\]
+Then,
+\[u_{t}(x,t)=w_{t}(x,t), \qquad u_{xx}(x,t)=w_{xx}(x,t)+''v(x).\]
+We now use the equation
+\[\dfrac{\partial w }{\partial t } (x,t) = \dfrac{\partial^2 w}{\partial x^2}(x,t) + v''(x) + 6 x -2,\]
+the boundary conditions
+\[u(0,t) = w(0,t) + v(0) = 0, \quad u(1,t)= w(1,t) + v(1) = -1,\]
+and the initial condition
+\[u(x,0) = w(x,0) + v(x) = -x^{3}.\]
+The idea is to force $v(x)$ to absorbe the external force and the non-zero boundary conditions so the heat equation in for $w$ has a familiar form. In other words, we need to solve
+\begin{equation*} \begin{split}
+& \dfrac{\partial w }{\partial t } (x,t) = \dfrac{\partial^2 w}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& w(0,t) = w(1,t)= 0, \qquad t>0, \\
+& w(x,0) = -x^{3} - v(x), \qquad 0<x<1,
+\end{split}\end{equation*}
+given that $v(x)$ is the solution to
+\begin{equation}
+v''(x)+6x-2=0,\quad v(0)=0, \quad v(1)=-1.
+\end{equation}
+The second order equation is easy to solve
+\[v(x)=-x^{3}+x^{2}-x.\]
+The heat equation with zero BC's and initial condition $w(x,0)=x^{3}-x^{3}+x^{2}-x=x(1-x)$ have solution (exercise)
+\begin{eqnarray*}
+w(x,t) = \sum_{n=1}^{\infty}\frac{4(1-(-1)^{n})}{n^{3}\pi^{3}}e^{-\alpha n^{2}\pi^{2}t}\sin (n\pi x).
+\end{eqnarray*}
+Thus, the solution to the original heat problem is $w(x,t)+v(x)$
+\begin{eqnarray*}
+\boxed{u(x,t) = -x(x^{2}-x+1)+\sum_{n=1}^{\infty}\frac{4(1-(-1)^{n})}{n^{3}\pi^{3}}e^{-\alpha n^{2}\pi^{2}t}\sin (n\pi x)}.
+\end{eqnarray*}
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the heat flow problem,
+\begin{equation*} 
+\begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t) -3u, \qquad 0<x<\pi, \quad t>0, \\
+& \dfrac{\partial u }{\partial x } (0,t) = \dfrac{\partial u }{\partial x } (\pi,t)=0, \qquad t>0, \\
+& u(x,0) = 2 + \cos x - 5 \cos 4x, \qquad 0<x<\pi.
+\end{split}
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+Using the separation of variables method
+\begin{eqnarray*}
+u(x,t) = X(x)T(t), \qquad
+\dfrac{\partial u }{\partial t }(x,t) = X(x)T^{\prime}(t), \qquad
+\dfrac{\partial^2 u}{\partial x^2}(x,t) = X^{\prime \prime}(x)T(t),
+\end{eqnarray*}
+in the partial differential equation
+\begin{eqnarray*}
+X(x)T^{\prime}(t) = X^{\prime \prime}(x)T(t) -3X(x)T(t) \quad 
+\Rightarrow \quad \dfrac{T^{\prime}(t)}{T(t)} + 3 = \dfrac{X^{\prime \prime}(x)}{X(x)} = \lambda.
+\end{eqnarray*}
+
+Note that the $3$ term is intencionally placed in the $T(t)$ side, so the eigenvalue problem is known and simple.
+
+Then, solving the heat flow problem reduces now to solving the following three problems.
+
+\textsl{1.} The eigenvalue problem
+\begin{eqnarray*}
+X^{\prime \prime}(x) - \lambda X(x)=0, \quad 0<x<\pi; \qquad
+X'(0)=0, \quad & X'(\pi) =0,
+\end{eqnarray*}
+has eigenvalues 
+$$\lambda_{n} = -n^2, \quad n = 0,1,2 , \dots$$ 
+with eigenfunctions 
+$$\boxed{X_{n}(x) = B_{n}\cos(n x)},\quad n = 0,1,2 , \dots$$
+
+
+\textsl{2. } Using the eigenvalue $\lambda = -n^2$ found in \textsl{1}, is easy to see that 
+\begin{eqnarray*}
+T_{n}^{\prime}(t) = - (3+ n^{2})T_{n}(t),
+\end{eqnarray*}
+has solution
+\begin{eqnarray*}
+\boxed{T_{n}(t) = A_{n}e^{-(3+n^{2}) t}},\quad n = 0,1,2 , \dots
+\end{eqnarray*}
+
+\textbf{Note.} The eigenfunction $X_{n}=\cos(n\pi x)$ implies that we need the Fourier \textsl{cosine} series.
+
+\textsl{3. } The Fourier cosine series representation for the function $f(x)=2+\cos(x)-5\cos(4x)$ has coefficients
+\begin{eqnarray*}
+\boxed{a_{0} = 2, \quad a_{1} = 1, \quad a_{4} = -5}.
+\end{eqnarray*}
+
+Putting the three previous results together, the solution to the heat flow problem is then given by
+\[u(x,t) = \sum_{n=1}^{\infty}a_{n}e^{-(3+ n^{2})t}\sin (n x).\]
+\[\Rightarrow
+\boxed{u(x,t) = 2e^{-3t}+e^{-4t}\cos(x)-5e^{-19t}\cos(4x)}.
+\]
+
+
+\end{solution}
+
+
+
+
+
+
+
+\begin{problem}
+Find a formal solution to the vibrating string problem governed by the given initial-boundary value problem
+\begin{equation*} \begin{array}{lr}
+\dfrac{ \partial^2 u }{\partial t^2} =  4 \dfrac{ \partial^2 u }{\partial x^2} , & 0<x<\pi, \quad t>0 \\
+ u(0,t)  =  u(\pi,t) =0,  & t>0 \\
+ u(x,0)  =  x^2(\pi-x), & 0<x<\pi \\
+ \frac{ \partial u }{\partial t}(x,0) =  \dfrac{(x-\pi)^3}{3}, & 0<x<\pi 
+\end{array}\end{equation*}
+\end{problem}
+
+\begin{solution}
+ Using the method of variation of parameters, the general solution of any wave equation of the form:
+
+\begin{eqnarray*}
+\dfrac{ \partial^2 u }{\partial t^2} & = & \alpha^2 \dfrac{ \partial^2 u }{\partial x^2} , \quad \quad  \quad 0<x<L, \quad t>0 \\
+u(0,t) & = & u(L,t) =0,  \quad \quad t>0 \\
+u(x,0) & = & f(x), \quad \quad \quad \quad  0<x<L \\
+\frac{ \partial u }{\partial t}(x,0) & = & g(x), \quad \quad \quad \quad \quad 0<x<L
+\end{eqnarray*}
+
+is given by:
+
+\begin{eqnarray*}
+u(x,t) = \sum_{n=1}^{\infty} \left[ a_{n} \cos \left( \dfrac{n\pi \alpha t}{L} \right) + b_{n} \sin \left( \dfrac{n\pi \alpha t}{L} \right) \right] \sin \left( \dfrac{n\pi x}{L} \right)
+\end{eqnarray*}
+
+where the coefficients $a_{n}$ and $b_{n}$ are determined from the Fourier Sine Series
+
+\begin{eqnarray}
+f(x) & = & \sum_{n=1}^{\infty} a_{n} \sin \left( \dfrac{n\pi x}{L} \right) \nonumber \\
+g(x) & = & \sum_{n=1}^{\infty} b_{n} \left( \dfrac{n\pi \alpha}{L} \right) \sin \left( \dfrac{n\pi x}{L} \right) \label{formula: b_n coefficients}
+\end{eqnarray}
+
+In our case, we have: $\alpha =2, L = \pi, f(x) = x^2(\pi-x)$ and $g(x) = \dfrac{(x-\pi)^3}{3}$.
+
+We need to to find the coefficients $a_{n}$ and $b_{n}$. To do this we have to find the Fourier Sine Series of $f(x)= x^2(\pi-x)$  and $g(x)= \dfrac{(x-\pi)^3}{3}$ on the interval given above, namely $0<x<\pi$.
+
+The coefficients $a_{n}$ are given by the following integral:
+
+\begin{eqnarray*}
+a_{n} & = & \dfrac{2}{L} \int_{0}^{L} f(x) \sin \left( \dfrac{n \pi x}{L} \right) {\rm d} x \\
+& = & \dfrac{2}{\pi} \int_{0}^{\pi} x^2(\pi-x) \sin \left( n x \right) {\rm d} x \\
+& = & \dfrac{2}{\pi} \int_{0}^{\pi} (\pi x^2-x^3) \sin \left( n x \right) {\rm d} x \\
+& = & \dfrac{2}{\pi} \left[ (\pi x^2-x^3) \left( - \dfrac{\cos \left( n x \right)}{n} \right) \right]_{0}^{\pi}-  \dfrac{2}{\pi} \int_{0}^{\pi} (2\pi x-3x^2) \left( - \dfrac{\cos \left( n x \right)}{n} \right) {\rm d} x \\
+& = & 0 +  \dfrac{2}{n\pi} \int_{0}^{\pi} (2\pi x-3x^2)\cos \left( n x \right){\rm d} x \\
+& = &  \dfrac{2}{n\pi} \left[ (2\pi x-3x^2)\left(  \dfrac{\sin \left( n x \right)}{n} \right) \right]_{0}^{\pi} -  \dfrac{2}{n\pi}  \int_{0}^{\pi} (2\pi -6x)\left(  \dfrac{\sin \left( n x \right)}{n} \right){\rm d} x \\
+& = &  0 -  \dfrac{4}{n^2\pi}  \int_{0}^{\pi} (\pi -3x)\sin \left( n x \right){\rm d} x \\
+& = &  0 -  \dfrac{4}{n^2\pi} \left[(\pi -3x)\left( - \dfrac{\cos \left( n x \right)}{n} \right) \right]_{0}^{\pi}  + \dfrac{4}{n^2\pi} \int_{0}^{\pi} (-3)\left( - \dfrac{\cos \left( n x \right)}{n} \right){\rm d} x \\
+& = &  \dfrac{4}{n^3\pi} \left[(\pi -3x)\cos \left( n x \right) \right]_{0}^{\pi}  + \dfrac{12}{n^3\pi} \int_{0}^{\pi} \cos \left( n x \right) {\rm d} x \\
+& = &  \dfrac{4}{n^3\pi} \left[(-2\pi)\cos \left( n \pi \right) - \pi \right]  + \dfrac{12}{n^3\pi} \left[ \left(  \dfrac{\sin \left( n x \right)}{n} \right) \right]_{0}^{\pi} \\
+& = &  \dfrac{4}{n^3} \left(-2(-1)^n - 1 \right)  + 0 \\
+& = &  \dfrac{4( 2(-1)^{n+1} - 1)  }{n^3} 
+\end{eqnarray*}
+
+If we inspect equation \eqref{formula: b_n coefficients} more carefully, we see that the coefficients $b_{n} \left( \dfrac{n\pi \alpha}{L} \right)$ satisfy the same integral as the coefficients $a_{n}$ with the exception that  we are evaluating $g(x)$ not $f(x)$. Otherwise stated:
+
+\begin{eqnarray*}
+b_{n} \left( \dfrac{n\pi \alpha}{L} \right) & = & \dfrac{2}{L} \int_{0}^{L} g(x) \sin \left( \dfrac{n \pi x}{L} \right) {\rm d} x \\
+\Rightarrow \quad b_{n}  & = & \dfrac{2}{n\pi \alpha} \int_{0}^{L} g(x) \sin \left( \dfrac{n \pi x}{L} \right) {\rm d} x \\
+ & = & \dfrac{1}{n\pi} \int_{0}^{\pi} \dfrac{(x-\pi)^3}{3} \sin \left( n x \right) {\rm d} x \\
+ & = & \dfrac{1}{n\pi} \left[ \dfrac{(x-\pi)^3}{3} \left( - \dfrac{\cos \left( n x \right)}{n} \right) \right]_{0}^{\pi} -  \dfrac{1}{n\pi} \int_{0}^{\pi} (x-\pi)^2 \left( - \dfrac{\cos \left( n x \right)}{n} \right) {\rm d} x \\
+  & = & -\dfrac{\pi^2}{3n^2} + \dfrac{1}{n^2\pi} \int_{0}^{\pi} (x-\pi)^2 \cos \left( n x \right){\rm d} x \\
+& = & -\dfrac{\pi^2}{3n^2} + \dfrac{1}{n^2\pi} \left[(x-\pi)^2 \left(  \dfrac{\sin \left( n x \right)}{n} \right) \right]_{0}^{\pi} - \dfrac{1}{n^2\pi} \int_{0}^{\pi} 2(x-\pi) \left(  \dfrac{\sin \left( n x \right)}{n} \right) {\rm d} x \\ 
+& = & -\dfrac{\pi^2}{3n^2} +0 - \dfrac{2}{n^3\pi} \int_{0}^{\pi} (x-\pi) \sin \left( n x \right) {\rm d} x \\ 
+& = & -\dfrac{\pi^2}{3n^2}  - \dfrac{2}{n^3\pi} \left[ (x-\pi)\left( - \dfrac{\cos \left( n x \right)}{n} \right) \right]_{0}^{\pi} + \dfrac{2}{n^3\pi}  \int_{0}^{\pi} (1) \left( - \dfrac{\cos \left( n x \right)}{n} \right) {\rm d} x \\ 
+& = & -\dfrac{\pi^2}{3n^2}  - \dfrac{2}{n^4\pi} \left[ 0-(-\pi)\left( - 1 \right) \right] - \dfrac{2}{n^4\pi} \left[ \dfrac{\sin \left( n x \right)}{n}  \right ]_{0}^{\pi} \\
+& = & -\dfrac{\pi^2}{3n^2} + \dfrac{2}{n^4} - 0 \\
+& = & \dfrac{2}{n^4} -\dfrac{\pi^2}{3n^2}   \\
+\end{eqnarray*}
+
+Hence, our general solution is given by:
+
+\begin{eqnarray*}
+\boxed{u(x,t) = \sum_{n=1}^{\infty} \left[ \left(\dfrac{4( 2(-1)^{n+1} - 1)  }{n^3}  \right) \cos\left(2 n  t \right) +\left(\dfrac{2}{n^4} -\dfrac{\pi^2}{3n^2} \right) \sin\left(2 n  t \right) \right]  \sin\left( n x \right)}.
+\end{eqnarray*}
+\end{solution}
+
+
+
+
+
+
+\end{document}

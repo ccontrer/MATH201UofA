@@ -1,0 +1,754 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 1}
+\labtitle{First-order differential equations}
+\makelabtitle
+
+% separable
+\topic{Separable equations}
+\begin{problem}
+Determine whether the given differential equation is separable
+\begin{equation*}
+     (xy^2 + 3y^2) dy - 2x \, dx =0.
+\end{equation*}
+\end{problem}
+
+% % separable
+% \begin{problem}
+% Solve the equation
+% \begin{equation*}
+%      \dfrac{ dx }{dt} = 3 x t^2.
+% \end{equation*}
+% \end{problem}
+
+% separable
+\begin{problem}
+Solve the equation
+\begin{equation*}
+     \dfrac{ dy }{dx} = \frac{x}{y^2 \sqrt{1+x}}
+\end{equation*}
+\end{problem}
+
+
+
+% separable
+\begin{problem}
+Solve the following differential equation
+\begin{equation*}
+     \dfrac{ ds }{dt}  =  t \ln(s^{2t}) + 8 t^2.
+\end{equation*}
+\end{problem}
+
+
+
+% separable implicit
+\begin{problem}
+Solve the equation
+\begin{equation*}
+     \dfrac{ dy }{dx} = \frac{\sec^2(y)}{1+x^2}.
+\end{equation*}
+\end{problem}
+
+% separable ivp
+\begin{problem}
+Solve the initial value problem
+\begin{equation*}
+     \dfrac{1}{\theta} \dfrac{ dy }{d\theta} = \frac{y \sin(\theta)}{y^2+1}, \quad y(\pi)=1.
+\end{equation*}
+\end{problem}
+
+
+
+
+
+% integrating factor
+\topic{Linear equations}
+\begin{problem}
+Obtain the general solution to the equation
+\begin{equation*}
+      \dfrac{ dy }{dx} = \frac{y }{x} + 2 x + 1.
+\end{equation*}
+\end{problem}
+
+
+% integrating factor
+\begin{problem}
+Obtain the general solution to the equation
+\begin{equation*}
+      x \dfrac{ dy }{dx}+ 2 y = x^{-3}.
+\end{equation*}
+\end{problem}
+
+
+% integrating factor
+\begin{problem}
+Obtain the general solution to the equation
+\begin{equation*}
+     (t+y+1)dt -  dy =0 .
+\end{equation*}
+\end{problem}
+
+% integrating factor
+\begin{problem}
+Solve the initial value problem
+\begin{equation*}
+     t^2 \dfrac{ dx }{dt} + 3 t x = t^4 \ln(t) +1 , \quad x(1) =0. 
+\end{equation*}
+\end{problem}
+
+
+% homogeneous 1st order
+\topic{1st order homogeneous}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+\frac{dy}{dx}=\frac{x^{2}+3y^{2}}{2xy}, \quad x>0. 
+\end{equation*}
+\end{problem}
+
+
+% exact equation
+\topic{Exact equations}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+2xy dx+(x^{2}-y^{2})dy=0. 
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+ydx + (2x - y e^{y}) dy = 0.
+\end{equation*}
+\end{problem}
+
+
+% Bernoulli
+\topic{Bernoulli}
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     \frac{dy}{dx}=\frac{(1+x)y-6y^{3}}{2x}.
+\end{equation*}
+\end{problem}
+
+
+
+
+\begin{problem}
+Solve following problem
+\begin{equation*}
+      y'+3y'=4xy^{3}.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Solve following IVP
+\begin{equation*}
+      xe^{x}y' = (x-1)e^{x}y+y^{2}, \quad y(1)=e.
+\end{equation*}
+\end{problem}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+All problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eight Edition, Adisson--Wesley.
+
+\begin{preamble}
+\textbf{Definitions and formulas}
+
+\begin{formulaitem}
+\item A \textbf{first-order linear equation} has the form
+\[y' +P(x)y=Q(x).\]
+We solve this equations using the \textbf{integrating factor} formula
+\[I(x)=e^{\int P(x) dx},\qquad y(x)=\frac{1}{I(x)}\left[\int I(x)Q(x)dx +C \right].\]
+
+\item If the right hand side of a differential equation can be expressed as a function of the ratio $y/x$, \[\frac{dy}{dx}=f(x,y)=g\left(\frac{y}{x}\right),\] then the equation is called \textbf{first order homogeneous}. In such case, we apply the change of variable $v=y/x$ to make the equation separable.
+
+\item Differential equations of the form
+\[M(x,y)dx + N(x,y) dy = 0,\]
+are called \textbf{exact equations} if and only if
+\[\frac{\partial M}{\partial y}(x,y)=\frac{\partial N}{\partial x}(x,y).\]
+If it is not exact we might be able to use an integrating factor:
+\begin{enumerate}
+ \item If $\frac{M_{ y} - N_{ x}}{ N}$ depends only on $x$ , use $I ( x ) = e^{\int \frac{M_{ y} - N_{ x}}{ N} dx}$ .
+ \item If $\frac{N_{ x} - M_{ y}}{ M}$ depends only on $y$ , use $I ( y ) = e^{\int \frac{N_{ x} - M_{ y}}{ M} dx}$ .
+\end{enumerate}
+
+
+\item Differential equations of the form
+\[y'+P(x)y=Q(x)y^{p},\quad p\neq 1\]
+are called \textbf{Bernoulli equations}. In such case, we apply the change of variable $u=y^{1-p}$ to make the equation first order linear.
+\end{formulaitem}
+\end{preamble}
+
+
+
+\begin{problem}
+Determine whether the given differential equation is separable
+\begin{equation}
+     (xy^2 + 3y^2) dy - 2x \, dx =0.
+\end{equation}
+\end{problem}
+\begin{solution}
+This equation is separable since : 
+\begin{eqnarray*}
+0 & = & (xy^2 + 3y^2) {\rm d}y - 2x \, dx \\
+&= & y^2(x + 3) {\rm d}y - 2x \, dx \\
+\end{eqnarray*}
+Dividing through by $x+3$, we obtain:
+\begin{equation*}
+ 0  =  y^2 {\rm d}y -\dfrac{2x}{x+3} dx \\
+\end{equation*}
+Moving $\dfrac{2x}{x+3} dx$ to the other side, we obtain our desired result:
+\begin{equation*}
+ \boxed{y^2 {\rm d}y  =  \dfrac{2x}{x+3} dx }.
+\end{equation*}
+\end{solution}
+
+
+
+
+
+
+\begin{problem}
+Solve the equation
+\begin{equation}
+     \dfrac{ dy }{dx} = \frac{x}{y^2 \sqrt{1+x}}
+\end{equation}
+\end{problem}
+\begin{solution}
+This equation is separable, since
+\begin{eqnarray*}
+y^2dy & = & \frac{x}{ \sqrt{1+x}}dx \\
+\int y^2dy & = & \int \frac{x}{ \sqrt{1+x}}dx \\
+\frac{y^3}{3} & = & \int \frac{x}{ \sqrt{1+x}}dx \\
+\end{eqnarray*}
+To solve the integral in right hand side, make $t =1 +x$. This implies that ${d}t ={d}x$, hence
+\begin{eqnarray*}
+\frac{y^3}{3} & = & \int \frac{t-1}{ \sqrt{t}}dt \\
+& = & \int t^{1/2} - t^{-1/2}dt\\
+& = & \frac{2 t^{3/2}}{3} - 2 t^{1/2} +C\\
+& = & \frac{2 (1+x)^{3/2}}{3} - 2 (1+x)^{1/2} +C\\
+\end{eqnarray*}
+Isolating $y$, we obtain:
+\begin{equation*}
+\boxed{y(x) = \left[ 2(1+x)^{3/2} - 6(1+x)^{1/2} +C\right]^{1/3}},
+\end{equation*}
+for some constant $C$.
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Determine whether the given differential equation is separable
+\begin{equation}
+     \dfrac{ ds }{dt}  =  t \ln(s^{2t}) + 8 t^2.
+\end{equation}
+\end{problem}
+
+\begin{solution}
+This equation is separable since : 
+\begin{eqnarray*}
+\dfrac{ ds }{dt}  & = &  t \ln(s^{2t}) + 8 t^2 \\
+& = & t(2t)\ln(s) + 8 t^2 \\
+& = & 2t^2\ln(s) + 8 t^2 \\
+& = & 2t^2(\ln(s) + 4 ) \\
+\end{eqnarray*}
+\begin{equation*}
+\Rightarrow \boxed{ \dfrac{ ds }{\ln(s) + 4 } = 2t^2 dt}.
+\end{equation*}
+\end{solution}
+
+
+
+
+% \begin{problem}
+% Solve the equation
+% \begin{equation}
+%      \dfrac{ dx }{dt} = 3 x t^2.
+% \end{equation}
+% \end{problem}
+% \begin{solution}
+% This equation is separable. Putting all the $t$ terms on one side and all the $x$ terms on the other side, we obtain:
+% \begin{equation*}
+% \dfrac{ dx }{x} =  3 t^2 dt
+% \end{equation*}
+% Applying the integral operator on both side, we get:
+% \begin{eqnarray*}
+% \int \dfrac{ dx }{x} & = & \int  3 t^2 dt \\
+% \ln |x|  & = & t^3 + C \\
+% |x|  & = & e^{t^3 + C}
+% \end{eqnarray*}
+% \begin{equation*}
+%  \Rightarrow \boxed{x(t) = Ae^{t^3}},
+% \end{equation*}
+% 
+% for some constant $A$.
+% \end{solution}
+
+
+
+
+\begin{problem}
+Solve the equation
+\begin{equation}
+     \dfrac{ dy }{dx} = \frac{\sec^2(y)}{1+x^2}.
+\end{equation}
+\end{problem}
+\begin{solution}
+This equation is separable,
+\begin{eqnarray*}
+\frac{dy }{\sec^2(y)}& = & \frac{dx}{1+x^2} \\
+\cos^2(y)dy  & = & \frac{dx}{1+x^2} \\
+\int \cos^2(y)dy  & = & \int \frac{dx}{1+x^2} \\
+\int \frac{\cos(2y)}{2}+ \frac{1}{2} \, dy  & = & \arctan(x)+C \\
+\frac{\sin(2y)}{4}+ \frac{y}{2}   & = & \arctan(x)+C.
+\end{eqnarray*}
+In this case, we cannot isolate $y$, hence our solution is given implicitly by
+\begin{equation*}
+\boxed{\sin(2y(x))+ 2y(x)  =  4\arctan(x)+C}.
+\end{equation*}
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the initial value problem
+\begin{equation}
+     \dfrac{1}{\theta} \dfrac{ dy }{d\theta} = \frac{y \sin(\theta)}{y^2+1}, \quad y(\pi)=1.
+\end{equation}
+\end{problem}
+\begin{solution}
+This equation is separable,
+\begin{eqnarray*}
+\frac{y^2+1}{y} dy & = & \theta \sin(\theta) d\theta \\
+\int \frac{y^2+1}{y} dy & = &  \int \theta \sin(\theta) d\theta \\
+\int y + y^{-1} dy & = &  \int \theta \sin(\theta) d\theta \\
+\frac{y^2}{2} + \ln|y| & = &  -\theta \cos(\theta) + \sin(\theta)+C.
+\end{eqnarray*}
+Setting $y(\pi)=1$, we can solve for $C$.
+\begin{eqnarray*}
+\frac{1^2}{2} + \ln|1| & = &  -\pi \cos(\pi) + \sin(\pi)+C \\
+\frac{1}{2}  & = &  \pi  + C \\
+C  & = & \frac{1}{2} - \pi   \\
+\end{eqnarray*}
+In this case, we cannot isolate $y$, hence our solution is given implicitly by
+\begin{equation*}
+\boxed{\frac{y(\theta)^2}{2} + \ln|y(\theta)|  =   -\theta \cos(\theta) + \sin(\theta)+\frac{1}{2} - \pi}.
+\end{equation*}
+\end{solution}
+
+\begin{solution}
+We can alternatively use the initial value in the integration, where we compute a \textit{definite integral}. \\
+For example, in the previous solution we can integrate between the given initial point $\pi$, and the independent variable $\theta$ (note that we need to use a different variable in the integrand of the second integral)
+\begin{eqnarray*}
+\int_{\pi}^{\theta} y + y^{-1} dy & = &  \int_{\pi}^{\theta} t \sin(t) dt \\
+\Rightarrow \left. \frac{1}{2}y^{2} \right|_{\pi}^{\theta} + \left. \ln |y| \right|_{\pi}^{\theta} & = &\left. -t \cos t \right|_{\pi}^{\theta} + \left. \sin t \right|_{\pi}^{\theta} \\
+\Rightarrow \frac{1}{2} y^{2}(\theta) - \frac{1}{2} +\ln |y(\theta)| - 0 & = & -\theta \cos t + \cancelto{{\scriptstyle -1}}{ \pi \cos \pi} + \sin \theta - \cancelto{\scriptstyle 0}{\sin \pi} ,
+\end{eqnarray*}
+Thus, the implicit solution is,
+\begin{equation*}
+\boxed{ \frac{1}{2}y^{2}(\theta) -\ln |y(\theta)| = -\theta \cos\theta + \sin \theta +\frac{1}{2} -\pi }.
+\end{equation*}
+
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+\begin{problem}
+Obtain the general solution to the equation
+\begin{equation}\label{formula: question 7}
+      \dfrac{ dy }{dx} = \frac{y }{x} + 2 x + 1.
+\end{equation}
+\end{problem}
+\begin{solution}
+This equation is not separable, but can be written in the standard form
+\begin{equation}\label{formula: special form}
+y^{\prime} + P(x) y = Q(x).
+\end{equation}
+When written in standard form, the integrating factor is given by
+\begin{equation}\label{formula: Integrating factor}
+I(x) = e^{\int P(x) dx},
+\end{equation}
+and the solution to any first order non separable equation of the form \eqref{formula: special form} is given by
+\begin{equation}\label{formula: Solution}
+y(x) = \frac{1}{I(x)} \left[ \int I(x) Q(x) dx + C \right].
+\end{equation}
+Rewriting equation \eqref{formula: question 7} in the form of equation \eqref{formula: special form}, we obtain
+\begin{equation*}
+ \dfrac{ dy }{dx} - \frac{1 }{x} y   =  2 x + 1.
+\end{equation*}
+Hence the integrating factor is
+\begin{eqnarray*}
+I(x) & = & e^{\int - \frac{1 }{x} dx} \\
+& = & e^{-\ln|x|} \\
+& = & e^{\ln|x^{-1}|} \\
+& = & x^{-1}.
+\end{eqnarray*}
+Thus, the solution to equation \eqref{formula: question 7} is given by equation \eqref{formula: Solution}
+\begin{eqnarray*}
+y(x) & = & \frac{1}{x^{-1}} \left[ \int x^{-1} (2x+1) dx + C \right]\\
+& = & x \left[ \int (2+x^{-1}) dx + C \right]\\
+& = & x \left[ 2x + \ln|x| + C \right]\\
+& = &  2x^2 + x\ln|x| + Cx.
+\end{eqnarray*}
+Finally, for some constant $C$ the general solution is,
+\begin{equation*}
+     \boxed{y(x) = 2x^2 + x\ln|x| + Cx }.
+\end{equation*}
+\end{solution}
+
+\begin{solution}
+Let's say we forgot the formula \eqref{formula: Solution} for the integrating factor. The two things we need to remember is that the equation can be written in the special form \eqref{formula: special form} (emphasizing on what multiplies $y$)
+\begin{equation*}
+y^{\prime} + P(x) y = Q(x),
+\end{equation*}
+and that we need to compute $e^{\int P(x)dx}$, so that,
+\begin{equation*}
+     \frac{d(e^{\int P(x)dx} y)}{dx} = e^{\int P(x)dx} y' + e^{\int P(x)dx}P(x) y.
+\end{equation*}
+Now, 
+\begin{eqnarray*}
+I(x) & = & e^{\int - \frac{1 }{x} dx} \\
+& = & e^{-\ln|x|} \\
+& = & e^{\ln|x^{-1}|} \\
+& = & x^{-1}. \\
+\end{eqnarray*}
+If we multiply $x^{-1}$ on both sides of the equation we get
+\begin{gather*}
+     y' - x^{-1}y = (2x +1)\\
+     \Rightarrow x^{-1}y' - x^{-2}y = x^{-1}(2x +1)\\
+     \Rightarrow (x^{-1}y)'=2 + x^{-1}\\
+     \Rightarrow \int d(x^{-1}y) = \int (2 +x^{-1})dx\\
+     \Rightarrow x^{-1} y = 2x +\ln |x| + C,
+\end{gather*}
+Thus, the solution for some constant $C$ is, 
+\begin{equation*}
+     \boxed{y(x) = 2 x^{2} +x\ln |x| +C x}.
+\end{equation*}
+
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Obtain the general solution to the equation
+\begin{equation}
+      x \dfrac{ dy }{dx}+ 2 y = x^{-3}.
+\end{equation}
+\end{problem}
+\begin{solution}
+Rewriting this equation in the form of equation \eqref{formula: special form}, we obtain
+\begin{equation*}
+\dfrac{ dy }{dx}+ \frac{2}{x} y = x^{-4}.
+\end{equation*}
+The integrating factor is given by 
+\begin{eqnarray*}
+I(x) & = & e^{\int  \frac{2 }{x} dx} \\
+& = & e^{2\ln|x|} \\
+& = & e^{\ln|x^{2}|} \\
+& = & x^{2}.
+\end{eqnarray*}
+Hence, the general solution is given by equation \eqref{formula: Solution}.
+\begin{eqnarray*}
+y(x) & = & \frac{1}{x^{2}} \left[ \int x^{2} x^{-4} dx + C \right]\\
+& = & x^{-2} \left[ \int x^{-2} dx + C \right]\\
+& = & x^{-2} \left[ -x^{-1} + C \right]\\
+& = &  -x^{-3} + C x^{-2}.
+\end{eqnarray*}
+Hence, for some constant $C$ the general solution is,
+\begin{equation*}
+     \boxed{y(x) = -\dfrac{1}{x^{3}} + \dfrac{C}{x^{2}}}.
+\end{equation*}
+\end{solution}
+
+
+
+
+\begin{problem}
+Obtain the general solution to the equation
+\begin{equation}
+     (t+y+1)dt -  dy =0 .
+\end{equation}
+\end{problem}
+\begin{solution}
+Rewriting this equation in the form of equation \eqref{formula: special form}, we obtain
+\begin{equation*}
+\dfrac{ dy }{dt} - y= t+1.
+\end{equation*}
+The integrating factor is given by 
+\begin{eqnarray*}
+I(t) & = & e^{\int  -1 dt} \\
+& = & e^{-t}.
+\end{eqnarray*}
+The general solution is given by equation \eqref{formula: Solution}
+\begin{eqnarray*}
+y(x) & = & \frac{1}{e^{-t}} \left[ \int e^{-t}(t+1) dx + C \right]\\
+& = & e^{t}  \left[ -(t+2)e^{-t} + C \right]\\
+& = & -(t+2) + C e^{t}.
+\end{eqnarray*}
+Hence, for some constant $C$ the general solution is, 
+\begin{equation*}
+     \boxed{y(x) = -(t+2) + C e^{t} }.
+\end{equation*}
+
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Solve the initial value problem
+\begin{equation}
+     t^2 \dfrac{ dx }{dt} + 3 t x = t^4 \ln(t) +1 , \quad x(1) =0 .
+\end{equation}
+\end{problem}
+\begin{solution}
+Rewriting this equation in the form of equation \eqref{formula: special form}, we obtain:
+
+\begin{equation*}
+\dfrac{ dx }{dt} + \frac{3}{t} x = t^2 \ln(t) + t^{-2}
+\end{equation*}
+The integrating factor is given by 
+\begin{eqnarray*}
+I(t) & = & e^{\int  \frac{3 }{t} dt} \\
+& = & e^{3\ln|t|} \\
+& = & e^{\ln|t^{3}|} \\
+& = & t^{3} .
+\end{eqnarray*}
+The general solution is given by equation \eqref{formula: Solution}
+\begin{eqnarray*}
+x(t) & = & \frac{1}{t^{3}} \left[ \int t^{3}(t^2 \ln(t) + t^{-2}) dt + C \right]\\
+& = & t^{-3} \left[ \int t^5 \ln(t) + t dt + C \right]\\
+& = & t^{-3} \left[ \frac{t^6}{6} \ln(t) - \frac{t^6}{36} + \frac{t^2}{2} + C \right]\\
+& = &  \frac{t^3}{6} \ln(t) - \frac{t^3}{36} + \frac{1}{2t} + \frac{C}{t^3}.
+\end{eqnarray*}
+Using the initial condition $x(1) =0$, we can solve for $C$
+\begin{eqnarray*}
+x(1) = 0 & = & \frac{(1)^3}{6} \ln(1) - \frac{(1)^3}{36} + \frac{1}{2(1)} + \frac{C}{(1)^3} \\
+& = &  - \frac{1}{36} + \frac{1}{2} + C \\
+ \Rightarrow C & = & -\dfrac{17}{36}.
+\end{eqnarray*}
+Hence, the solution is
+\begin{equation*}
+     \boxed{x(t) = \dfrac{t^3}{6} \ln(t) - \dfrac{t^3}{36} + \dfrac{1}{2t} - \dfrac{17}{36t^3} }.
+\end{equation*}
+
+\end{solution}
+
+
+
+% homogeneous 1st order
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+\frac{dy}{dx}=\frac{x^{2}+3y^{2}}{2xy}, \quad x>0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+Note that this equation is not separable, however the change of variable $u=y/x$ makes the equation separable. In such case,
+$$y(x)=x u(x) \,\,\text{ and }\,\, y'=u + x u'.$$ Rewrite the differential equation as (the trick is to take the appropriate common factor in the numerator and denominator)
+\begin{equation}\label{equ:odehomo1}
+     \frac{du}{dx}=\frac{\cancel{x^{2}}(1+3\left(\frac{y}{x}\right)^{2})}{2\cancel{x^{2}}\left(\frac{y}{x}\right)}=\frac{1+3\left(\frac{y}{x}\right)^{2}}{2\left(\frac{y}{x}\right)},
+\end{equation}
+so the suggested change of variable is now natural. \\
+Equations of the form $dy/dx = f(x,y)$, where $f(x,y)$ can be expressed as a function of the ratio $y/x$ are called \textit{homogeneous}. Using the change of variable in \eqref{equ:odehomo1} we have,
+\begin{eqnarray*}
+u +x \frac{du}{dx}& = & \frac{1+3u^{2}}{2u}\\
+x\frac{du}{dx} & = & \frac{1+3u^2 -2u^2}{2u}\\
+x\frac{du}{dx}& = & \frac{1+u^{2}}{2u}\\
+\frac{2udu}{1+u^{2}}& = &\frac{dx}{x}. 
+\end{eqnarray*}
+Which is a separable equation. For the first integral we use the change of variable $v=1+u^{2}$. Hence,
+\begin{eqnarray*}
+\ln |1+u^{2}|& = & \ln |x| + C\\
+1+u^2& = & C x\\
+u & = &\sqrt{C x - 1},
+\end{eqnarray*}
+Finally, replacing the change of variable, the solution for some constant C is,
+\begin{equation*}
+\boxed{y(x)=x\sqrt{C x - 1}}.
+\end{equation*}
+
+\end{solution}
+
+
+% exact equation
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+2xy dx+(x^{2}-y^{2})dy=0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+This equation is exact since,
+\[M(x,y)=2xy,\,\, N(x,y)= x^{2}-y^{2} \Rightarrow \partial_{y}M(x,y)= 2x = \partial_{x}N(x,y). \]
+Thus, 
+\[F(x,y)= \int M(x,y) dx = x^{2}y + g(y),\]
+and
+\[\partial_{y}F(x,y)=x^{2}+g'(y) = x^{2}-y^{2} = N(x,y) \Rightarrow g'(y) = -y^{2} \Rightarrow g(y)= -\frac{1}{3}y^{3}-C.\]
+Hence,
+\[\boxed{F(x,y)=x^{2}y-\frac{1}{3}y^{3}=C}\]
+\end{solution}
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+ydx + (2x - y e^{y}) dy = 0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Note that the equation is not separable and not exact
+\[M _{y} = 1 \neq N_{ x} = 2 .\]
+To find the integrating factor we first compute either
+\[M_{ y} - N_{ x} N ,\]
+to create an integrating factor depending only on $x$ (i.e., $\mu( x )$), or
+\[\frac{N_{ x} - M_{ y}}{ M} ,\]
+to create an integrating factor depending only on $y$ (i.e., $\mu ( y )$).
+Take, for example,
+\[\frac{N_{ x} - M_{ y}}{ M} = \frac{2 - 1}{ y} = \frac{1}{y}.\]
+Since this function depends only on $y$ we can define the following integrating factor 
+\[\mu( y ) = e^{ \int \frac{N_{ x} - M_{ y}}{ M} dy }= e^{ \int \frac{ dy}{ y}} = y.\]
+Multiplying both sides of the equation by $\mu ( y ) = y$ , we get
+\[y^{ 2} dx + (2 xy - y^{ 2} e^{ y} ) dy = 0 .\]
+Note that this new equation is exact.  Now we apply the method for exact equations
+\[F ( x,y ) = \int M ( x,y ) \partial x = Z\int y^{ 2} \partial x = xy 2 + h ( y ) .\]
+and
+\[\partial_{ y} F ( x,y ) = 2 xy + h'( y ) = 2 xy - y^{ 2} e^{ y} = N ( x,y ) \Rightarrow h'( y ) = - y^{ 2} e^{ y} ,\]
+which after integration by parts gives,
+\[ h ( y ) = ( - y^{ 2} + 2 y - 2) e^{y} +C.\]
+Finally,
+\[\boxed{F ( x,y ) = xy^{ 2} + ( - y^{ 2} + 2 y - 2) e^{ y} = C }.\]
+\end{solution}
+
+
+% Bernoulli equation
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     \frac{dy}{dx}=\frac{(1+x)y-6y^{3}}{2x}.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Write the equation in the standard form
+\[y'-\frac{1}{2}\left(\frac{1}{x}+1\right)y=-\frac{3}{x}y^{3},\]
+which is a Bernoulli equation. The change of variable is then,
+\[u = y^{1-3}=y^{-2}\Rightarrow u'=-2 y^{-3}y' \,\,\text{ and }\,\, y = \pm u^{-1/2}.\]
+Dividing the equation over $y^{3}$ (always divide over $y^{p}$ to get $u'$) and using the substitution
+\begin{gather*}
+y^{-3}y'-\frac{1}{2}\left(\frac{1}{x}+1\right)y^{-2}=-\frac{3}{x} \\
+-\frac{1}{2}u' - \frac{1}{2} \left(\frac{1}{x}+1\right)u=-\frac{3}{x}. \\
+u' + \left(\frac{1}{x}+1\right)u=\frac{6}{x}.
+\end{gather*}
+This equation can be solved using integrating factor,
+\[I(x)=e^{\int\left(\frac{1}{x}+1\right)dx}=e^{\ln|x|+x}=xe^{x},\]
+then
+\[u(x)= \frac{1}{x e^{x}}\left[\int xe^{x}\frac{6}{x}dx + C\right]= \frac{6}{x}+\frac{C}{xe^{x}}.\]
+Going back to $y(x)$,
+\[\boxed{y(x)= \pm\left(\frac{6}{x}+\frac{C}{xe^{x}}\right)^{-1/2}}.\]
+\end{solution}
+
+
+
+% \begin{problem}
+% Solve following problem
+% \begin{equation*}
+%       y'+3y'=4xy^{3}.
+% \end{equation*}
+% \end{problem}
+% \begin{solution}
+% Write the equation in the standard form
+% \[y'+3y=4xy^{3},\]
+% which is a Bernoulli equation. The change of variable is then,
+% \[u = y^{1-3}=y^{-2}\Rightarrow u'=-2 y^{-3}y' \,\,\text{ and }\,\, y = \pm u^{-1/2}.\]
+% Dividing the equation over $y^{3}$ (always divide over $y^{p}$ to get $u'$) and using the substitution
+% \begin{gather*}
+% y^{-3}y'+3y^{-2}=4x \\
+% -\frac{1}{2}u' +3u=4{x}. \\
+% u' - 6 u= -8x.
+% \end{gather*}
+% This equation can be solved using integrating factor,
+% \[I(x)=e^{\int-6 dx}=e^{-6x},\]
+% then
+% \[u(x)= \frac{1}{e^{-6x}}\left[\int e^{-6x}(-8)xdx + C\right]= \frac{4}{3}x+\frac{4}{9}+Ce^{6x}.\]
+% Going back to $y(x)$,
+% \[\boxed{y(x)= \pm\left(\frac{4}{3}x+\frac{4}{9}+Ce^{6x}\right)^{-1/2}}.\]
+% \end{solution}
+
+
+
+
+\begin{problem}
+Solve following problem
+\begin{equation*}
+      xe^{x}y'= (x-1)e^{x}y+y^{2}
+\end{equation*}
+\end{problem}
+\begin{solution}
+Write the equation in the standard form
+\[y'+\left( \frac{1}{x} - 1 \right)y=\frac{e^{-x}}{x}y^{2},\]
+which is a Bernoulli equation. The change of variable is,
+\[u = y^{1-2}=y^{-1}\Rightarrow u'=- y^{-2}y' \Rightarrow -u'= y^{-2}y' \,\,\text{ and }\,\, y = \pm u^{-1}.\]
+Dividing the equation over $y^{2}$ (always divide over $y^{p}$ to get $u'$) and using the substitution
+\begin{gather*}
+y^{-2}y'+\left( \frac{1}{x} - 1 \right)y^{-1}=\frac{e^{-x}}{x} \\
+\Rightarrow -u' + \left( \frac{1}{x} - 1 \right)u=\frac{e^{-x}}{x} \\
+\Rightarrow u' + \left( 1 - \frac{1}{x} \right) u= -\frac{e^{-x}}{x}.
+\end{gather*}
+This equation can be solved using integrating factor,
+\[I(x)=e^{\int\left( 1 - \frac{1}{x} \right) dx}=e^{x - \ln |x|}=\frac{e^{x}}{x},\]
+then
+\[u(x)= xe^{-x}\left[-\int \frac{e^{x}}{x\frac{e^{-x}}{x}} dx + C\right]= xe^{-x}\left[\frac{1}{x} + C \right].\]
+Going back to $y(x)$,
+\[y(x)= \left( e^{-x}  + Cxe^{-x} \right)^{-1}.\]
+Using the initial condition $y(1)=e$,
+\[e=\left( e^{-1}  + Ce^{-1} \right)^{-1}\Rightarrow e^{-1}=\left( e^{-1}  + Ce^{-1} \right),\]
+which implies $C=0$. Thus, the solution to the IVP is, to our surprise, as simple as
+\[\boxed{y(x)= e^{x}}.\]
+\end{solution}
+
+
+
+\end{document}

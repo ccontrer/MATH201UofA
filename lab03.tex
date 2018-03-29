@@ -1,0 +1,655 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 3}
+\labtitle{Undetermined coefficients and variation of parameters}
+\makelabtitle
+
+
+
+\topic{Undetermined coefficients}
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime} +2 y^{\prime} - y =10
+\end{equation*}
+\end{problem}
+
+
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime} +  y = 2^{x}
+\end{equation*}
+\end{problem}
+
+
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime} - y^{\prime} +  9y = 3\sin(3t)
+\end{equation*} 
+\end{problem}
+
+
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+4y^{\prime \prime}+11y^{\prime} -  3y = -2te^{-3t}
+\end{equation*}
+\end{problem}
+
+
+% undertermined coefficients
+\begin{problem}
+$^{\dagger}$ Solve the following problem
+\begin{equation*}
+     y''-4y'+13y=3e^{2x}\sin 3x.
+\end{equation*}
+\end{problem}
+
+
+
+\topic{Variation of parameter}
+% variation of parameters
+\begin{problem}
+Find a general solution to differential equation using the method of variation of parameters
+\begin{equation*}
+y^{\prime \prime} + y = \sec(t).
+\end{equation*}
+\end{problem}
+
+
+
+\begin{problem}
+Find a general solution to differential equation
+\begin{equation*}
+5y'' + -20 y' +20 y = t^{-2}e^{2t}+20, \qquad t>0.
+\end{equation*}
+\end{problem}
+
+
+\topic{Cauchy-Euler}
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     x^{2}y''-3xy'+4y=x+2.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}     
+     x^{2}y''+3xy'+y=5x^{-1}\ln x.
+\end{equation*}
+\end{problem}
+
+
+
+
+\topic{Reduction of order formula}
+\begin{problem}
+Find a second solution to the problem given the solution $y_{1}(t)=e^{t}$
+\begin{equation*}
+ty''-(t+1)y'+y=0, \quad t>0.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Find a general solution to the problem given the first solution to the homogeneous part $y_{1}(x)=e^{-x}$
+\begin{equation*}
+y''+(\tan x +2)y'+(\tan x+1)y=e^{-x}\cos x.
+\end{equation*}
+\end{problem}
+
+
+\topic{Third-order with constant coefficients}
+% three roots
+\begin{problem}
+Find a general solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime \prime}+2y^{\prime \prime} + 5 y^{\prime} -26 y =0.
+\end{equation*}
+\end{problem}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+
+
+\begin{preamble}
+
+\textbf{Methods for particular solution}
+
+\begin{formulaitem}
+ 
+\item The \textbf{method of undetermined coefficients} is limited to certain functions $g(t)$ and second-order with constant coefficients equations \[ay''+by'+cy=g(t),\] since it requires guessing the particular solution. However, we need less effort and calculations than the more general methods for non-homogeneous equations (e.g. variation of parameters). Here is a simple table of common problems where the method is useful.
+
+\begin{center}
+\begin{tabular}{|c|c|p{3cm}|}
+\hline
+$g(t)$ & $y_{p(t)}$ & Comments \\
+\hline \hline
+$ C t^{m} $ & $ A_{m}t^{m} + \cdots A_{1}t + A_{0} $ &  {\scriptsize $r=0$ is not a root} \\ \hline
+$ C \cos(\beta t) $ or $C\sin(\beta t)$ & $ A \cos(\beta t) + B \sin(\beta t) $ & {\scriptsize $r=i\beta$ is not a root} \\ \hline
+$ C t^{m} e^{rt}$ & $ t^{s}(\underbrace{A_{m}t^{m}+\cdots A_{1}t + A_{0}}_{p_{m(t)}})e^{rt} $ & {\scriptsize $s=0,1,2$ ($r$ not root, single, double)} \\ \hline
+$ C t^{m} e^{\alpha t}\cos(\beta t)$ or $\sin$ & $ t^{s}p_{m}(t)e^{\alpha t}\cos(\beta t) + t^{s}\underbrace{q_{m}(t)}_{\neq p_{m}}e^{\alpha t}\sin(\beta t) $ &  {\scriptsize $s=0,1$ ($\alpha+i \beta$ is not root, is root) and $p_{m}$ and $q_{m}$ are polinomials (see previous row)}\\ \hline
+$ C \cosh(\beta t) $ or $C\sinh(\beta t)$ & $ A \cosh(\beta t) + B \sinh(\beta t)$ & {\scriptsize  If $\pm\beta$ are not roots} \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{Be carefull!}. When $r=0$ is a root, we have $e^{0t}=1$. That means, for example, that $C t^{m}$ is actually a $C t^{m}e^{rt}$ case and you have to multiple by $t^s$.
+\vspace{10pt}
+
+\item For the more complicated non homogeneous part the method of \textbf{variation of parameters} is the best choice. The problem here is the integration part.
+
+If $y_{1}(t)$ and $y_{2}(t)$ are two linearly independent solutions to the homogeneous equation
+\begin{equation*}\label{formula: homogenous equation}
+y^{\prime \prime}(t) + p(t)y^{\prime}(t)+q(t)y(t) = 0
+\end{equation*}
+where $p(t),q(t)$ and $g(t)$ are continuous, then a particular solution to:
+\begin{equation*}\label{formula: particular equation}
+y^{\prime \prime}(t) + p(t)y^{\prime}(t)+q(t)y(t) = g(t),
+\end{equation*}
+is given by \[y_{p}(t) = v_{1}(t) y_{1}(t) + v_{2}(t) y_{2}(t),\] where 
+\begin{equation*}\label{formula: system solution}
+v_{1}(t) = - \int \dfrac{g(t) y_{2}(t)}{W[y_{1},y_{2}](t)} dt, \quad v_{2}(t) =  \int \dfrac{g(t) y_{1}(t)}{W[y_{1},y_{2}](t)} dt,
+\end{equation*}
+with 
+\[W[y_{1},y_{2}](t) = \left| \begin{array}{cc} y_{1}(t) & y_{2}(t) \\
+y_{1}^{\prime}(t) & y_{2}^{\prime}(t) \end{array} \right| =  y_{1}(t)y_{2}^{\prime}(t)-y_{1}^{\prime}(t)y_{2}(t).\]
+
+Recall that \textbf{two solutions are linearly independent} if  $W[y_{1},y_{2}](t)\neq 0$.
+
+
+\item \textsl{Reduction of order.} $y''+p(t)y'+q(t)y=0$. Given a first solution $y_{1}(t)$
+\[\boxed{y_{2}(t)=y_{1}(t)\int\frac{e^{-\int p(t) dt}}{(y_{1}(t))^{2}}dt}\]
+
+\item \textsl{The Cauchy-Euler equation} \[a x^{2}y'' +bxy' + c y = f(x),\] changes to the second-order with constant coefficients equation \[az'' +(b-a)z'+cz=f(e^{t}),\] after applying the change of variable \[x = e^{t} \quad \Rightarrow \quad z(t) = y(e^{t}).\]
+\textbf{Note:} if $f(x)=0$, a shortcut (no change of variable) is to write the solution 
+\begin{align*}
+\text{Case 1:} \quad y(x)&=C_{1}x^{r_{1}}+C_{2}x^{r_{2}}, \quad \text{if}\quad r_{1}\neq r_{2}, \\
+\text{Case 2:} \quad y(x)&=C_{1}x^{r_{1}}+C_{2}x^{r_{1}}\ln (x), \quad \text{if}\quad r_{1}= r_{2}, \\
+\text{Case 3:} \quad y(x)&=C_{1}x^{\alpha}\cos(\beta \ln (x) )+C_{2}x^{\alpha}\sin(\beta \ln (x) ), \quad \text{if}\quad r_{1}, r_{2} = \alpha \pm i \beta,
+\end{align*}
+where $r_{1}$ and $r_{2}$ are the roots of \[ar^{2}+(b-a)r+c=0.\]
+
+\end{formulaitem}
+\end{preamble}
+
+
+
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime} +2 y^{\prime} - y =10
+\end{equation*}
+\end{problem}
+\begin{solution}
+Make the following guess:
+\begin{equation*}
+y_{p}(t) = A \quad \Rightarrow \quad y_{p}^{\prime}(t) = y_{p}^{\prime \prime}(t) = 0
+\end{equation*}
+Substituting our guess into the equation, we obtain:
+\begin{equation*}
+-A =10 \quad \Rightarrow \quad A = -10
+\end{equation*}
+Hence, $$\boxed{y_{p}(t) = -10}$$ is the particular solution to this equation.
+\end{solution}
+
+
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime} +  y = 2^{x}
+\end{equation*}
+\end{problem}
+\begin{solution}
+Make the following guess:
+\begin{equation*}
+y_{p}(t) = A 2^{x} \quad \Rightarrow \quad y_{p}^{\prime}(t) =A \ln(2) 2^{x} \quad \Rightarrow \quad y_{p}^{\prime \prime}(t) = A \ln(2)^{2} 2^{x}
+\end{equation*}
+Substituting our guess into the equation, we obtain:
+\begin{equation*}
+A \ln(2)^{2} 2^{x} + A 2^{x} = 2^x \quad \Rightarrow \quad A = \dfrac{1}{1 + \ln(2)^2}
+\end{equation*}
+Hence, $$\boxed{y_{p}(t) = \dfrac{2^x}{1 + \ln(2)^2}}$$ is the particular solution to this equation.
+\end{solution}
+
+
+
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime} - y^{\prime} +  9y = 3\sin(3t)
+\end{equation*} 
+\end{problem}
+\begin{solution}
+Finding the roots of the characteristic equation we have $r=\frac{1}{2}\pm i \frac{\sqrt{35}}{2}$. Since this does not seems to appear on the RHS, we make the following guess
+\begin{eqnarray*}
+y_{p}(t) & = & A \sin(3t) + B \cos(3t) \\
+y_{p}^{\prime}(t) &= &3A \cos(3t) - 3B \sin(3t) \\
+y_{p}^{\prime \prime}(t) &= & -9A \sin(3t) - 9B \cos(3t).
+\end{eqnarray*}
+Substituting our guess into the equation, we obtain:
+\begin{equation*}
+-3A \cos(3t) + 3B \sin(3t) = 3\sin(3t)
+\end{equation*}
+This can only be true if $A=0$ and $B=1$. 
+Hence, $$\boxed{y_{p}(t) = \cos(3t)}$$ is the particular solution to this equation.
+\end{solution}
+
+
+
+% undetermined coefficients
+\begin{problem}
+Find a particular solution to the given differential equation
+\begin{equation*}
+4y^{\prime \prime}+11y^{\prime} -  3y = -2te^{-3t}
+\end{equation*}
+\end{problem}
+\begin{solution}
+The characteristic equation for this ODE is 
+\begin{equation}
+4r^2 +11r -3 =0, \quad  \Rightarrow \quad r= -3 \quad {\rm and} \quad \frac{1}{4}
+\end{equation}
+Hence the homogeneous solution to this ODE is given by:
+\begin{equation}
+y(t) = C_{1} e^{-3 t}  + C_{2} e^{\frac{1}{4}t}
+\end{equation}
+To find the particular solution, we can save ourselves some trouble by noticing that $r =-3$ is a single root to the characteristic equation and the term $e^{-3t}$ appears on the right hand side of our equation.
+Hence, we make the following guess:
+\begin{eqnarray*}
+y_{p}(t) & = & t(At+B)e^{-3t} \\
+y_{p}^{\prime}(t) &= & e^{-3t}(-3At^2+(2A-3B)t+B) \\
+y_{p}^{\prime \prime}(t) &= & e^{-3t}(9At^2+(9B-12A)t+2A-6B)
+\end{eqnarray*}
+Substituting our guess into the equation, we obtain:
+\begin{equation*}
+-(26At+13B-8A)e^{-3t} = -2te^{-3t}
+\end{equation*}
+This can only be true if $26A = 2$ and $13B-8A=0$. Solving this system, we obtain: $A=\dfrac{1}{13}$ and $B=\dfrac{8}{169}$.
+Hence, $$\boxed{y_{p}(t) = t\left(\dfrac{1}{13}t+\dfrac{8}{169}\right)e^{-3t}}$$ is the particular solution to this equation.
+\end{solution}
+
+
+% undetermined coeffieciens
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     y''-4y'+13y=3e^{2x}\sin 3x.
+\end{equation*}
+\end{problem}
+\begin{solution}
+The characteristic equation for this ODE is 
+\begin{equation}
+r^2 -4r +13 =0, \quad  \Rightarrow \quad r= 2 \pm i 3.
+\end{equation}
+Hence the homogeneous solution to this ODE is given by:
+\begin{equation}
+y_{h}(x) = C_{1} e^{2 x} \cos 3x  + C_{2} e^{2x}\sin 3x
+\end{equation}
+Since $e^{2x}\sin 3x$ appears in the non-homogeneous part and the homogeneous solution we have to multiply our particular solution guess by $x$. Hence, we make the following guess
+\begin{eqnarray*}
+y_{p}(x) & = & (Ax\cos3x+Bx\sin3x)e^{2x} \\
+y'_{p}(x) & = & [(2A+3B)x\cos 3x + A\cos3x+(-3A +2B)x \sin 3x + B\sin3x]e^{2x} \\
+y''_{p}(x) & = & [(4A+6B)\cos3x+(-6A+4BB\sin 3x \\ & & + (-5A+12B)x\cos 3x + (-12A -5B)x \sin 3x]e^{2x}.
+\end{eqnarray*}
+Since we needed to multiply by $x$ our particular solution, we know the terms $x\cos (3x) e^{2x}$ and $x\sin (3x) e^{2x}$ won't give any information about $A$ and $B$ (the $x$ is the important part). So, we look only at the coefficients multiplying $\cos(3x)e^{2x}$ and $\sin(3x)e^{2x}$. Using the equation (only focusing in this coefficients)
+\begin{equation*} \begin{split}
+\cos(3x)e^{2x}:& \quad  4A +6B -4A = 0 \\
+\sin(3x)e^{2x}:& \quad  -6A +4B -4B = 3.
+\end{split}
+\end{equation*}
+This can only be true if $A = -1/2$ and $B=0$. Hence, 
+$$y_{p}(t) = -\frac{1}{2}xe^{2x}\cos3x,$$ 
+is the particular solution to this equation, and
+\[\boxed{y(t) = C_{1} e^{2 x} \cos 3x  + C_{2} e^{2x}\sin 3x -\frac{1}{2}xe^{2x}\cos3x}\]
+is the general solution. \\
+\textbf{Note}: If you see you can use undetermined coefficients, don't bother trying variation of parameters. Most of the times the former is easier and faster. 
+\end{solution}
+
+
+
+
+% variation of parameters
+\begin{problem}
+Find a general solution to differential equation using the method of variation of parameters.
+\begin{equation*}
+y^{\prime \prime} + y = \sec(t)
+\end{equation*}
+\end{problem}
+\begin{solution}
+The characteristic equation for this ODE is :
+\begin{equation*}
+r^2 +1 =0 \quad \Rightarrow \quad r = \pm i
+\end{equation*}
+Our homogeneous solution is then given by:
+\begin{equation*}
+y_{h}(t) = C_{1} \cos(t) + C_{2} \sin(t)
+\end{equation*}
+The Wronskian of these two solutions is:
+\begin{equation*}
+W[y_{1},y_{2}](t) = \left| \begin{array}{cc} \cos(t) & \sin(t) \\
+-\sin(t) & \cos(t) \end{array} \right| = \cos(t)^2 + \sin(t)^2 =1;
+\end{equation*}
+
+To find a particular solution to this equation, we will make the following guess:
+\begin{equation*}
+y_{p}(t) = v_{1}(t) \cos(t) + v_{2}(t) \sin(t)
+\end{equation*}
+We can find the coefficients $C_{1}(t)$ and $C_{2}(t)$ using the variation of parameters formulas with $g(t) = \sec(t)$.
+Hence:
+\begin{eqnarray*}
+v_{1}(t) & = & - \int \dfrac{g(t) y_{2}(t)}{W[y_{1},y_{2}](t)} {\rm d} t \\
+& = & - \int \dfrac{\sec(t) \sin(t)}{1} {\rm d} t \\
+& = & - \int \tan(t) {\rm d} t \\
+& = & \ln|\cos(t)| \\
+\end{eqnarray*}
+\begin{eqnarray*}
+v_{2}(t) & = &  \int \dfrac{g(t) y_{1}(t)}{W[y_{1},y_{2}](t)} {\rm d} t \\
+& = &  \int \dfrac{\sec(t) \cos(t)}{1} {\rm d} t \\
+& = & \int 1 {\rm d} t \\
+& = & t \\
+\end{eqnarray*}
+Putting all these results together, we obtain our particular solution:
+\begin{equation*}
+y_{p}(t) = \ln|\cos(t)| \cos(t) + t \sin(t)
+\end{equation*}
+Hence, the general solution is given by:
+\begin{equation*}
+\boxed{y(t) = y_{h}(t) + y_{p}(t) = C_{1} \cos(t) + C_{2} \sin(t)+ \ln|\cos(t)| \cos(t) + t \sin(t)}
+\end{equation*}
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Find a general solution to differential equation
+\begin{equation*}
+5y'' + -20 y' +20 y = t^{-2}e^{2t}+20, \qquad t>0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we solve the homogeneous part. The characteristic equation for this ODE is 
+\begin{equation*}
+5r^2 -20 r+20r =0 \quad \Rightarrow \quad r = 2.
+\end{equation*}
+
+Our homogeneous solution is then given by
+\begin{equation*}
+y_{h}(t) = C_{1}e^{2t}+C_{2}te^{2t}.
+\end{equation*}
+Now, the $t^{-2}e^{2t}$ makes us think that undetermined coefficients is the method here. But recall that $t^{-2}$, which is a rational function not a polynomial, is not in the table. Thus, we must use variation of parameters. On the other hand, the part with the term $20$ can be solved easily using undetermined coefficients. We will have then two particular solutions $y_{p_{1}}(t)$ and $y_{p_{2}}(t)$ for the $t^{-2}e^{2t}$ and $20$ terms, respectively. 
+
+\par \textsl{1.} Particular solution for
+\[5y'' + -20 y' +20 y = t^{-2}e^{2t},\] using variation of parameters is
+\begin{equation*}
+y_{p_{1}}(t) = v_{1}(t) e^{2t} + v_{2}(t) te^{2t}.
+\end{equation*}
+
+The Wronskian is
+\begin{equation*}
+W[y_{1},y_{2}](t) = \left| \begin{array}{cc} e^{2t} & te^{2t} \\
+2e^{2t} & e^{2t}(1+2t) \end{array} \right| = e^{4t} \neq 0;
+\end{equation*}
+
+
+\begin{equation*}
+v_{1}(t) = - \int \dfrac{g(t) y_{2}(t)}{W[y_{1},y_{2}](t)} dt = - \int \dfrac{te^{2t}t^{-2}e^{2t}}{e^{4t}}dt = -\ln(t).
+\end{equation*}
+\begin{equation*}
+v_{2}(t) =  \int \dfrac{g(t) y_{1}(t)}{W[y_{1},y_{2}](t)} dt = \int \dfrac{e^{2t}t^{-2}e^{2t}}{e^{4t}}dt = -t^{-1}.
+\end{equation*}
+Putting all these results together, we obtain our first particular solution
+\begin{equation*}
+y_{p_{1}}(t) = -\ln (t)e^{2t} - e^{2t}.
+\end{equation*}
+
+\par \textsl{2.} Particular solution for
+\[5y'' + -20 y' +20 y = 20,\] using undetermined coefficients is
+\begin{equation*}
+     y_{p_{2}}(t)=A.
+\end{equation*}
+Since $y_{p_{2}}'=y_{p_{2}}''=0$ the solution is as simple as \[y_{p_{2}}=1.\]
+
+Hence, the general solution is given by
+\begin{equation*}
+\boxed{y(t) = y_{h}(t) + y_{p_{1}}(t) + y_{p_{2}}(t) =C_{1}e^{2t}+C_{2}te^{2t} -\ln (t)e^{2t} - e^{2t} + 1 }.
+\end{equation*}
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}
+     x^{2}y''-3xy'+4y=x+2.
+\end{equation*}
+\end{problem}
+\begin{solution}
+This is a Cauchy-Euler equation. There are two ways of solving this equations, the one we are going to use now is easier and faster but it only works for homogeneous equations ($g(x)=0$) or very simple cases of non-homogeneous equations. Otherwise, it is very difficult to make a good guess for the particular solution.\\
+Assume, for some $r$ a solution of the form 
+\[y(x)=x^{r}\Rightarrow y'(x)=rx^{r-1}\Rightarrow y''(x)=r(r-1)x^{r-2}.\]
+Then the characteristic equation becomes
+\[r^{2}-4r+4=0 \quad \Rightarrow r = 2,\]
+and the homogeneous solution is
+\[y_{h}(x)=C_{1}x^{2}+C_{2}x^{2}\ln x.\]
+(Recall that in Cauchy-Euler equations, in case of repeated roots we multiply by $\ln x$ instead of $x$.)\\
+For the particular solution our guess is
+\begin{eqnarray*}
+y_{p}(x) & = & Ax + B \\
+y'_{p}(x) & = & A \\
+y''_{p}(x) & = & 0.
+\end{eqnarray*}
+In this case (Cauchy-Euler equation as opposed to standard form) we have substitute $y$ and all its derivatives into the equation 
+\begin{equation*} \begin{split}
+ -3Ax + 4 A x +4B = x+2,
+\end{split}
+\end{equation*}
+where $A=1$ and $B =1/2$. Hence, 
+$$y_{p}(t) = x + \frac{1}{2}$$ 
+is the particular solution.\\
+Finally 
+\[\boxed{y(x)=C_{1} x^{2}+ C_{2}x^{2}\ln x + x +\frac{1}{2}}.\]
+is the general solution.
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the following problem
+\begin{equation*}     
+     x^{2}y''+3xy'+y=5x^{-1}\ln x.
+\end{equation*}
+\end{problem}
+\begin{solution}
+This is a Cauchy-Euler equation. We will use the second way since the the term since the non-homogeneous part seems too difficult to guess.\\
+We do the following change of variable
+\[x = e^{t} \Rightarrow t=\ln x, \quad z(t) = y(e^{t})\Rightarrow z' = xy', \quad z''-z'=x^{2}y''.\]
+Hence, our equation becomes
+\[z''+2z'+z=5te^{-t}.\]
+The characteristic equation for this ODE is 
+\begin{equation}
+r^2 +2r +1 =0, \quad  \Rightarrow \quad r= -1.
+\end{equation}
+Thus, the homogeneous solution is
+\begin{equation}
+z_{h}(t) = C_{1} e^{- t} + C_{2} te^{-t}.
+\end{equation}
+For the particular solutions, note that $r=-1$ is a double root, hence our guess is 
+\begin{eqnarray*}
+z_{p}(t) & = & t^{2}(At+B)e^{-t} = (At^{3}+Bt^{2})e^{-t} \\
+z'_{p}(t) & = & (-At^{3}+(3A-B)t^{2}+2Bt)e^{-t} \\
+z''_{p}(t) & = & (At^{3}+(-6A+B)t^{2}+(6A-4B)t+2B)e^{-t}.
+\end{eqnarray*}
+Recall that we can omit the $t^{3}e^{-t}$ and $t^{2}e^{-t}$ terms and look only at the coefficients multiplying the terms $te^{-t}$ and $e^{-t}$ 
+\begin{equation*} \begin{split}
+te^{-t}:& \quad  6A -4B +4B = 5 \\
+e^{-t}:& \quad  2B =0,
+\end{split}
+\end{equation*}
+with solution $A=5/6$ and $B=0$. Hence, 
+$$z_{p}(t) = \frac{5}{6}t^{3}e^{-t},$$ 
+is the particular solution.\\
+The general solution is 
+\[z(t)=  C_{1} e^{- t} + C_{2} te^{-t} +\frac{5}{6}t^{3}e^{-t}.\]
+Finally, going back to $y(x)$,
+\[\boxed{y(x)=C_{1}x^{-1}+C_{2}x^{-1}\ln x +\frac{5}{6}x^{-1}\ln^{3}x},\]
+is the solution to the original equation.
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Find a general solution to the problem, given a first solution $y_{1}(t)=e^{t}$
+\begin{equation*}
+ty''-(t+1)y'+y=0, \quad t>0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+First, we need to write the equation in the standard form
+\[y''-\left( 1 + \tfrac{1}{t} \right) y + \tfrac{1}{t}y=0.\]
+We need a solution of the form $y_{2}(t)=y_{2}(t)v(t)$. If we substitute $$y_{2}(t)=y_{2}(t)v(t), \quad y_{2}'(t)=y_{1}'v + y_{1}v' \quad y_{2}''(t)=y_{1}''v + 2y_{1}'v'+ y_{1}v'',$$
+we find that reduction of order formula 
+\[y_{2}(t)=y_{1}(t)\int \frac{e^{-\int p(t)dt}}{y_{1}^{2}(t)}dt = e^{t}\int \frac{e^{\int \left( 1 + \tfrac{1}{t} \right)dt}}{e^{2t}}dt= e^{t}\int \frac{te^{t}}{e^{2t}}dt=-(t+1).\]
+Thus, a general solution is 
+\[\boxed{y(t) = C_{1}e^{t} + C_{2}(t+1)}.\]
+
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Find a general solution to the problem given the first solution to the homogeneous part $y_{1}(x)=e^{-x}$
+\begin{equation*}
+y''+(\tan x +2)y'+(\tan x+1)y=e^{-x}\cos x.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Here we use reduction of order to find the second homogeneous solution, and then apply variation of parameters to find the particular solution.
+
+According to the reduction of order formula a second solution is give by
+\begin{equation*}
+y_{2}(x)=e^{-x}\int \frac{e^{-\int(\tan x + 2)dx}}{e^{-2x}}dx = e^{-x}\int \frac{e^{\ln|\cos x|}e^{-2x}}{e^{-2x}}dx=-e^{-x}\sin x.
+\end{equation*}
+Thus, an homogeneous solution is
+\[y_{h}(x)=C_{1}e^{-x}+C_{2}e^{-x}\sin x.\]
+
+The particular solution has the form
+\[y_{p}(x)=v_{1}(x)e^{-x}+v_{2}(x)e^{-x}\sin x,\]
+The Wronskian is
+\begin{equation*}
+W[y_{1},y_{2}](x) = \left| \begin{array}{cc} e^{-x} & e^{-x}\sin x \\
+-e^{-x} & e^{-x}(-\sin x +\cos x) \end{array} \right| = e^{-2x}\cos x \neq 0, \quad \text{for} \quad x \neq n\pi +\tfrac{\pi}{2}.
+\end{equation*}
+Then,
+\begin{equation*}
+v_{1}(x) = - \int \dfrac{e^{-x}\sin x e^{-x}\cos x}{e^{-2x}\cos x}dx =\cos x,
+\end{equation*}
+\begin{equation*}
+v_{2}(x) =  \int \dfrac{e^{-x} e^{-x}\cos x}{e^{-2x}\cos x}dx =x.
+\end{equation*}
+Finally,
+\[\boxed{y(x)=C_{1}e^{-x}+C_{2}e^{-x}\sin x + e^{-x}\cos x  + xe^{-x}\sin x.}\]
+\end{solution}
+
+
+
+
+
+
+\begin{problem}
+Find a general solution to the given differential equation
+\begin{equation*}
+y^{\prime \prime \prime}+2y^{\prime \prime} + 5 y^{\prime} -26 y =0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+The characteristic equation for this ODE is :
+\begin{equation*}
+r^3+2r^2+5r-26=0.
+\end{equation*}
+Since none of us seem to be able to remember the cubic formula, we will proceed by guessing integer roots. (For problems of this type given to you in class or in exams, there will always be an integer root). Note that if there exists an integer root, it will always be a divisors of the constant term. By the Intermediate Value theorem, for odd degree polynomials with integer coefficients, there always exist an integer root that divides the constant term.
+In our case, the constant term is $-26$, and the divisors of $-26$ are $ \{-26,-13,-2,-1,1,2,13,26 \}$.
+Going through this, list, we see that $r=2$ is a root since:
+\begin{equation*}
+(2^3)+2 (2^2)+5(2)-26 = 8 + 8 +10 -26 =0
+\end{equation*}
+Once we have found one root, we can divide the polynomial $r^3+2r^2+5r-26$ by $r-2$ using Euclidean division to obtain it's quadratic remainder. In English, this means that $r^3+2r^2+5r-26= (r-2)(r^2+ar+b)$ for some constants $a$ and $b$.
+Hence, we have:
+\begin{eqnarray*}
+r^3+2r^2+5r-26 & = & (r-2)(r^2+ar+b) \\
+& = & r^3 +(a-2)r^2 + (b-2a)r-2b\\
+\Rightarrow \quad a-2 & = & 2 \\
+\Rightarrow \quad b-2a & = & 5\\
+\Rightarrow \quad -2b & = & -26\\
+\end{eqnarray*}
+From this,we see that $a=4$ and $b=13$.
+Now we can rewrite our characteristic equation as :
+\begin{equation*}
+(r-2)(r^2+4r+13)=0
+\end{equation*}
+Finding the two remaining roots using the quadratic formula, we obtain:
+\begin{equation*}
+r^2+4r+13=0, \quad \Rightarrow \quad r = -2 \pm 3 i
+\end{equation*}
+In summary, the characteristic equation $r^3+2r^2+5r-26=0$ has three distinct roots namely: $r = \{2, -2 + 3i, -2 -3i\}$. Hence our general solutions can be written as:
+\begin{equation*}
+\boxed{ y(t) = C_{1} e^{2t} + C_{2} e^{-2t} \cos(3t) + C_{3} e^{-2t} \sin(3t)}.
+\end{equation*}
+\end{solution}
+
+
+
+\end{document}

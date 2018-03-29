@@ -1,0 +1,919 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 5}
+\labtitle{Power series solutions: regular points}
+\makelabtitle
+
+
+
+\topic{Recurrence relation and first terms}
+
+\begin{problem}
+{Find a recurrence relation and the first five non-zero terms in the power series approximation for the given initial value problem}
+\begin{equation*}
+y'' + (x+2)y = 0, \quad y(0)=1, \quad y'(0)=1.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =0.
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =x^2.
+\end{equation*}
+\end{problem}
+
+
+\topic{First terms}
+
+\begin{problem}
+Find at least the first four nonzero terms in a power series expansion about $x=0$ for the solution to the given initial value problem,
+\begin{equation*}
+(x^2-x+1)y^{\prime \prime} - y^{\prime} -y=x^{2},\quad y(0)=0, y^{\prime}(0)=1.
+\end{equation*}
+\end{problem}
+
+\topic{Full power series}
+
+\begin{problem}
+{ Find a power series expansion about $x =0$ for a general solution to the given differential equation. Your answer should include a general formula for the coefficients}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =0.
+\end{equation*}
+\end{problem}
+
+
+
+
+\begin{problem}
+{ Find a power series expansion about $x =0$ for a general solution to the given differential equation. Your answer should include a general formula for the coefficients}
+\begin{equation*}
+(x^2+1)y^{\prime \prime} - x y^{\prime} + y =0.
+\end{equation*}
+\end{problem}
+
+
+
+\topic{Cauchy product}
+
+\begin{problem}
+Find at least the first four nonzero terms in a power series expansion about $x=0$ for the solution to the given initial value problem,
+\begin{equation*}
+y'' + x y' + e^{x} y =0, \quad y(0) =1, y'(0)=1.
+\end{equation*}
+\end{problem}
+
+
+
+
+\begin{problem}
+Find at least four non-zero terms in the power series expansion to the initial value problem
+\[y''-(\sin x) y = 0, \quad y(\pi)=1, y'(\pi)=0.\]
+\end{problem}
+ 
+ 
+ 
+ 
+
+
+
+
+% \begin{problem}
+% Find at least the first four nonzero terms in a power series expansion about $x=0$ for the solution to the given initial value problem,
+% \begin{equation*}
+% y^{\prime} - e^{x} y =0, \quad y(0) =1.
+% \end{equation*}
+% \end{problem}
+% 
+% 
+% \begin{problem}
+% {Determine the first three nonzero terms in the Taylor polynomial approximations for the given initial value problem}
+% \begin{equation*}
+% y^{\prime} = x^2 + y^2, \quad y(0)=1.
+% \end{equation*}
+% \end{problem}
+% 
+% 
+% 
+% \begin{problem}
+% {Find a power series expansion about $x =0$ for a general solution to the given differential equation. Your answer should include a general formula for the coefficients}
+% \begin{equation*}
+% y^{\prime} - 2xy =0.
+% \end{equation*}
+% \end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+
+\begin{preamble}
+\begin{formulaitem}
+\item A \textbf{power series } of $f(x)$ about $x_{0}$ is an expansion of the form
+\[f(x)=\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}.\]
+
+\item \begin{theorem}[Ratio test]
+If, for $n$ large, the coefficients $a_{n}\neq 0$ satisfy
+\[\lim_{n\rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=L \quad(0\leq L\leq \infty),\]
+then the radius of convergence is $L$.
+\end{theorem}
+
+\item Recall also that we can \textit{differentiate} and \textit{integrate} power series
+\[f'(x)=\sum_{n=1}^{\infty}na_{n}(x-x_{0})^{n-1},\]
+and
+\[\int f(x) dx=\sum_{n=0}^{\infty}\frac{a_{n}}{n+1}(x-x_{0})^{n+1} + C,\]
+with the same radius of convergence of $f(x)$.
+
+\item \textbf{Cauchy product for series}
+\begin{equation*}
+\left(\sum_{n=0}^{\infty} a_{n} x^n \right)\left(\sum_{n=0}^{\infty} b_{n} x^n \right) =\sum_{n=0}^{\infty} c_{n} x^n, \quad \text{where,} \quad 
+c_{n} = \sum_{k=0}^{n} a_{k} b_{n-k}.
+\end{equation*}
+
+\end{formulaitem}
+\end{preamble}
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+{Find a recurrence relation and the first five non-zero terms in the power series approximation for the given initial value problem}
+\begin{equation*}
+y'' + (x+2)y = 0, \quad y(0)=1, \quad y'(0)=1.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Assume a power solution of the form
+\begin{equation*}
+y(x) = \sum_{n=0}^{\infty} a_{n} x^n,
+\end{equation*}
+with derivatives
+\begin{eqnarray*}
+y^{\prime}(x) & = & \sum_{n=1}^{\infty} n a_{n} x^{n-1}, \\
+y^{\prime \prime}(x) & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2}.
+\end{eqnarray*}
+Using the equation we have
+\begin{gather*}
+\sum_{n=2}^{\infty}n(n-1) a_{n} x^{n-2} + (x+2)\sum_{n=0}^{\infty} a_{n} x^n = 0,\\
+\Rightarrow \sum_{n=2}^{\infty}n(n-1) a_{n} x^{n-2} + \sum_{n=0}^{\infty} a_{n} x^{n+1} + \sum_{n=0}^{\infty} 2a_{n} x^n = 0,
+\end{gather*}
+change the exponent in all summations to $n$
+\begin{equation*}
+\Rightarrow \sum_{n=0}^{\infty}(n+2)(n+1) a_{n+2} x^{n} + \sum_{n=1}^{\infty} a_{n-1} x^{n} + \sum_{n=0}^{\infty} 2a_{n} x^n = 0,
+\end{equation*}
+and combine the summations leaving the first extra terms in two of the summations
+\begin{equation*}
+\Rightarrow 2a_{2} + 2 a_{0} + \sum_{n=1}^{\infty}\left[(n+2)(n+1) a_{n+2} + a_{n-1} + 2a_{n}\right] x^n = 0.
+\end{equation*}
+Matching left hand side and right hand side
+\begin{equation*}
+\begin{cases}
+2a_{2} +2a_{0}=0 \\
+(n+2)(n+1)a_{n+2} + a_{n-1} + 2a_{n} =0, \quad n\geq1.
+\end{cases}
+\end{equation*}
+Using the the initial conditions we find $a_{0}=y(0)=1$ and $a_{1}=y'(0)=1$. Thus, the recursive relation is given by
+\begin{equation*}
+\boxed{\begin{cases}
+a_{0}=1, \, a_{1}=1,\, a_{2} =-1, \\
+a_{n+2} = -\dfrac{a_{n-1} + 2a_{n}}{(n+2)(n+1)}, \quad n\geq 1.
+\end{cases}
+}
+\end{equation*}
+Now, we find the first 5 non-zero terms using the recurrence relation
+\begin{equation*}
+a_{0}=1, \; a_{1}=1,\; a_{2} =-1,\; a_{3} = -\frac{2+1}{3\cdot2}= -\frac{1}{2}, \; a_{4} = -\frac{2(-1)+1}{4\cdot3}= \frac{1}{12}.
+\end{equation*}
+Finally, the power series solution with the first five non-zero terms is
+\begin{equation*}
+\boxed{y(x)=1+x-x^{2} -\frac{1}{2}x^{3} +\frac{1}{12}x^{4}+\cdots}
+\end{equation*}
+\end{solution}
+
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+We expand the solution $z(t)$ into the following power series about $x=0$.
+
+\begin{equation*}
+z(x) = \sum_{n=0}^{\infty} a_{n} x^n
+\end{equation*}
+Taking the first two derivatives, we have:
+
+\begin{eqnarray*}
+z^{\prime}(x) & = & \sum_{n=1}^{\infty} n a_{n} x^{n-1} \\
+z^{\prime \prime}(x) & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} \\
+\end{eqnarray*}
+
+Substituting these equations into our ODE, we obtain:
+
+\begin{eqnarray*}
+0 & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - x^2 \sum_{n=1}^{\infty} n a_{n} x^{n-1} - x \sum_{n=0}^{\infty} a_{n} x^n \\
+& = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & \sum_{n=-1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & (1)(2)a_{2} + (2)(3)a_{3}x - a_{0}x+ \sum_{n=1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=1}^{\infty} a_{n} x^{n+1} \\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ \sum_{n=1}^{\infty} \left[ (n+2)(n+3) a_{n+3}-n a_{n}-a_{n} \right] x^{n+1}\\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ \sum_{n=1}^{\infty} \left[ (n+2)(n+3) a_{n+3}-(n+1)a_{n} \right] x^{n+1}\\
+\end{eqnarray*}
+Since this expression must be true for all $x$, we must have:
+
+\begin{eqnarray*}
+2a_{2} & = & 0, \\
+6a_{3} - a_{0} & = & 0, \\
+(n+2)(n+3) a_{n+3}-(n+1)a_{n} & = & 0, \quad n\geq 1.
+\end{eqnarray*}
+This leads to the following recurrence relation:
+
+\begin{eqnarray*}
+a_{2} & = & 0 \\
+a_{3} & = & \dfrac{a_{0}}{6} \\
+a_{n+3} & = & \left(\dfrac{(n+1)}{(n+2)(n+3)}\right)a_{n}
+\end{eqnarray*}
+
+Let's find the first coefficients
+
+\begin{eqnarray*}
+a_{0} & = & a_{0} \\
+a_{1} & = & a_{1}\\
+a_{2} & = & 0 \\
+a_{3} & = & \dfrac{a_{0}}{6}  \\
+a_{4} & = & \left(\dfrac{2}{(3)(4)}\right)a_{1}  =  \left(\dfrac{1}{6}\right)a_{1}  
+\end{eqnarray*}
+
+Hence, the solution to the this ODE is given by:
+
+\begin{equation*}
+\boxed{y(x) = a_{0} + a_{1}x + \frac{a_{0}}{6}x^{3} + \frac{a_{1}}{6}x^{4}+\cdots}
+\end{equation*}
+\end{solution}
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+{Find a recurrence relation and the first four non-zero terms in the power series approximation about $x=0$}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =x^2.
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+We expand the solution $z(t)$ into the following power series about $x=0$.
+
+\begin{equation*}
+z(x) = \sum_{n=0}^{\infty} a_{n} x^n
+\end{equation*}
+Taking the first two derivatives, we have:
+
+\begin{eqnarray*}
+z^{\prime}(x) & = & \sum_{n=1}^{\infty} n a_{n} x^{n-1} \\
+z^{\prime \prime}(x) & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} \\
+\end{eqnarray*}
+
+Substituting these equations into our ODE (be aware of the $x^{2}$ term in the right hand side), we obtain:
+
+\begin{eqnarray*}
+x^{2} & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - x^2 \sum_{n=1}^{\infty} n a_{n} x^{n-1} - x \sum_{n=0}^{\infty} a_{n} x^n \\
+& = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & \sum_{n=-1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & (1)(2)a_{2} + (2)(3)a_{3}x - a_{0}x+ \sum_{n=1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=1}^{\infty} a_{n} x^{n+1} \\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ \sum_{n=1}^{\infty} \left[ (n+2)(n+3) a_{n+3}-n a_{n}-a_{n} \right] x^{n+1}\\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ [12 a_{4}-3a_{1}]x^{2} + \sum_{n=2}^{\infty} \left[ (n+2)(n+3) a_{n+3}-(n+1)a_{n} \right] x^{n+1}.
+\end{eqnarray*}
+Since this expression must be true for all $x$, we must have:
+
+\begin{eqnarray*}
+2a_{2} & = & 0, \\
+6a_{3} - a_{0} & = & 0, \\
+12 a_{4}-2a_{1} & = & 1, \\
+(n+2)(n+3) a_{n+3}-(n+1)a_{n} & = & 0, \quad n\geq 2.
+\end{eqnarray*}
+This leads to the following recurrence relation:
+
+\begin{eqnarray*}
+a_{2} & = & 0, \\
+a_{3} & = & \dfrac{a_{0}}{6}, \\
+a_{4} & = & \dfrac{1}{12} + \dfrac{2a_{1}}{12}, \\
+ a_{n+3} & = & \left(\dfrac{(n+1)}{(n+2)(n+3)}\right)a_{n}, \quad n\geq 2.
+\end{eqnarray*}
+
+Let's find the first coefficients
+
+\begin{eqnarray*}
+a_{0} & = & a_{0} \\
+a_{1} & = & a_{1}\\
+a_{2} & = & 0 \\
+a_{3} & = & \dfrac{a_{0}}{6}  \\
+a_{4} & = & \dfrac{1}{12} + \dfrac{a_{1}}{6} 
+\end{eqnarray*}
+
+Hence, the solution to the this ODE is given by:
+
+\begin{equation*}
+\boxed{y(x) = a_{0} + a_{1}x + \frac{a_{0}}{6}x^{3} + \left(\frac{1}{12} + \frac{a_{1}}{6}\right) x^{4}+\cdots}
+\end{equation*}
+Compare to the previous solution.
+
+\textbf{Extra work:} Note that we can find more terms
+\begin{eqnarray*}
+a_{5} & = & \dfrac{3}{4\cdot5}a_{2} = 0  \\
+a_{6} & = & \dfrac{4}{5\cdot6}a_{3} = \dfrac{4}{5\cdot 6\cdot 6}a_{0} = \dfrac{1}{45}a_{0}  \\
+a_{7} & = & \dfrac{5}{6\cdot7}a_{4} = \dfrac{5}{6\cdot 7\cdot 12} + \dfrac{5}{6\cdot 7\cdot 6}a_{1} = \dfrac{5}{504} + \dfrac{5}{252}a_{1} 
+\end{eqnarray*}
+in the separate this solution in terms of the homogeneous and particular solutions
+\begin{equation*}
+\boxed{y(x) = a_{0}\underbrace{\left(1+\frac{1}{6}x^{3}+ \frac{1}{45}x^{6} \cdots\right)}_{\text{1st lin. ind. sol.}} + a_{1}\underbrace{\left(x + \frac{1}{6}x^{4}+\frac{5}{252}x^{7}+\cdots\right)}_{\text{2nd lin. ind. sol.}} + \underbrace{\left(\frac{1}{12}x^{4}+ \frac{5}{504}x^{7}+\cdots\right)}_{\text{part. sol.}}.} 
+\end{equation*}
+\end{solution}
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+Find at least the first four nonzero terms in a power series expansion about $x=0$ for the solution to the given initial value problem,
+\begin{equation*}
+(x^2-x+1)y^{\prime \prime} - y^{\prime} -y=x^{2},\quad y(0)=0, y^{\prime}(0)=1.
+\end{equation*}
+\end{problem}
+\begin{solution}
+\indent Let $$y(x)= \displaystyle \sum_{n=0}^{\infty} a_{n} x^n = a_{0} + a_{1}x +a_{2}x^{2}+a_{3}x^{3} + a_{4}x^{4} + \cdots $$. Taking the first two derivatives, we have
+
+\begin{align*}
+y^{\prime}(x) & = a_{1} + 2 a_{2}x+ 3a_{3}x^{2} + 4a_{4}x^{3} + \cdots \\
+y^{\prime \prime}(x) & = 2a_{2} + 6a_{3}x + 12a_{4}x^{2} + \cdots\\
+\end{align*}
+Using the initial conditions we see that $a_{0}=0$ and $a_{1}=1$.
+Substituting these result into our equation, we obtain
+\begin{align*}
+x^{2} & =  (x^2-x+1) \cdot (2a_{2} + 6a_{3}x + 12a_{4}x^{2} + \cdots) \\
+& \qquad - (1 + 2 a_{2}x+ 3a_{3}x^{2} + 4a_{4}x^{3} + \cdots) - (x +a_{2}x^{2}+a_{3}x^{3} + a_{4}x^{4} + \cdots) \\
+& = (2a_{2}x^{2} + 6a_{3}x^{3} + 12a_{4}x^{4} + \cdots) + (- 2a_{2}x - 6a_{3}x^{2} - 12a_{4}x^{3} + \cdots) + (2a_{2} + 6a_{3}x + 12a_{4}x^{2} + \cdots) \\
+& \qquad + ( -1 - 2 a_{2}x- 3a_{3}x^{2} - 4a_{4}x^{3} + \cdots) + (-x -a_{2}x^{2}-a_{3}x^{3} - a_{4}x^{4} + \cdots) \\
+& = (-1 + 2a_{2})+ (-1-4a_{2}+6a_{3})x + (a_{2}-9a_{3}+12a_{4})x^{2}+\cdots 
+\end{align*}
+
+Matching terms of each side of this equation
+
+
+
+\begin{align*}
+0 = 2a_{2}-1  & \Rightarrow a_{2} = \frac{1}{2} \\
+0 = -1-4\cancelto{\frac{1}{2}}{a_{2}}+6a_{3}  & \Rightarrow a_{3} = \frac{1}{2} \\
+1 = \cancelto{\frac{1}{2}}{a_{2}}-9\cancelto{\frac{1}{2}}{a_{3}}+12a_{4}  & \Rightarrow a_{4} = \frac{5}{12}
+\end{align*}
+
+Thus, the solution with the first four non-zero terms is given by
+
+\begin{equation*}
+\boxed{y(x) = x +\dfrac{1}{2}x^2+\dfrac{1}{2}x^3 + \dfrac{5}{12}x^4 + \ldots}
+\end{equation*}
+\end{solution}
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+{ Find a power series expansion about $x =0$ for a general solution to the given differential equation. Your answer should include a general formula for the coefficients}
+\begin{equation*}
+z^{\prime \prime} - x^2 z^{\prime} - xz =0.
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+We expand the solution $z(t)$ into the following power series about $x=0$.
+
+\begin{equation*}
+z(x) = \sum_{n=0}^{\infty} a_{n} x^n
+\end{equation*}
+Taking the first two derivatives, we have:
+
+\begin{eqnarray*}
+z^{\prime}(x) & = & \sum_{n=1}^{\infty} n a_{n} x^{n-1} \\
+z^{\prime \prime}(x) & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} \\
+\end{eqnarray*}
+
+Substituting these equations into our ODE, we obtain:
+
+\begin{eqnarray*}
+0 & = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - x^2 \sum_{n=1}^{\infty} n a_{n} x^{n-1} - x \sum_{n=0}^{\infty} a_{n} x^n \\
+& = & \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & \sum_{n=-1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=0}^{\infty} a_{n} x^{n+1} \\
+& = & (1)(2)a_{2} + (2)(3)a_{3}x - a_{0}x+ \sum_{n=1}^{\infty} (n+2)(n+3) a_{n+3} x^{n+1} - \sum_{n=1}^{\infty} n a_{n} x^{n+1} -  \sum_{n=1}^{\infty} a_{n} x^{n+1} \\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ \sum_{n=1}^{\infty} \left[ (n+2)(n+3) a_{n+3}-n a_{n}-a_{n} \right] x^{n+1}\\
+& = & 2a_{2} + (6a_{3} - a_{0})x+ \sum_{n=1}^{\infty} \left[ (n+2)(n+3) a_{n+3}-(n+1)a_{n} \right] x^{n+1}\\
+\end{eqnarray*}
+Since this expression must be true for all $x$, we must have:
+
+\begin{eqnarray*}
+2a_{2} & = & 0 \\
+6a_{3} - a_{0} & = & 0 \\
+(n+2)(n+3) a_{n+3}-(n+1)a_{n} & = & 0
+\end{eqnarray*}
+This leads to the following recurrence relation:
+
+\begin{eqnarray*}
+a_{2} & = & 0 \\
+a_{3} & = & \dfrac{a_{0}}{6} \\
+ a_{n+3} & = & \left(\dfrac{(n+1)}{(n+2)(n+3)}\right)a_{n}
+\end{eqnarray*}
+
+Let's try to find a pattern for the coefficients.
+
+\begin{eqnarray*}
+a_{0} & = & a_{0} \\
+a_{1} & = & a_{1}\\
+a_{2} & = & 0 \\
+a_{3} & = & \dfrac{a_{0}}{6}  = \dfrac{a_{0}}{3!}  \\
+a_{4} & = & \left(\dfrac{2}{(3)(4)}\right)a_{1}  =  \left(\dfrac{2^2}{4!}\right)a_{1}  \\
+a_{5} & = & 0 \\
+a_{6} & = & \left(\dfrac{(4)}{(5)(6)}\right)a_{3} = \left(\dfrac{(4)}{(2)(3)(5)(6)}\right)a_{0} = \left(\dfrac{4^2}{6!}\right)a_{0} \\
+a_{7} & = & \left(\dfrac{(5)}{(6)(7)}\right)a_{4} = \left(\dfrac{(2 \cdot 5)^2}{7!}\right) a_{1} \\
+a_{8} & = & \left(\dfrac{(6)}{(7)(8)}\right)a_{5} = 0 \\
+a_{9} & = & \left(\dfrac{(7)}{(8)(9)}\right)a_{6} = \left(\dfrac{(7)}{(8)(9)}\right)\left(\dfrac{4^2}{6!}\right)a_{0} =\left(\dfrac{(1 \cdot 4 \cdot 7)^2}{9!}\right)a_{0}  \\
+a_{10} & = & \left(\dfrac{(8)}{(9)(10)}\right)a_{7} = \left(\dfrac{(8)}{(9)(10)}\right)\left(\dfrac{(2 \cdot 5)^2}{7!}\right) a_{1} = \left(\dfrac{(2 \cdot 5 \cdot 8)^2}{10!}\right)a_{1}
+\end{eqnarray*}
+
+Although complicated ,the pattern is starting to get more obvious:
+
+we have:
+
+\begin{eqnarray*}
+a_{0} & = & a_{0}\\
+a_{1} & = & a_{1}\\
+a_{3n} & = & \dfrac{\left[1 \cdot 4 \cdot 7 \cdots (3n-2) \right]^2}{(3n)!}a_{0} \quad n=1,2, \ldots \\
+a_{3n+1} & = & \dfrac{\left[2 \cdot 5 \cdot 8 \cdots (3n-1) \right]^2}{(3n+1)!}a_{1} \quad n=1,2, \ldots \\
+a_{3n+2} & = & 0, \quad n=0,1,2, \ldots \\
+\end{eqnarray*}
+
+Hence, the solution to the this ODE is given by:
+
+\begin{equation*}
+\boxed{y(x) = a_{0} \left(1 + \sum_{n=1}^{\infty} \left[ \dfrac{\left[1 \cdot 4 \cdot 7 \cdots (3n-2) \right]^2}{(3n)!} \right] x^{3n} \right) + a_{1} \left(x+ \sum_{n=1}^{\infty} \left[\dfrac{\left[2 \cdot 5 \cdot 8 \cdots (3n-1) \right]^2}{(3n+1)!} \right] x^{3n+1} \right).}
+\end{equation*}
+\end{solution}
+
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+{ Find a power series expansion about $x =0$ for a general solution to the given differential equation. Your answer should include a general formula for the coefficients}
+\begin{equation*}
+(x^2+1)y^{\prime \prime} - x y^{\prime} + y =0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+ We expand the solution $y(x)$ into the following power series about $x=0$.
+\begin{equation*}
+y(x) = \sum_{n=0}^{\infty} a_{n} x^n
+\end{equation*}
+Taking the first two derivatives, we have
+\begin{gather*}
+y^{\prime}(x) =  \sum_{n=1}^{\infty} n a_{n} x^{n-1}, \\
+y^{\prime \prime}(x) = \sum_{n=2}^{\infty} (n-1)n a_{n} x^{n-2}.
+\end{gather*}
+Using the equation we have
+\begin{gather*}
+(x^2 + 1)\sum_{n=2}^{\infty}n(n-1)a_{n}x^{n-2} -x \sum_{n=1}^{\infty} na_{n}x^{n-1} + \sum_{n=0}^{\infty} a_{n}x^{n} = 0, \\
+\Rightarrow \sum_{n=2}^{\infty}n(n-1)a_{n}x^{n} + \underbrace{\sum_{n=2}^{\infty}n(n-1)a_{n}x^{n-2}}_{n-2\rightarrow n} - \sum_{n=1}^{\infty} na_{n}x^{n} + \sum_{n=0}^{\infty} a_{n}x^{n} = 0, \\
+\Rightarrow \sum_{n=2}^{\infty}n(n-1)a_{n}x^{n} + \sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^{n} - \sum_{n=1}^{\infty} na_{n}x^{n} + \sum_{n=0}^{\infty} a_{n}x^{n} = 0, \\
+\Rightarrow 2a_{2} + 6 a_{3}x - a_{1}x + a_{0} + a_{1}x + \sum_{n=2}^{\infty}[(n+2)(n+1)a_{n+2} + (n-1)^{2}a_{n}]x^{n} =0 \\
+\Rightarrow (2a_{2} + a_{0}) + 6 a_{3} x + \sum_{n=2}^{\infty}[(n+2)(n+1)a_{n+2} + (n-1)^{2}a_{n}]x^{n} =0.
+\end{gather*}
+Matching both side sides  of the equation
+\begin{equation*}
+\begin{array}{cccc}
+a_{0},a_{1}\in \mathbb{R}, & a_{2}=-\frac{1}{2}a_{0}, & a_{3}=0, & a_{n+2}=-\dfrac{(n-1)^{2}}{(n+2)(n+1)}a_{n},\,n\geq 2.
+\end{array}
+\end{equation*}
+Use the recursive relation to find the pattern
+\begin{align*}
+n=2, & \qquad a_{4}=-\dfrac{1}{4\cdot 3} a_{2} = \dfrac{1}{4\cdot 3\cdot 2}a_{0}\\
+n=3, & \qquad a_{5}=-\dfrac{2^{2}}{5\cdot 4} a_{3} = 0\\
+n=4, & \qquad a_{6}=-\dfrac{3^{2}}{6\cdot 5} a_{4} = -\dfrac{(3\cdot 1)^{2}}{6!}a_{0}\\
+n=5, & \qquad a_{7}=-\dfrac{4^{2}}{7\cdot 6} a_{5} = 0\\
+n=6, & \qquad a_{8}=-\dfrac{5^{2}}{8\cdot 7} a_{6} = -\dfrac{(5\cdot 3\cdot 1)^{2}}{8!}a_{0}
+\end{align*}
+We can see (with extra effort to find the pattern) that the even coefficients are given by
+\begin{align*}
+a_{2n} & = \frac{(-1)^{n}((2n-3)(2n-5)\cdots 1)^{2}}{(2n)!}a_{0} 
+% \qquad \text{multiply by} \quad \frac{(2n-2)(2n-4)\cdots}{(2n-2)(2n-4)\cdots} \\
+%        & = \frac{(-1)^{n}(2n-2)!}{2^{n-2}(n-1)!(2n)!}a_{0} = \frac{(-1)^{n}(2n-2)!}{2^{n-2}(n-1)!(2n)(2n-1)(2n-2)!}a_{0} \\
+%        & = \frac{(-1)^{n}}{2^{n}(2n-1)n!}a_{0}.
+\end{align*}
+Verify that this is true with $a_{8}$, for example.
+
+Thus, the general solution is given by
+\begin{equation*}
+\boxed{y(x)=a_{0}\sum_{n=0}^{\infty} \frac{(-1)^{n}((2n-3)(2n-5)\cdots 1)^{2}}{(2n)!} x^{2n} + a_{1}x.}
+\end{equation*}
+
+
+
+
+\end{solution}
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+Find at least the first four non-zero terms in a power series expansion about $x=0$ for the solution to the given initial value problem,
+\begin{equation*}
+y'' + x y' + e^{x} y =0, \quad y(0) =1, y'(0)=1.
+\end{equation*}
+\end{problem}
+\begin{solution}
+We expand the solution $y(x)$ with a few terms into the following power series about $x=0$
+\begin{equation*}
+y(x) =  a_{0} + a_{1}x + a_{2}x^{2} + a_{3}x^{3} + a_{4}x^{4}+\cdots 
+\end{equation*}
+Taking the first two derivatives, we have
+\begin{gather*}
+y^{\prime}(x) =  a_{1} + 2a_{2}x + 3a_{3}x^{2} + 4a_{4}x^{3}+\cdots \\
+y^{\prime \prime}(x) = 2a_{2} + 6a_{3}x + 12a_{4}x^{2}+ 20a_{5}x^{3}\cdots 
+\end{gather*}
+Using initial conditions we have
+\begin{equation}
+a_{0}=1,\qquad a_{1} = 1.
+\end{equation}
+First we need the product of functions $e^{x}y$ written in power series
+\begin{align*}
+e^{x}y(x) &= \sum_{n=0}^{\infty}\frac{1}{n!}x^{n} \sum_{n=0}^{\infty}a_{n}x^{n} = \left(1 + \frac{1}{1!}x + \frac{1}{2!}x^{2} + \frac{1}{3!}x^{3} + \dots\right)\left(1 + x + a_{2}x^{2} + a_{3}x^{3}+ \cdots\right) \\
+          &= 1 + (1 + 1)x + \left(a_{2}+ 1 + \frac{1}{2!}1\right)x^{2} + \left(a_{3} + a_{2} + \frac{1}{2!} + \frac{1}{3!}\right)x^{3}+ \cdots
+\end{align*}
+Using the equation we have
+\begin{multline*}
+(2a_{2} + 6a_{3}x + 12a_{4}x^{2} + 20a_{5}x^{3} + \cdots ) + (a_{1}x + 2a_{2}x^{2} + 3a_{3}x^{3} +\cdots) \\+ (1 + 2x + (a_{2}+ \tfrac{3}{2})x^{2}+ (a_{3} + a_{2} + \tfrac{1}{2} + \tfrac{1}{6})x^{3} + \cdots) = 0.
+\end{multline*}
+Matching coefficients on each side we have
+\begin{align*}
+& 2a_{2} + 1= 0 \Rightarrow a_{2}=-\frac{1}{2}, \\
+& 6a_{3} + 1  + 2 =0 \Rightarrow a_{3}=-\frac{1}{2}, \\
+& 12a_{4} + 2a_{2}  + a_{2} +\frac{3}{2} =0 \Rightarrow a_{4}= 0, \\
+& 20a_{5} + 3a_{3}  + a_{3} + a_{2} +\frac{1}{2} + \frac{1}{6} =0 \Rightarrow a_{5}= \frac{11}{120}.
+\end{align*}
+Finally, the solution with 5 non-zero terms is given by
+\begin{equation*}
+\boxed{y(x)= 1 + x -\frac{1}{2}x^{2} -\frac{1}{2}x^{3} + \frac{11}{120}x^{5} + \cdots}
+\end{equation*}
+
+\end{solution}
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+Find at least four non-zero terms in the power series expansion to the initial value problem
+\[y''-(\sin x) y = 0, \quad y(\pi)=1, y'(\pi)=0.\]
+\end{problem}
+\begin{solution}
+We are given initial conditions at $x_{0}=\pi$, the trick here is to find a power series expansion around $x_{0}=\pi$, which is a regular point for the equation,
+\[y(x)=\sum_{n=0}^{\infty}a_{n}(x-\pi)^{n}.\]
+In order to do this we first make a change of variables. Let
+\[t=x-\pi \Rightarrow x = t + \pi, \,\, \text{ and } \,\, Y(t)=y(t+\pi) \Rightarrow Y' = y', \,\, Y'' = y'',\]
+in which case 
+\[\sin x = \sin(t+\pi)=\sin t \cos \pi +\cos t \sin \pi = -\sin t,\]
+and the initial value problem becomes
+\[Y''+\sin t Y = 0, \quad Y(0)=1,\, Y'(0)=0.\]
+If we try to solve without using this change of variables, the series expansion of $\sin x$ (around $x=0$) is a very bad approximation around $x=\pi$ (where we are solving for $y(x)$). 
+
+Now, we solve this new problem using a simple power series expansion (recall that we only need a few terms)
+\begin{eqnarray*}
+Y(t)&=&\sum_{n=0}^{\infty}a_{n}t^{n}=a_{0}+a_{1}t+a_{2}t^{2}+a_{3}t^{3}+a_{4}t^{4}+a_{5}t^{5}+a_{6}t^{6}\dots\\
+    &=&  1+a_{1}t+a_{2}t^{2}+a_{3}t^{3}+a_{4}t^{4}+a_{5}t^{5}+a_{6}t^{6}\dots\\
+Y'(t)&=&\sum_{n=1}^{\infty}na_{n}t^{n-1}=a_{1}+2a_{2}t+3a_{3}t^{2}+4a_{4}t^{3}+5a_{5}t^{4}+6a_{6}t^{5}+\dots\\
+    &=&  0+2a_{2}t+3a_{3}t^{2}+4a_{4}t^{3}+5a_{5}t^{4}+6a_{6}t^{5}+\dots \\
+Y''(t)&=&\sum_{n=2}^{\infty}n(n-1)a_{n}t^{n-2}=2a_{2}+3\cdot2a_{3}t+4\cdot3a_{4}t^{2}+5\cdot4a_{5}t^{3}+6\cdot5a_{6}t^{4}+\dots
+\end{eqnarray*}
+Here $a_{0}=1$ and $a_{1}=0$. Since $a_{1}=0$, we still have three more terms to find.
+
+For the term $\sin (t) Y(t)$ we need to expand the sine in power series and multiply it with the expansion of $Y(t)$. For that, recall the Cauchy product
+\begin{equation*}
+\left(\sum_{n=0}^{\infty} b_{n} x^n \right)\left(\sum_{n=0}^{\infty} d_{n} x^n \right) =\sum_{n=0}^{\infty} c_{n} x^n,
+\end{equation*}
+where
+\begin{equation*}
+c_{n} = \sum_{k=0}^{n} b_{k} d_{n-k} = b_{0}d_{n}+b_{1}d_{n-1}+b_{2}d_{n-2}+\dots+b_{n-1}d_{1}+b_{n}d_{0}.
+\end{equation*}
+
+The power series of sine around $0$ is 
+\[\sin t =\sum_{n=0}^{\infty}\frac{(-1)^{n}t^{2n+1}}{(2n+1)!}=t - \frac{1}{3!}t^{3}+ \frac{1}{5!}t^{5}-\frac{1}{7!}t^{7}+\frac{1}{9!}t^{9}\dots.\]
+\textbf{Be careful!} Do not confuse the terms in this expansion with the ones in $\sum_{n=0}^{\infty} b_{n}t^{n}$, they have different exponents. In our case
+\[b_{0}=0,\,\, b_{1}=1, \,\,b_{2}=0, \,\,b_{3}=-\frac{1}{3!},\,\,b_{4}=0, b_{5}=\frac{1}{5!}, \dots\]
+and $d_{n}=a_{n}$.
+Finding the value of the coefficients $c_{n}$
+\begin{eqnarray*}
+c_{0} & = & b_{0}a_{0} = 0\\
+c_{1} & = & b_{0}a_{1} + b_{1}a_{0} = 1 \\
+c_{2} & = & b_{0}a_{2} + b_{1}a_{1} + b_{2}a_{0} = 0 \\
+c_{3} & = & b_{0}a_{3} + b_{1}a_{2} + b_{2}a_{1} + b_{3}a_{0} = a_{2} - \frac{1}{3!} \\
+c_{4} & = & b_{0}a_{4} + b_{1}a_{3} + b_{2}a_{2} + b_{3}a_{1} + b_{4}a_{0} = a_{3}. \\
+\end{eqnarray*}
+Using the equation we have
+\begin{gather}
+\left(2a_{2} + 6 a_{3}t +12 a_{4}t^{2}+20 a_{5}t^{3}+30 a_{6}t^{4}+\dots\right)
+     +\left( 0 + t + 0 \cdot t^{2}+ \left(a_{2}-\frac{1}{3!}\right)t^{3}+\dots\right) =0,
+\end{gather}
+where matching coefficients multiplying $x$ with the same power we get,
+\begin{align*}
+  2a_{2} = 0 & \Rightarrow a_{2} = 0 \\
+  6 a_{3} = -1 & \Rightarrow a_{3} = -\frac{1}{6} \\
+  12 a_{4}= 0 & \Rightarrow a_{4} = 0 \\
+  20 a_{5} = -a_{2} +\frac{1}{3!} & \Rightarrow a_{5} = \frac{1}{120}\\
+  30 a_{6} = -a_{3} & \Rightarrow a_{6} = \frac{1}{180}.
+\end{align*}
+Suing this coefficients in the expansion of $Y(t)$ we have
+\[Y(t)=1-\frac{1}{6}t^{3}+\frac{1}{120}t^{5}+\frac{1}{180}t^{6}+\dots\]
+
+Thus, the solution to the initial problem is 
+\[\boxed{y(x)=1-\frac{1}{6}(x-\pi)^{3}+\frac{1}{120}(x-\pi)^{5}+\frac{1}{180}(x-\pi)^{6}+\dots}\]
+\end{solution}
+
+
+
+
+
+% \begin{problem}
+% { Determine the first three nonzero terms in the Taylor polynomial approximations for the given initial value problem}
+% \begin{equation*}
+% y^{\prime} = x^2 + y^2, \quad y(0)=1.
+% \end{equation*}
+% \end{problem}
+% \begin{solution}
+% We make the following guess for a solution:
+% 
+% \begin{eqnarray*}
+% y(x)  & =  & \sum_{n=0}^{\infty} a_{n} x^n \\
+% & =  & a_{0} +a_{1}x + a_{2}x^2 + \ldots \\
+% & =  & 1 +a_{1}x + a_{2}x^2 + \ldots
+% \end{eqnarray*}
+% since $y(0)=1$,
+% 
+% Taking the derivative we obtain:
+% 
+% \begin{eqnarray*}
+% y^{\prime}(x)  & =  & \sum_{n=1}^{\infty} n a_{n} x^{n-1} \\
+% & =  & a_{1} + 2a_{2}x + 3a_{3}x^2 +  \ldots \\
+% \end{eqnarray*}
+% 
+% Substituting this into our equation, we have:
+% 
+% \begin{eqnarray*}
+% a_{1} + 2a_{2}x + 3a_{3}x^2 +  \ldots & = & x^2 + (1 +a_{1}x + a_{2}x^2 + \ldots )^2 \\
+% & = & x^2 + (1 + 2 a_{1} x + (a_{1}^2 +2 a_{2})x^2  + \ldots) \\
+% & = & 1 + 2 a_{1} x + (a_{1}^2 +2 a_{2}+1)x^2 +  \ldots\\
+% \end{eqnarray*}
+% 
+% Since, we require these two sides to be equal we have:
+% 
+% \begin{eqnarray*}
+% a_{1} & = & 1 \\
+% 2a_{2} & = & 2 a_{1}  = 2 \quad \Rightarrow a_{2} = 1
+% \end{eqnarray*}
+% 
+% Hence,
+% 
+% \begin{equation*}
+% y(x) = 1 + x +x^2 + \ldots
+% \end{equation*}
+% \end{solution}
+
+
+
+
+% 
+% \begin{problem}
+% { Find a power series expansion about $x =0$ for a general solution to the given differential equation. Your answer should include a general formula for the coefficients}
+% \begin{equation*}
+% y^{\prime} - 2xy =0.
+% \end{equation*}
+% \end{problem}
+% \begin{solution}
+% We propose the following series solution:
+% 
+% \begin{eqnarray*}
+% y(x) & = & \sum_{n=0}^{\infty} a_{n} x^n
+% \end{eqnarray*}
+% 
+% Taking the derivative, we obtain:
+% 
+% \begin{eqnarray*}
+% y(x) & = & \sum_{n=1}^{\infty} n a_{n} x^{n-1} \\
+% \end{eqnarray*}
+% 
+% Inserting these results into our equation, we obtain:
+% 
+% \begin{equation*}
+% \sum_{n=1}^{\infty} n a_{n} x^{n-1} - \sum_{n=0}^{\infty} 2 a_{n} x^{n+1} =0
+% \end{equation*}
+% 
+% Our goal is now to shift the index of summation of one of these sums to make the exponent of $x$ equal in both.
+% Shifting the index of summation in the first sum by 2, we obtain:
+% 
+% \begin{equation*}
+% \sum_{n=-1}^{\infty} (n+2) a_{n+2} x^{n+1} - \sum_{n=0}^{\infty} 2 a_{n} x^{n+1} =0
+% \end{equation*}
+% 
+% Now that the exponents are equal, we want to combine these two summations.
+% 
+% \begin{eqnarray*}
+% a_{1}  + \sum_{n=0}^{\infty} (n+2) a_{n+2} x^{n+1} - \sum_{n=0}^{\infty} 2 a_{n} x^{n+1} & = & 0 \\
+% \Rightarrow \quad a_{1}  + \sum_{n=0}^{\infty} \left[ (n+2) a_{n+2} - 2 a_{n} \right] x^{n+1}  & = & 0
+% \end{eqnarray*}
+% 
+% Since the left hand side and right hand side must agree for all $x$, we must have:
+% 
+% \begin{eqnarray*}
+% a_{1} & = & 0\\
+% (n+2) a_{n+2} - 2 a_{n} & = & 0 \Rightarrow a_{n+2} = \left(\dfrac{2}{n+2} \right)a_{n}
+% \end{eqnarray*}
+% 
+% Let's look at a few coefficients:
+% 
+% \begin{eqnarray*}
+% a_{0} & = & a_{0} \\
+% a_{1} & = & 0\\
+% a_{2} & = & \left(\dfrac{2}{2} \right)a_{0} =a_{0} \\
+% a_{3} & = & 0 \\
+% a_{4} & = & \left(\dfrac{2}{4} \right) \left(\dfrac{2}{2} \right)a_{0} = \dfrac{a_{0}}{(2)(1)} = \dfrac{a_{0}}{2!}  \\
+% a_{5} & = & 0 \\
+% a_{6} & = & \left(\dfrac{2}{6} \right)  \left(\dfrac{2}{4} \right) \left(\dfrac{2}{2} \right)a_{0} = \dfrac{a_{0}}{(3)(2)(1)} =   \dfrac{a_{0}}{3!} \\
+% \end{eqnarray*}
+% 
+% The pattern is now obvious, it can be shown using induction that:
+% 
+% \begin{eqnarray*}
+% a_{2n+1} & = & 0 , \quad n \geq 0\\
+% a_{2n} & = & \dfrac{a_{0}}{n!} , \quad n \geq 0 \\
+% \end{eqnarray*}
+% 
+% Hence the solution to the given differential equation is given by:
+% 
+% \begin{eqnarray*}
+% y(x) & = & \sum_{n=0}^{\infty} a_{n} x^n \\
+% & = & \sum_{n=0}^{\infty} a_{2n+1} x^{2n+1} + \sum_{n=0}^{\infty} a_{2n} x^{2n} \\
+% & = & \sum_{n=0}^{\infty} \dfrac{a_{0}}{n!} x^{2n} \\
+% & = & a_{0}\sum_{n=0}^{\infty} \dfrac{x^{2n}}{n!} \\
+% & = & a_{0} e^{x^2}
+% \end{eqnarray*}
+% \end{solution}
+% 
+% %------------------------------------------------------------------------------
+% \begin{problem}
+% Find at least the first four nonzero terms in a power series expansion about $x=0$ for the solution to the given initial value problem,
+% \begin{equation*}
+% (x^2-x+1)y^{\prime \prime} - y^{\prime} -y=0,\quad y(0)=0, y^{\prime}(0)=1.
+% \end{equation*}
+% \end{problem}
+% \begin{solution}
+% \indent Let $$y(x)= \displaystyle \sum_{n=0}^{\infty} a_{n} x^n = a_{0} + a_{1}x +a_{2}x^{2}+a_{3}x^{3} + a_{4}x^{4} + \cdots $$. Taking the first two derivatives, we have
+% 
+% \begin{align*}
+% y^{\prime}(x) & = a_{1} + 2 a_{2}x+ 3a_{3}x^{2} + 4a_{4}x^{3} + \cdots \\
+% y^{\prime \prime}(x) & = 2a_{2} + 6a_{3}x + 12a_{4}x^{2} + \cdots\\
+% \end{align*}
+% Using the initial conditions we see that $a_{0}=0$ and $a_{1}=1$.
+% Substituting these result into our equation, we obtain
+% \begin{align*}
+% 0 & =  (x^2-x+1) \cdot (2a_{2} + 6a_{3}x + 12a_{4}x^{2} + \cdots) \\
+% & \qquad - (1 + 2 a_{2}x+ 3a_{3}x^{2} + 4a_{4}x^{3} + \cdots) - (x +a_{2}x^{2}+a_{3}x^{3} + a_{4}x^{4} + \cdots) \\
+% & = (2a_{2}x^{2} + 6a_{3}x^{3} + 12a_{4}x^{4} + \cdots) + (- 2a_{2}x - 6a_{3}x^{2} - 12a_{4}x^{3} + \cdots) + (2a_{2} + 6a_{3}x + 12a_{4}x^{2} + \cdots) \\
+% & \qquad + ( -1 - 2 a_{2}x- 3a_{3}x^{2} - 4a_{4}x^{3} + \cdots) + (-x -a_{2}x^{2}-a_{3}x^{3} - a_{4}x^{4} + \cdots) \\
+% & = (-1 + 2a_{2})+ (-1-4a_{2}+6a_{3})x + (a_{2}-9a_{3}+12a_{4})x^{2}+\cdots 
+% \end{align*}
+% 
+% Matching terms of each side of this equation
+% 
+% 
+% 
+% \begin{align*}
+% 0 = 2a_{2}-1  & \Rightarrow a_{2} = \frac{1}{2} \\
+% 0 = -1-4\cancelto{\frac{1}{2}}{a_{2}}+6a_{3}  & \Rightarrow a_{3} = \frac{1}{2} \\
+% 0 = \cancelto{\frac{1}{2}}{a_{2}}-9\cancelto{\frac{1}{2}}{a_{3}}+12a_{4}  & \Rightarrow a_{4} = \frac{1}{3}
+% \end{align*}
+% 
+% Thus, the solution with the first four non-zero terms is given by
+% 
+% \begin{equation*}
+% \boxed{y(x) = x +\dfrac{1}{2}x^2+\dfrac{1}{2}x^3 + \dfrac{1}{3}x^4 + \ldots}
+% \end{equation*}
+% \end{solution}
+% 
+% 
+% 
+% \begin{problem}
+% Find at least the first four nonzero terms in a power series expansion about $x=0$ for the solution to the given initial value problem,
+% \begin{equation*}
+% y^{\prime} - e^{x} y =0, \quad y(0) =1.
+% \end{equation*}
+% \end{problem}
+% \begin{solution}
+% \indent Let $y(x) = \displaystyle \sum_{n=0}^{\infty} a_{n} x^n$.  Taking the first derivative , we obtain:
+% 
+% \begin{equation*}
+% y^{\prime}(x) = \displaystyle \sum_{n=1}^{\infty} n a_{n} x^{n-1}
+% \end{equation*}
+% We also know that that we can expand $e^{x}$ around $x=0$ into the following power series:
+% 
+% \begin{equation*}
+% e^{x} = \displaystyle \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!}
+% \end{equation*}
+% For this following problem, we will need to use the Cauchy-product of two infinite series defined as follows:
+% 
+% \begin{equation*}
+% \left(\sum_{n=0}^{\infty} b_{n} x^n \right)\left(\sum_{n=0}^{\infty} d_{n} x^n \right) =\sum_{n=0}^{\infty} c_{n} x^n,
+% \end{equation*}
+% where
+% 
+% \begin{equation*}
+% c_{n} = \sum_{k=0}^{n} b_{k} d_{n-k}
+% \end{equation*}
+% 
+% Plugging this results into our equation, we obtain:
+% 
+% \begin{eqnarray*}
+% 0 & = & \sum_{n=1}^{\infty} n a_{n} x^{n-1} -\left(\sum_{n=0}^{\infty} \dfrac{x^{n}}{n!}\right) \left(\sum_{n=0}^{\infty} a_{n} x^n\right) \\
+% & = & \sum_{n=0}^{\infty} (n+1) a_{n+1} x^{n} -\sum_{n=0}^{\infty}\left(\sum_{k=0}^{n} \dfrac{a_{k}}{(n-k)!} \right)x^n  \\
+% & = & \sum_{n=0}^{\infty} \left[(n+1) a_{n+1} - \sum_{k=0}^{n} \dfrac{a_{k}}{(n-k)!} \right] x^n
+% \end{eqnarray*}
+% 
+% This implies that:
+% \begin{equation*}
+% (n+1) a_{n+1} - \sum_{k=0}^{n} \dfrac{a_{k}}{(n-k)!}=0 , \quad \Rightarrow  a_{n+1} = \dfrac{1}{n+1} \sum_{k=0}^{n} \dfrac{a_{k}}{(n-k)!}
+% \end{equation*}
+% With our initial condition setting $a_{0}=1$, we have:
+% 
+% \begin{eqnarray*}
+%  a_{1} & = & 1\\
+%  a_{2} & = & 1 \\
+% a_{3}  & = & \dfrac{5}{6}
+% \end{eqnarray*}
+% 
+% Hence, the first four nonzero terms in a power series expansion about $x=0$ for the solution to the given initial value problem is given by:
+% 
+% \begin{equation*}
+% y(x) = 1 + x + x^2 + \dfrac{5}{6} x^3 + \ldots
+% \end{equation*}
+% \end{solution}
+% 
+
+
+
+
+\end{document}

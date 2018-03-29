@@ -1,0 +1,549 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 10}
+\labtitle{Eigenvalue problem}
+\makelabtitle
+
+
+
+
+
+\topic{Eigenvalue problems (zero boundary conditions)}
+\begin{problem}
+Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+
+
+\topic{Eigenvalue problems (zero-derivative boundary conditions)}
+\begin{problem}
+Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y'(0)=0  \,,\qquad y'(\pi) =0. 
+\end{equation*}
+\end{problem}
+
+
+\topic{Eigenvalue problems (mixed boundary conditions)}
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y'(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+
+
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0) - y'(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+
+
+
+\topic{Eigenvalue problems (general form)}
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + 4 y' + \lambda y =0\,; \qquad  0<x<\pi/2 \,, \qquad y(0)=0  \,,\qquad y(\pi/2) =0. 
+\end{equation*}
+\end{problem}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+\begin{preamble}
+\begin{formulaitem}
+ 
+\item For a \textbf{general eigenvalue problem }\[ay'' +b y' + \lambda y = 0, \qquad \text{s.t. boundary conditions}\footnote{\text{s.t. stands for subject to.}},\]
+the roots of the auxiliary equation are \[r=-\frac{b}{2a}\pm \frac{\sqrt{b^{2}-4a\lambda}}{2a}= -\frac{b}{2a}\pm \frac{\sqrt{\Delta}}{2a}.\]
+The three possible nontrivial solutions depend on the sign of the discriminant $\Delta=b^{2}-4a\lambda$.
+\begin{enumerate}
+     \item $\Delta=b^{2}-4a\lambda>0.$
+
+Then  $\lambda<\frac{b^{2}}{4a}$, $r_{1}=-\frac{b}{2}+ \frac{\sqrt{b^{2}-4a\lambda}}{2a}$,  $r_{2}=-\frac{b}{2a}- \frac{\sqrt{b^{2}-4a\lambda}}{2}$ (different real roots), and
+     \[{y(x)=C_{1}e^{r_{1}x}+C_{2}e^{r_{2}x}}.\]
+
+     \item $\Delta=b^{2}-4a\lambda=0.$
+
+Then  $\lambda=\frac{b^{2}}{4a}$, $r_{1}=r_{2}=\frac{b}{2a}$ (repeated real roots), and
+     \[{y(x)=C_{1}e^{r_{1}x}+C_{2}xe^{r_{1}x}}.\]
+
+
+     \item $\Delta=b^{2}-4a\lambda<0.$
+
+Then  $\lambda>\frac{b^{2}}{4ac}$, then $r_{1,2}=-\frac{b}{2a}\pm i \frac{\sqrt{4a\lambda- b^{2}}}{2a}=-\frac{b}{2a}\pm i\frac{\sqrt{-\Delta}}{2a}$ (complex roots), and
+     \[{y(x)=C_{1}e^{-\tfrac{b}{2a}x}\cos\left(\frac{\sqrt{-\Delta}}{2a}x\right) +C_{2}e^{-\tfrac{b}{2a}x}\sin\left(\frac{\sqrt{-\Delta}}{2a}x\right)}.\]
+\end{enumerate}
+For each one of the cases the goal is to use the boundary conditions to determine values for $\lambda$ leading to nontrivial solutions. A solution will be \textbf{trivial} ($y(x)=0$), when the boundary conditions imply $C_{1}=C_{2}=0$.
+
+\end{formulaitem}
+\end{preamble}
+
+
+
+
+
+\begin{problem}
+Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.
+
+\par \textsl{Case 1.} $\Delta = \lambda >0$. Then $r_{1}=\sqrt{\lambda}$, $r_{2}=-\sqrt{\lambda}$ are distinct real roots, and the solution to the ODE is
+\[y(x)=C_{1}e^{\sqrt{\lambda}x}+C_{2}e^{-\sqrt{\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1} +C_{2} & = & 0\\
+       e^{\sqrt{\lambda}\pi}C_{1} + e^{-\sqrt{\lambda}\pi}C_{2}& = & 0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix}1&1\\e^{\sqrt{\lambda}\pi} & e^{-\sqrt{\lambda}\pi}\end{matrix}\right|=e^{-\sqrt{\lambda}\pi}-e^{\sqrt{\lambda}\pi}=0,$$ 
+which implies $e^{\sqrt{\lambda}\pi}=e^{-\sqrt{\lambda}\pi}$, which is a contradiction since $\lambda\neq 0$. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 2.} $\Delta = \lambda =0$. Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to the ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{2} & = & 0\\
+       \pi C_{1} + C_{2} & = & 0
+      \end{array}\right. .
+\end{equation*}
+Which implies $C_{1}=C_{2}=0$. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = \lambda <0 .$ Then $r_{1}=i\sqrt{-\lambda}$, $r_{2}=-i\sqrt{-\lambda}$ are complex roots, and the solution to the ODE is
+\[y(x)=C_{1}\cos\sqrt{-\lambda}x+C_{2}\sin\sqrt{-\lambda}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1}  & = & 0\\
+       \cos(\sqrt{-\lambda}\pi)C_{1} + \sin(\sqrt{-\lambda}\pi)C_{2} & = & 0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[\sin(\sqrt{-\lambda}\pi)C_{2}=0 \,\Leftrightarrow\, C_{2} = 0 \text{ or } \sin(\sqrt{-\lambda}\pi)=0.\]
+For nontrivial solutions we need 
+\[\sin(\sqrt{-\lambda}\pi)=0 \,\Leftrightarrow \, \sqrt{-\lambda}\pi=n\pi\,\Leftrightarrow \, \sqrt{-\lambda}=n.\] 
+Thus, the eigenvalues are
+\[\boxed{\lambda_{n}=-n^{2}}, \quad n\geq 1,\]
+with eigenfunctions (recall that $C_{2}$ is arbitrary)
+\[\boxed{y_{n}(x)=C_{n}\sin(nx)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+
+\textbf{Note:} the general domain eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<L \,, \qquad y(0)=0  \,,\qquad y(L) =0,
+\end{equation*}
+has eigenvalues
+\[\boxed{\lambda_{n}=-\left( \frac{n\pi}{L}\right)^{2}}, \quad n\geq 1,\]
+and eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\sin\left( \frac{n\pi x}{L} \right)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+
+Recall the step where
+\[\sin(\sqrt{-\lambda}L)=0 \,\Leftrightarrow \, \sqrt{-\lambda}L=n\pi\,\Leftrightarrow \, \sqrt{-\lambda}=\frac{n\pi}{L}.\] 
+\end{solution}
+
+
+
+
+
+
+\begin{problem}
+Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{-\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.
+
+\par \textsl{Case 1.} $\Delta = -\lambda >0 \,\, \Rightarrow \, \lambda<0.$ Then $r_{1}=\sqrt{-\lambda}$, $r_{2}=-\sqrt{-\lambda}$ are distinct real roots, and the solution to the ODE is
+\[y(x)=C_{1}e^{\sqrt{-\lambda}x}+C_{2}e^{-\sqrt{-\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1} +C_{2}&=&0\\
+      e^{\sqrt{-\lambda}\pi}C_{1}  e^{-\sqrt{-\lambda}\pi}C_{2}& = &0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix}1&1\\ e^{\sqrt{-\lambda}\pi} & e^{-\sqrt{-\lambda}\pi}\end{matrix}\right|=e^{-\sqrt{-\lambda}\pi}-e^{\sqrt{-\lambda}\pi}=0,$$ 
+which implies $e^{\sqrt{-\lambda}\pi}=e^{-\sqrt{-\lambda}\pi}$, which is a contradiction since $\lambda\neq 0$. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 2.} $\Delta = -\lambda =0 \,\, \Rightarrow \, \lambda=0.$ Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to the ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{2} & = & 0\\
+       \pi C_{1} + C_{2} & = & 0
+      \end{array}\right. .
+\end{equation*}
+Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = -\lambda <0 \,\, \Rightarrow \, \lambda>0.$ Then $r_{1}=i\sqrt{\lambda}$, $r_{2}=-i\sqrt{\lambda}$ are complex roots, and the solution to the ODE is
+\[y(x)=C_{1}\cos\sqrt{\lambda}x+C_{2}\sin\sqrt{\lambda}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1} & = & 0\\
+       \cos(\sqrt{-\lambda}\pi)C_{1} + \sin(\sqrt{\lambda}\pi)C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[\sin(\sqrt{\lambda}\pi)C_{2}=0 \,\Leftrightarrow\, C_{2} = 0 \text{ or } \sin(\sqrt{\lambda}\pi)=0.\]
+For nontrivial solutions we need 
+\[\sin(\sqrt{\lambda}\pi)=0 \,\Leftrightarrow \, \sqrt{\lambda}\pi=n\pi\,\Leftrightarrow \, \sqrt{\lambda}=n.\] 
+Thus, the eigenvalues are
+\[\boxed{\lambda_{n}=n^{2}}, \quad n\geq 1,\]
+with eigenfunctions (recall that $C_{2}$ is arbitrary)
+\[\boxed{y_{n}(x)=C_{n}\sin(nx)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+
+\textbf{Note:} the general domain eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<L \,, \qquad y(0)=0  \,,\qquad y(L) =0,
+\end{equation*}
+has eigenvalues
+\[\boxed{\lambda_{n}=\left( \frac{n\pi}{L}\right)^{2}}, \quad n\geq 1,\]
+and eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\sin\left( \frac{n\pi x}{L} \right)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+
+\end{solution}
+
+
+
+
+
+
+
+
+
+\begin{problem}
+Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y'(0)=0  \,,\qquad y'(\pi) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.
+
+\par \textsl{Case 1.} $\Delta = \lambda >0$. Then $r_{1}=\sqrt{\lambda}$, $r_{2}=-\sqrt{\lambda}$ are distinct real roots, and the solution to the ODE is
+\[y(x)=C_{1}e^{\sqrt{\lambda}x}+C_{2}e^{-\sqrt{\lambda}x}.\]
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=\sqrt{\lambda}C_{1}e^{\sqrt{\lambda}x}-\sqrt{\lambda}C_{2}e^{-\sqrt{\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       \sqrt{\lambda}C_{1} -\sqrt{\lambda}C_{2} & = & 0\\
+       \sqrt{\lambda}e^{\sqrt{\lambda}\pi}C_{1} - \sqrt{\lambda} e^{-\sqrt{\lambda}\pi}C_{2}& = & 0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix}\sqrt{\lambda}&-\sqrt{\lambda}\\ \sqrt{\lambda}e^{\sqrt{\lambda}\pi} & - \sqrt{\lambda} e^{-\sqrt{\lambda}\pi}\end{matrix}\right|=-\lambda e^{-\sqrt{\lambda}\pi}+\lambda e^{\sqrt{\lambda}\pi}=0,$$ 
+which implies $e^{\sqrt{\lambda}\pi}=e^{-\sqrt{\lambda}\pi}$, which is a contradiction since $\lambda\neq 0$. Hence, \textsl{there is no nontrivial solution}.
+
+
+\par \textsl{Case 2.} $\Delta = \lambda =0$. Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to the ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=C_{1}.\]
+
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1} & = & 0\\
+       C_{1} & = & 0
+      \end{array}\right. .
+\end{equation*}
+Which implies $C_{2}$ is free to choose. Hence,  a non-trivial solution is the eigenvalue
+\[\boxed{\lambda=0},\]
+with eigenfunction
+\[\boxed{y(x)=C_{0}},\]
+
+\par \textsl{Case 3.} $\Delta = \lambda <0 .$ Then $r_{1}=i\sqrt{-\lambda}$, $r_{2}=-i\sqrt{-\lambda}$ are complex roots, and the solution to the ODE is
+\[y(x)=C_{1}\cos\sqrt{-\lambda}x+C_{2}\sin\sqrt{-\lambda}x.\]
+
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=-\sqrt{-\lambda}C_{1}\sin\sqrt{-\lambda}x+\sqrt{-\lambda}C_{2}\cos\sqrt{-\lambda}x.\]
+
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       \sqrt{-\lambda} C_{2}  & = & 0\\
+       -\sqrt{-\lambda}\sin(\sqrt{-\lambda}\pi)C_{1} + \sqrt{-\lambda}\cos(\sqrt{-\lambda}\pi)C_{2} & = & 0
+      \end{array}\right. ,
+\end{equation*}
+Since $\lambda\neq 0$, then $C_{2}=0$, and we need 
+\[-\sqrt{-\lambda}\sin(\sqrt{-\lambda}\pi)C_{1}=0 \,\Leftrightarrow\, C_{1} = 0 \text{ or } \sin(\sqrt{-\lambda}\pi)=0.\]
+For nontrivial solutions we need 
+\[\sin(\sqrt{-\lambda}\pi)=0 \,\Leftrightarrow \, \sqrt{-\lambda}\pi=n\pi\,\Leftrightarrow \, \sqrt{-\lambda}=n.\] 
+Thus, in this case the eigenvalues are
+\[\boxed{\lambda_{n}=-n^{2}}, \quad n\geq 1,\]
+with eigenfunctions (recall that $C_{1}$ is arbitrary)
+\[\boxed{y_{n}(x)=C_{n}\cos(nx)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+
+\textbf{Note:} we can combine Cases 2 and 3 to write eigenvalues
+\[\boxed{\lambda_{n}=-n^{2}}, \quad n\geq 0,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\cos(nx)}, \quad n\geq 0.\]
+
+\textbf{Note:} the general domain eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<L \,, \qquad y'(0)=0  \,,\qquad y'(L) =0,
+\end{equation*}
+has eigenvalues
+\[\boxed{\lambda_{n}=-\left( \frac{n\pi}{L}\right)^{2}}, \quad n\geq 0,\]
+and eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\cos\left( \frac{n\pi x}{L} \right)}, \quad n\geq 0,\]
+for some arbitrary constants $C_{n}$.
+\end{solution}
+
+
+
+
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y'(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{-\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.
+
+\par \textsl{Case 1.} $\Delta = -\lambda >0 \,\, \Rightarrow \, \lambda<0.$ Then $r_{1}=\sqrt{-\lambda}$, $r_{2}=-\sqrt{-\lambda}$ are distinct real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{\sqrt{-\lambda}x}+C_{2}e^{-\sqrt{-\lambda}x}.\]
+We need $y'(x)$ in order to use the first initial conditions
+\[y'(x)=\sqrt{-\lambda}C_{1}e^{\sqrt{-\lambda}x}-\sqrt{-\lambda}C_{2}e^{-\sqrt{-\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+        \sqrt{-\lambda}C_{1} - \sqrt{-\lambda}C_{2}&=&0\\
+       e^{\sqrt{-\lambda}\pi}C_{1} +e^{-\sqrt{-\lambda}\pi}C_{2}&=&0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix}\sqrt{-\lambda} & -\sqrt{-\lambda} \\ e^{\sqrt{-\lambda}\pi} & e^{-\sqrt{-\lambda}\pi}\end{matrix}\right|=\sqrt{-\lambda}e^{-\sqrt{-\lambda}\pi}+\sqrt{-\lambda}e^{\sqrt{-\lambda}\pi}=0,$$ 
+which implies $e^{\sqrt{-\lambda}\pi}=-e^{\sqrt{-\lambda}\pi}$, which is a contradiction since the exponential function is always positive and $\lambda\neq 0$. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 2.} $\Delta = -\lambda =0 \,\, \Rightarrow \, \lambda=0.$ Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+We need $y'(x)$ in order to use the first initial conditions
+\[y'(x)=C_{1}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1} & = &0\\
+       C_{1}\pi+C_{2} & = &0
+      \end{array}\right. \quad \Leftrightarrow \quad C_{1}=C_{2}=0.
+\end{equation*}
+Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = -\lambda <0 \,\, \Rightarrow \, \lambda>0.$ Then $r_{1}=i\sqrt{\lambda}$, $r_{2}=-i\sqrt{\lambda}$ are complex roots, and the solution to ODE is
+\[y(x)=C_{1}\cos\sqrt{\lambda}x+C_{2}\sin\sqrt{\lambda}x.\]
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=-\sqrt{\lambda}C_{1}\sin\sqrt{\lambda}x+\sqrt{\lambda}C_{2}\cos\sqrt{\lambda}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       \sqrt{\lambda}C_{2}  & = & 0\\
+       \cos(\sqrt{\lambda}\pi)C_{1} + \sin(\sqrt{\lambda}\pi)C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[\cos(\sqrt{\lambda}\pi)C_{1}=0 \,\Leftrightarrow\, C_{1} = 0 \text{ or } \cos(\sqrt{\lambda}\pi)=0.\]
+For nontrivial solutions we need 
+\[\cos(\sqrt{\lambda}\pi)=0 \,\Leftrightarrow \, \sqrt{\lambda}\pi=n\pi+\frac{\pi}{2}\,\Leftrightarrow \, \sqrt{\lambda}=n+\frac{1}{2}.\] 
+
+Then, the eigenvalues are
+\[\boxed{\lambda_{n}=(n+\tfrac{1}{2})^{2}}, \quad n\geq 0,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\cos((n+\tfrac{1}{2})x)}, \quad n\geq 0,\]
+for some arbitrary constants $C_{n}$.
+Note the difference with the previous problem where the BC's are slightly different.
+\end{solution}
+
+
+
+
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0) - y'(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{-\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.
+
+\par \textsl{Case 1.} $\Delta = -\lambda >0 \,\, \Rightarrow \, \lambda<0.$ Then $r_{1}=\sqrt{-\lambda}$, $r_{2}=-\sqrt{-\lambda}$ are distinct real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{\sqrt{-\lambda}x}+C_{2}e^{-\sqrt{-\lambda}x}.\]
+We need $y'(x)$ in order to use the first initial conditions
+\[y'(x)=\sqrt{-\lambda}C_{1}e^{\sqrt{-\lambda}x}-\sqrt{-\lambda}C_{2}e^{-\sqrt{-\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       (1-\sqrt{-\lambda})C_{1} + (1+\sqrt{-\lambda})C_{2}&=&0\\
+       e^{\sqrt{-\lambda}\pi}C_{1} +e^{-\sqrt{-\lambda}\pi}C_{2}&=&0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix}1-\sqrt{-\lambda} & 1+\sqrt{-\lambda} \\ e^{\sqrt{-\lambda}\pi} & e^{-\sqrt{-\lambda}\pi}\end{matrix}\right|=(1-\sqrt{-\lambda})e^{-\sqrt{-\lambda}\pi}-(1+\sqrt{-\lambda})e^{\sqrt{-\lambda}\pi}=0.$$ 
+Or 
+\[1-\sqrt{-\lambda}-(1+\sqrt{-\lambda})e^{2\sqrt{-\lambda}\pi}=0\]
+Since $\lambda <0$, then $-e^{2\sqrt{-\lambda}\pi}<1$, and
+\[1-\sqrt{-\lambda}-(1+\sqrt{-\lambda})e^{2\sqrt{-\lambda}\pi}<1-\sqrt{-\lambda}-1-\sqrt{-\lambda}=-2\sqrt{-\lambda}<0,\]
+which is a contradiction. Thus, no non-trivial solution.
+
+\par \textsl{Case 2.} $\Delta = -\lambda =0 \,\, \Rightarrow \, \lambda=0.$ Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+We need $y'(x)$ in order to use the first initial conditions
+\[y'(x)=C_{1}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{2} -C_{1}& = &0\\
+       C_{1}\pi+C_{2} & = &0
+      \end{array}\right. \quad \Leftrightarrow \quad C_{1}=C_{2}=0.
+\end{equation*}
+Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = -\lambda <0 \,\, \Rightarrow \, \lambda>0.$ Then $r_{1}=i\sqrt{\lambda}$, $r_{2}=-i\sqrt{\lambda}$ are complex roots, and the solution to ODE is
+\[y(x)=C_{1}\cos\sqrt{\lambda}x+C_{2}\sin\sqrt{\lambda}x.\]
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=-\sqrt{\lambda}C_{1}\sin\sqrt{\lambda}x+\sqrt{\lambda}C_{2}\cos\sqrt{\lambda}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1}-\sqrt{\lambda}C_{2}  & = & 0\\
+       \cos(\sqrt{\lambda}\pi)C_{1} + \sin(\sqrt{\lambda}\pi)C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[C_{1}=\sqrt{\lambda}C_{2}\Rightarrow \sqrt{\lambda}\cos(\sqrt{\lambda}\pi)C_{2}+\sin(\sqrt{\lambda}\pi)C_{2}=0 \,\Rightarrow\, \sqrt{\lambda} + \tan(\sqrt{\lambda}\pi)=0,\]
+which has infinite solutions. Thus, the eigenvalues are given by the implicit equation
+\[\boxed{\lambda_{n}+ \tan\left(\sqrt{\lambda_{n}}\pi\right)=0}, \quad n\geq 1,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\left(\sqrt{\lambda_{n}}\cos \left(\sqrt{\lambda_{n}}x\right)+ \sin \left(\sqrt{\lambda_{n}}x\right)\right)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+\end{solution}
+
+
+
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + 4 y' + \lambda y =0\,; \qquad  0<x<\pi/2 \,, \qquad y(0)=0  \,,\qquad y(\pi/2) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=-2\pm\sqrt{4-\lambda}=2\pm\sqrt{\Delta}.\]
+We consider the three cases.
+
+\par \textsl{Case 1.} $\Delta = 4-\lambda >0 \,\, \Rightarrow \, \lambda<4.$ Then $r_{1}=-2+\sqrt{4-\lambda}$, $r_{2}=-2-\sqrt{4-\lambda}$ are distinct real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{r_{1}x}+C_{2}e^{r_{2}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1} +C_{2}&=&0\\
+       e^{r_{1}\pi/2}C_{1} + e^{r_{2}\pi/2}C_{2}&=&0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix} 1 & 1 \\ e^{r_{1}\pi/2} & e^{r_{2}\pi/2}\end{matrix}\right|=e^{r_{1}\pi/2}-e^{r_{2}\pi/2}=0,$$ 
+which implies $r_{1}=r_{2}$, which is a contradiction since the roots are different. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 2.} $\Delta = 4-\lambda =0 \,\, \Rightarrow \, \lambda=4.$ Then $r_{1}=r_{2}=-2$ are repeated real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{-2x}+C_{2}xe^{-2x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1}  &= &0\\
+       e^{-\pi}C_{1} +\tfrac{\pi}{2}e^{\pi}C_{2} &= &0
+      \end{array}\right. \quad \Leftrightarrow \quad C_{1}=C_{2}=0.
+\end{equation*}
+Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = 4-\lambda <0 \,\, \Rightarrow \, \lambda>4.$ Then $r_{1}=-2+i\sqrt{\lambda-4}$, $r_{2}=-2-i\sqrt{\lambda-4}$ are complex roots, and the solution to ODE is
+\[y(x)=C_{1}e^{-2x}\cos\sqrt{\lambda-4}x+C_{2}e^{-2x}\sin\sqrt{\lambda-4}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1}  & = & 0\\
+       e^{-\pi}\cos(\sqrt{\lambda-4}\tfrac{\pi}{2})C_{1} + e^{-\pi}\sin(\sqrt{\lambda-4}\tfrac{\pi}{2})C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[\sin(\sqrt{\lambda-4}\tfrac{\pi}{2})C_{2}=0 \,\Leftrightarrow\, C_{2} = 0 \text{ or } \sin(\sqrt{\lambda-4}\tfrac{\pi}{2})=0.\]
+For nontrivial solutions we need 
+\[\sin(\sqrt{\lambda-4}\tfrac{\pi}{2})=0 \,\Leftrightarrow \, \sqrt{\lambda-4}\tfrac{\pi}{2}=n\pi \,\Leftrightarrow \, \sqrt{\lambda-4}=2n.\] 
+Thus, the eigenvalues are
+\[\boxed{\lambda_{n}=4n^{2}+4}, \quad n > 0,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}e^{-2x}\sin(2nx)}, \quad n > 0,\]
+for some arbitrary constants $C_{n}$.
+\end{solution}
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,281 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 6}
+\labtitle{Series solutions: singular points}
+\makelabtitle
+
+
+
+\topic{Singular points}
+\begin{problem}
+{ Determine all the singular points of the given differential equation}
+\begin{equation*}
+(t^2-t-2)x^{\prime \prime} + (t+1)x^{\prime} - (t-2)x =0.
+\end{equation*}
+\end{problem}
+
+\begin{problem}
+Classify all singular points of the following equation
+\begin{equation*}
+(x^{2}-x+1)y'' -y' - y = 0.
+\end{equation*}
+\end{problem}
+
+\begin{problem}
+Classify all singular points of the following equation
+\begin{equation*}
+(x^{3}-x)y'' + (\cos (x) - 1)y' + (x^2 -x)y = 0.
+\end{equation*}
+\end{problem}
+
+
+\topic{Radius of convergence}
+
+\begin{problem}
+Find a minimum value for the radius of convergence of a power series solution about $x_{0} =1$,
+\begin{equation*}
+y'' + \frac{2}{x^{2}-2x-3}y'-\frac{3}{x^2+x+1}y =0.
+\end{equation*}
+\end{problem}
+
+
+% \topic{Solution around singular points}
+% 
+% \begin{problem}
+% Find a power series solution about $x=0$ to the problem
+% \[4x^{2}y''+2x^{2}y'-(x+3)y=0.\]
+% \end{problem}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+\begin{preamble}
+Consider the problem
+\begin{equation}
+y''+p(x)y'+q(x)y=0.
+\label{equ:secondorderlinear}
+\end{equation}
+\begin{formulaitem}
+     \item The point $x_{0}$ is a \textbf{regular point} for \eqref{equ:secondorderlinear} if both $p(x)$ and $q(x)$ are analytic about $x_{0}$ (i.e., have a power series about $x_{0}$ with positive radius of convergence). The point $x_{0}$ is a \textbf{singular point}  for \eqref{equ:secondorderlinear} if it is not regular.
+     \item \textbf{Distance} between two complex points $z_{1}=\alpha_{1} + i\beta_{1}$ and $z_{2}=\alpha_{2} + i\beta_{2}$.
+     \begin{equation*}
+     d(z_{1},z_{2})=|(\alpha_{1}-\alpha_{2}) + i(\beta_{1}-\beta_{2})|=\sqrt{(\alpha_{1}-\alpha_{2})^{2} + (\beta_{1} - \beta_{2})^{2}}.
+     \end{equation*}
+     \item The \textbf{minimum radius of convergence} of \eqref{equ:secondorderlinear} about $x_{0}$ is
+     \[\rho = \min_{k}d(x_{0},z_{k}),\]
+     where $z_{k}$ are all singular points of \eqref{equ:secondorderlinear}. That is, the minimun radius of convergence is the distance between $x_{0}$ and the closest singular point of the equation.
+%      \item The point $x=x_{0}$ is a \textbf{regular singular point} if it is singular point but not a singularity for both $(x-x_{0})p(x)$ and $(x-x_{0})^2q(x)$. i.e., if 
+%      \[\lim_{x\rightarrow x_0}p(x)=\pm \infty, \qquad \lim_{x\rightarrow x_0}q(x)=\pm \infty,\]
+%      but
+%      \[\lim_{x\rightarrow x_0}(x-x_{0})p(x)<\infty, \qquad \lim_{x\rightarrow x_0}(x-x_{0})^2q(x)<\infty.\]
+%      Otherwise, the point $x=x_{0}$ is a \textbf{irregular singular point}.
+%      \item Define
+%      \[a(x) = (x-x_{0})p(x) = \sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}= a_{0} + a_{1}(x-x_{0})+a_{2}(x-x_{0})^{2}+\cdots\]
+%      \[b(x) = (x-x_{0})^{2}q(x) = \sum_{n=0}^{\infty}b_{n}(x-x_{0})^{n} = b_{0} + b_{1} (x-x_{0}) +b_{2}(x-x_{0})^{2}+\cdots\]
+%      \item For $a_{0}$ and $b_{0}$ defined above, the \textbf{indicial equation} is 
+%      \[f(r) = r^{2} + (a_{0}-1)r+b_{0}=0,\]
+%      has two roots $r_{1}$, the largerst, and $r_{2}$.
+%      \item The \textbf{Frobenious method} consists on assuming a solution of the form 
+%      \[y_{1}(x)=(x-x_{0})^{r_{1}}\sum_{n=0}^{\infty}c_{n}(x-x_{0})^{n} = \sum_{n=0}^{\infty}c_{n}(x-x_{0})^{n+r_{1}},\]
+%      where $r_{1}$ is the largest root of the indicial equation, and 
+%      \[c_{n}(r)=\frac{-1}{f(r+n)}\sum_{k=0}^{n-1}[(k+r)a_{n-k}+b_{n-k}]c_{k}.\]
+%      Recall that $c_{0}=1$ can be chosen, and $c_{-1}=c_{-2}=\dots=0$. 
+%      \item A \textbf{second solution} can be found depending on the other root of the indicial equation, $r_{1}$ and $r_{2}$,
+%      \begin{itemize}
+%      \item[\textbullet] $r_{1}-r_{2}$ is \textsl{non-integer}. Then
+%           \[y_{2}(x)=(x-x_{0})^{r_{2}}\sum_{n=0}^{\infty}c_{n}(x-x_{0})^{n}\]
+%           where $c_{n}$ is defined as before
+%      \item[\textbullet] $r_{1}=r_{2}$. Then
+%           \[y_{2}(x)=y_{1}(x)\ln(x)+(x-x_{0})^{r_{1}}\sum_{n=1}^{\infty}d_{n}(x-x_{0})^{n}\]
+%           where
+%           \[d_{n}(r)=-\frac{1}{n^{2}}\sum_{k=0}^{n-1}\{[(k+r)a_{n-k}+b_{n-k}]d_{k} + a_{n-k}c_{k}\}-\frac{2}{n}c_{n}.\]
+%      \item[\textbullet] $r_{1}-r_{2}=m$ is \textsl{integer}. Then
+%           \[y_{2}(x)=\alpha y_{1}(x)\ln(x)+(x-x_{0})^{r_{2}}\sum_{n=0}^{\infty}e_{n}(x-x_{0})^{n}\]
+%           where for $0<n<m$
+%           \[e_{n}(r_{2})=\frac{-1}{n(n-m)}\sum_{k=0}^{n-1}[(k+r_{2})a_{n-k}+b_{n-k}]e_{k},\]
+%           and for $n>m$
+%           \begin{equation*}\begin{split} e_{n}(r_{2})= & \frac{-1}{n(n-m)}\sum_{k=0}^{n-1}[(k+r_{2})a_{n-k}+b_{n-k}]e_{k}\\& -\frac{\alpha}{n(n-m)}\left( (2n-m)c_{n-m} + \sum_{k=m}^{n-1}a_{n-k}c_{k-m} \right),\end{split}
+%           \end{equation*}
+%           and 
+%           \[\alpha = \frac{-1}{m}\sum_{k=0}^{m-1}[(k+r_{2})a_{m-k}+b_{m-k}]e_{k}.\]
+%      \end{itemize}
+\end{formulaitem}
+\end{preamble}
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+{ Determine all the singular points of the given differential equation}
+\begin{equation*}
+(t^2-t-2)x^{\prime \prime} + (t+1)x^{\prime} - (t-2)x =0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Normalizing this equation, we have:
+
+\begin{equation*}
+x^{\prime \prime} + \left(\dfrac{t+1}{t^2-t-2}\right)x^{\prime} - \left(\dfrac{t-2}{t^2-t-2}\right)x =0
+\end{equation*}
+
+\begin{equation*}
+x^{\prime \prime} + \left(\dfrac{t+1}{(t-2)(t+1)}\right)x^{\prime} - \left(\dfrac{t-2}{(t-2)(t+1)}\right)x =0
+\end{equation*}
+
+Hence, we have:
+
+\begin{equation*}
+p(t) = \dfrac{t+1}{(t-2)(t+1)}, \quad q(t)  = \dfrac{t-2}{(t-2)(t+1)}
+\end{equation*}
+As we can see,  $p(t)$ is analytic on $(-\infty, 2) \cup (2, \infty)$ and $q(t)$ is analytic on  $(-\infty, -1) \cup (-1, \infty)$. 
+Hence, $ t = \{-1,2\}$ are singular points of this equation.
+\end{solution}
+
+%------------------------------------------------------------------------------
+\begin{problem}
+Classify all singular points of the following equation
+\begin{equation*}
+(x^{2}-x+1)y'' -y' - y = 0.
+\end{equation*}
+\end{problem}
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+Classify all singular points of the following equation
+\begin{equation*}
+(x^{3}-x)y'' + (\cos (x) - 1)y' + (x^2 -x) y = 0.
+\end{equation*}
+\end{problem}
+
+
+
+
+
+%------------------------------------------------------------------------------
+\begin{problem}
+Find a minimum value for the radius of convergence of a power series solution about $x_{0} =1$,
+\begin{equation*}
+y'' + \frac{2}{x^{2}-2x-3}y'-3\frac{3}{x^2+x+1}y =0.
+\end{equation*}
+\end{problem}
+\begin{solution}
+The coefficient in front of the $y$ terms has a singular point when $x^2+x+1=0$ and $x^{2}-2x-3=0$.
+
+\begin{equation*}
+x^2+x+1 = 0 \Rightarrow x = \dfrac{-1 \pm \sqrt{1-4}}{2} = \dfrac{-1}{2} \pm i \dfrac{\sqrt{3}}{2} 
+\end{equation*}
+
+\begin{equation*}
+x^2-2x-3 = 0 \Rightarrow x = -1,3
+\end{equation*}
+
+Hence, the radius of convergence of a power series solution about $x_{0} =1$ is at least as large as the distance from $x_{0} =1$ to the closest singular point $ \tfrac{-1}{2} \pm i \tfrac{\sqrt{3}}{2} $, $-1$, or $3$.
+
+The distance between $x_{0} =1$ to $x=\tfrac{-1}{2} \pm i \tfrac{\sqrt{3}}{2}$ is given by
+
+\begin{eqnarray*}
+d\left(1,\dfrac{-1}{2} \pm i \dfrac{\sqrt{3}}{2}\right)   & = & \sqrt{ \left(1-\dfrac{-1}{2}\right)^2 + \left(0-\dfrac{\pm\sqrt{3}}{2}\right)^2 } = \sqrt{ \left(\dfrac{3}{2}\right)^2 + \left(\dfrac{\sqrt{3}}{2}\right)^2 }\\
+& = &  \sqrt{ \dfrac{9}{4} + \dfrac{3}{4} } =  \sqrt{\dfrac{12}{4} } =  \sqrt{3 }, \\
+\end{eqnarray*}
+while
+\[d(1,-1)=2\qquad d(1,3)=2\]
+Hence, $x=\tfrac{-1}{2} \pm i \tfrac{\sqrt{3}}{2}$ are the closest singular points and the radius of convergence of a power series solution about $x_{0} =1$ is at least as large as $\sqrt{3}$.
+\end{solution}
+
+
+
+% %------------------------------------------------------------------------------
+% \begin{problem}
+% Find a power series solution about $x=0$ to the problem
+% \[4x^{2}y''+2x^{2}y'-(x+3)y=0.\]
+% \end{problem}
+% \begin{solution}
+% Fisrt we find $p(x)$ and $q(x)$
+% \[p(x)=\frac{1}{2}, \qquad q(x)=-\frac{x+3}{4x^{2}}\]
+% where clearly $x_{0}=0$ is a singular point for $q(x)$. Moreover, $x_{0}=0$ is a regular--singular point since 
+% \[a(x)=\frac{1}{2}x, \quad \Rightarrow \quad a_{1}=\frac{1}{2}, \quad a_{n}=0, \, n\neq 1,\]
+% and
+% \[b(x)=-\frac{3}{4}-\frac{1}{4}x, \quad \Rightarrow \quad b_{0}= -\frac{3}{4}, b_{1}=-\frac{1}{4}, \quad b_{n}=0, \, n\geq 2,\]
+% are analytic. The indicial equation is given by
+% \[f(s)=s^{2}-1s-\frac{3}{4}=0,\qquad r = \frac{4\pm \sqrt{16+48}}{8}\quad \Rightarrow \quad s_{1}=\frac{3}{2}, \,\, s_{2}=-\frac{1}{2}. \]
+% Take the largest root $s_{1}=\frac{3}{2}$ so a power series solution has the form
+% \[y(x)=\sum_{n=0}^{\infty} c_{n}x^{n+\frac{3}{2}}.\]
+% \textit{(Recursive formula)}
+% 
+% Now, we can use the given recursive formula for $c_{n}$. First we find $f(s_{1}+n)$,
+% \[f(s)=(s-\tfrac{3}{2})(s+\tfrac{1}{2})\quad \Rightarrow \quad f(s+n)=n(n+2),\]
+% then
+% \[c_{n}=\frac{-1}{n(n+2)}\sum_{k=0}^{n-1}[(k+\tfrac{3}{2})a_{n-k}+b_{n-k}]c_{k}.\]
+% Note that the only $a_{n}$ term that is not zeros is $a_{1}=\tfrac{1}{2}$, so only $a_{n-k}$ for $n-k=1$ survives, i.e. only $k=n-1$ survives. For $b_{n}$, the terms $b_{0}$ and $b_{1}$ are non-zero, but $n-k=0$ implies $k=n$ which is out of the summation limits ($k$ index up to $n-1$), thus only $k=n-1$ survives. Hence
+% \[c_{n}=\frac{-1}{n(n+2)}[(n+\tfrac{1}{2})\tfrac{1}{2}-\tfrac{1}{4}]c_{n-1}=\frac{-1}{2(n+2)}c_{n-1}.\]
+% \textit{(Find pattern)}
+% 
+% Set $c_{0}=1$ to get
+% \begin{equation}
+% \begin{split}
+% c_{1}&=\frac{-1}{2\cdot 3}c_{0}=\frac{-1}{2\cdot 3}\\
+% c_{2}&=\frac{-1}{2\cdot 4}c_{1}=\frac{1}{2^{2}\cdot 4\cdot 3}\\
+% c_{3}&=\frac{-1}{2\cdot 5}c_{2}=\frac{-1}{2^{3}\cdot 4\cdot 3}=\frac{-1}{2^{2}\cdot 5 !}.
+% \end{split}
+% \end{equation}
+% After a few terms we are convinced that
+% \[c_{n}=\frac{(-1)^{n}}{2^{n-1}n!},\]
+% which is valid for $n=0$ too.
+% Finally,
+% \[\boxed{y(x)=\sum_{n=0}^{\infty} \frac{(-1)^{n}}{2^{n-1}n!}x^{n+\frac{3}{2}}}.\]
+% 
+% For the second solution we see that $s_{1}-s_{2}=2$ is an integer value, thus 
+% \[y_{2}(x)=\alpha y_{1}(x)\ln(x)+x^{-\tfrac{1}{2}}\sum_{n=1}^{\infty}e_{n}x^{n}.\]
+% First we compute $\alpha$,
+% \[\alpha=-\frac{1}{2}\sum_{k=1}^{2-1}\left[ \left(k+\left( -\tfrac{1}{2} \right)\right)a_{m-k} +b_{m-k} \right]c_{k}\underbrace{=}_{m-k=1}-\frac{1}{2}\left[ \left(1 + \left( -\tfrac{1}{2} \right) \right) \tfrac{1}{2} + (-\tfrac{1}{4}) \right] \left( -\tfrac{1}{6} \right) = 0.
+% \]
+% When $\alpha=0$ several terms cancel (yay!). 
+% 
+% Then for $n<2$ (or $n=1$)
+% \[e_{n}(-\tfrac{1}{2})=\frac{-1}{n(n-2)}\sum_{k=0}^{n-1}\left[ \left( k-\tfrac{1}{2} \right) a_{n-k} +b_{n-k} \right] c_{k} \underbrace{=}_{n=1, \, k=0} \frac{-1}{1(1-2)}\left[ \left( -\tfrac{1}{2}\right)\tfrac{1}{2} + \left(-\tfrac{1}{4}\right) \right] 1 = -\tfrac{1}{2}.\]
+% 
+% 
+% And for $n>2$
+% \begin{equation*}\begin{split}
+% e_{n}(-\tfrac{1}{2})&=\frac{-1}{n(n-2)}\sum_{k=0}^{n-1}\left[ \left( k-\tfrac{1}{2} \right) a_{n-k} +b_{n-k} \right] c_{k} \underbrace{=}_{n-k=1} \frac{-1}{n(n-2)}\left[ \left( n-1 -\tfrac{1}{2}\right)\tfrac{1}{2} + \left(-\tfrac{1}{2}\right) \right] \frac{(-1)^{n}}{2^{n-1}(n+2)!} \\
+% &= \frac{(-1)^{n+1}(n-\tfrac{5}{2})}{2^{n-1}n(n-2)(n+2)!}
+% \end{split}
+% \end{equation*}
+% Thus,
+% \[\boxed{y_{2}(x)=x^{-1/2}\left[ 1 - \tfrac{1}{2}x + \sum_{n=3}^{\infty} \frac{(-1)^{n+1}(n-\tfrac{5}{2})}{2^{n-1}n(n-2)(n+2)!}x^{n} \right]}.\]
+% \end{solution}
+
+
+\end{document}

@@ -1,0 +1,204 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab 0}
+\labtitle{Integration techniques}
+\makelabtitle
+
+% 1
+\begin{problem}
+Find the given integral to compute
+\[e^{\int \frac{-4}{x}dx}.\]
+\end{problem}
+
+%2
+\begin{problem}
+Find
+\[\int\frac{x}{\sqrt{1+x}}dx.\]
+\end{problem}
+
+
+%3
+\begin{problem}
+Find the following integrals
+\[\int^{\pi/2}_{-\pi/2}\cosh(ix)dx, \qquad \int^{\pi/2}_{-\pi/2}\sinh(ix)dx.\]
+\end{problem}
+
+
+
+\begin{problem}
+Find the following integrals
+\[\int x^{3}\cos(n\pi x)dx, \qquad \int x^{3}\sin(n\pi x)dx.\]
+\end{problem}
+
+
+\begin{problem}
+For constants $a$ and $b$, find the integral
+\[\int_{0}^{\infty} \sin(bt)e^{-at}dt.\]
+\end{problem}
+
+
+\begin{problem}
+Show that
+\[\int \frac{dx}{a^{2}+x^{2}}=\frac{1}{a}\arctan \left( \frac{x}{a} \right)+C.\]
+\end{problem}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+% 1
+\begin{problem}
+Find the given integral to compute
+\[e^{\int \frac{-4}{x}dx}.\]
+\end{problem}
+
+\begin{solution}
+Integrating and applying logarithm properties
+\[\int \frac{-4}{x}dx = -4 \ln |x| + C = \ln |x|^{-4} + C = \ln |x^{-4}| +C.\]
+Thus
+\[\boxed{e^{\int \frac{-4}{x}dx} = e^{\ln |x^{-4}| +C} = K x^{-4}},\]
+for some constant $K$.
+\end{solution}
+
+
+%2
+\begin{problem}
+Find
+\[\int\frac{x}{\sqrt{1+x}}dx.\]
+\end{problem}
+\begin{solution}
+Using substitution $t = x +1$, we have
+\[\int\frac{x}{\sqrt{1+x}}dx = \int\frac{t-1}{\sqrt{t}}dt=\int t^{1/2}dt - \int t^{-1/2}dt = \frac{2}{3}t^{3/2}-2t^{1/2}+C,\]
+Subtituting back to $x$ 
+\[\boxed{\int\frac{x}{\sqrt{1+x}}dx=\frac{2}{3}(x+1)^{3/2}-2(x+1)^{1/2}+C}.\]
+\end{solution}
+
+
+
+%3
+\begin{problem}
+Find the following integrals
+\[\int^{\pi/2}_{-\pi/2}\cosh(ix)dx, \qquad \int^{\pi/2}_{-\pi/2}\sinh(ix)dx.\]
+\end{problem}
+\begin{solution}
+Recall that
+\[\cosh(ix)=\frac{e^{ix}+e^{-ix}}{2}=\cos(x),\]
+\[\sin(ix)=\frac{e^{ix}-e^{-ix}}{2}=i\sin(x).\]
+Thus,
+\[\int^{\pi/2}_{-\pi/2}\cosh(ix)dx = \int^{\pi/2}_{-\pi/2}\cos(x)dx= 2 \int^{\pi/2}_{0}\cos(x)dx = 2 \left.\sin x \right|_{0}^{\pi/2} = 2.\]
+and
+\[\int^{\pi/2}_{-\pi/2}\sinh(ix)dx = i \int^{\pi/2}_{-\pi/2}\sin(x)dx = 0.\]
+\end{solution}
+
+
+
+
+\begin{problem}
+Find the following integrals
+\[ \int x^{3}\cos(n\pi x)dx, \qquad \int x^{3}\sin(n\pi x)dx.\]
+\end{problem}
+\begin{solution}
+Consider the first integral. We need to integrate by parts three time, so the following table becomes handy.
+\begin{center}
+\begin{tabular}{c|c|c}
+sign & derivative & integral \\
+\hline
+ &          & $ \cos(n\pi x)$ \\
+$+$ & $x^{3}$  & $ \frac{1}{n \pi} \sin(n\pi x)$ \\
+$-$ & $3x^{2}$ & $-\left( \frac{1}{n \pi} \right)^{2} \cos(n\pi x)$ \\
+$+$ & $6x$     & $-\left( \frac{1}{n \pi} \right)^{3} \sin(n\pi x)$ \\
+$-$ & $6$      & $ \left( \frac{1}{n \pi} \right)^{4} \cos(n\pi x)$ \\
+$+$ & $0$      & $ \left( \frac{1}{n \pi} \right)^{5} \sin(n\pi x)$
+\end{tabular}
+\end{center}
+There is no need to compute the last row when you now one term becomes zero. From there is easy to compute all terms of the integral at once by multiplying each row.
+\[ \boxed{\int x^{3}\cos(n\pi x)dx = x^{3}\frac{1}{n\pi}\sin(n \pi x) + 3x^{2}\left( \frac{1}{n \pi} \right)^{2} \cos(n\pi x) - 6x\left( \frac{1}{n \pi} \right)^{3} \sin(n\pi x) - 6\left( \frac{1}{n \pi} \right)^{4} \cos(n\pi x)}.\]
+Consider now the second integral. The correspondent integration by parts table is
+\begin{center}
+\begin{tabular}{c|c|c}
+sign & derivative & integral \\
+\hline
+  &          & $ \sin(n\pi x)$ \\
+$+$ & $x^{3}$  & $-\frac{1}{n \pi} \cos(n\pi x)$ \\
+$-$ & $3x^{2}$ & $-\left( \frac{1}{n \pi} \right)^{2} \sin(n\pi x)$ \\
+$+$ & $6x$     & $ \left( \frac{1}{n \pi} \right)^{3} \cos(n\pi x)$ \\
+$-$ & $6$      & $ \left( \frac{1}{n \pi} \right)^{4} \sin(n\pi x)$
+\end{tabular}
+\end{center}
+Thus, 
+\[\boxed{\int x^{3}\sin(n\pi x)dx = - x^{3}\frac{1}{n \pi} \cos(n\pi x) + 3x^{2}\left( \frac{1}{n \pi} \right)^{2} \sin(n\pi x) + 6x \left( \frac{1}{n \pi} \right)^{3} \cos(n\pi x) - 6\left( \frac{1}{n \pi} \right)^{4} \sin(n\pi x)}.\]
+
+If you want to step further, you can compute both integrals at the same time by computing the single integral
+\[ \int x^{3}e^{i n\pi x}dx = \int x^{3}\cos(n\pi x)dx + i \int x^{3}\sin(n\pi x)dx.\]
+and then separating real and complex part. That is, using the table
+\begin{center}
+\begin{tabular}{c|c|c}
+sign & derivative & integral \\
+\hline
+  &          & $ e^{i n\pi x}$ \\
+$+$ & $x^{3}$  & $-i\left( \frac{1}{n \pi} \right) e^{i n\pi x}$ \\
+$-$ & $3x^{2}$ & $- \left( \frac{1}{n \pi} \right)^{2} e^{i n\pi x}$ \\
+$+$ & $6x$     & $ i\left( \frac{1}{n \pi} \right)^{3} e^{i n\pi x}$ \\
+$-$ & $6$      & $  \left( \frac{1}{n \pi} \right)^{4} e^{i n\pi x}$
+\end{tabular}
+\end{center} 
+Try it!
+\end{solution}
+
+
+
+\begin{problem}
+For constants $a$ and $b$, find the integral
+\[\int_{0}^{\infty} \sin(bt)e^{-at}dt.\]
+\end{problem}
+\begin{solution}
+If we integrate by [arts twice we arrive to the same integral where we can isolate it.
+\[\int_{0}^{\infty} \sin(bt)e^{-at}dt  = \left[ -\frac{1}{a}\sin (bt)e^{-at}\right]^{\infty}_{0} + \left[- \frac{b}{a^{2}}\cos (bt)e^{-at}\right]^{\infty}_{0} - \frac{a^{2}}{b^{2}}\int_{0}^{\infty}\sin(bt)e^{-at}dt.\]
+Recall that
+\[\lim_{t\rightarrow{\infty}}\cos(bt)e^{-at}=\lim_{t\rightarrow{\infty}}\sin(bt)e^{-at}=0,\]
+then 
+\[\left[ -\frac{1}{a}\sin (bt)e^{-at}\right]^{\infty}_{0} = 0 , \qquad \left[ -\frac{b}{a^{2}}\cos (bt)e^{-at}\right]^{\infty}_{0} = \frac{b}{a^{2}}.\]
+Denoting $I=\int_{0}^{\infty} \sin(bt)e^{-at}dt$ and multiplying by $a^{2}$, we get
+\[a^{2}I=b - b^{2}I \quad \Rightarrow \quad I= \frac{b}{a^{2}+b^{2}} \quad \Rightarrow \quad  \boxed{\int_{0}^{\infty} \sin(bt)e^{-at}dt= \frac{b}{a^{2}+b^{2}}}.\]
+\end{solution}
+
+
+
+\begin{problem}
+Show that
+\[\int \frac{dx}{a^{2}+x^{2}}=\frac{1}{a}\arctan \left( \frac{x}{a} \right)+C.\]
+\end{problem}
+\begin{solution}
+Using substitution $x = a \tan t$, ($dx = a \sec^{2}tdt$)
+\[\int \frac{dx}{a^{2}+x^{2}} = \int \frac{a\sec^{2} t dt}{a^{2}\sec^{2}t} = \frac{1}{a}t + C = \boxed{\frac{1}{a}\arctan\left( \frac{x}{a} \right) + C}.\]
+\end{solution}
+
+
+
+
+\end{document}

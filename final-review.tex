@@ -1,0 +1,1245 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+\documentclass[11pt]{article}
+\input{labs-style.tex}
+\usepackage{hyperref}
+\usepackage{cancel}
+
+
+\begin{document}
+
+
+\course{Differential Equations}
+\coursecode{MATH 201}
+\term{Winter 2018}
+\instructor{Carlos Contreras}
+\lqnumber{Lab extra}
+\labtitle{Final review}
+\makelabtitle
+
+\topic{Unit step function}
+\begin{problem}
+Determine the current as a function of time t for the given RLC series circuit. The current $I(t)$ in a RLC series circuit is governed by the initial value problem
+\begin{equation*}
+I^{\prime \prime}(t)+2I^{\prime}(t) +2I(t)=g(t); \quad I(0)=10, \quad I^{\prime}(0) = 0,
+\end{equation*}
+where,
+\begin{equation*}
+g(t) = \begin{cases} 
+20, &\quad t<3\pi \\
+0, &\quad 3\pi<t<4\pi \\
+20, &\quad 4\pi<t
+\end{cases}.
+\end{equation*}
+\end{problem}
+
+
+
+\topic{Unit function (non-constant)}
+\begin{problem}
+Solve the initial value problem
+\begin{equation*}
+y^{\prime \prime}(t)+4y(t)=f(t); \quad y(0)=0, \quad y^{\prime}(0) = 0,
+\end{equation*}
+where,
+\begin{equation*}
+f(t) = \begin{cases} 
+2t, &\quad 0\leq t<2 \\
+4, &\quad 2 \leq t 
+\end{cases}.
+\end{equation*}
+\end{problem}
+
+
+\topic{Dirac delta function}
+\begin{problem}
+Solve the given symbolic initial value problem
+\begin{equation*}
+y^{\prime \prime} + 2 y^{\prime} - 3 y = \delta(t-1) - \delta(t-2) , \quad y(0) =2 , \quad y^{\prime}(0) = -2.
+\end{equation*}
+\end{problem}
+
+
+
+\topic{Convolution/integro differential equation}
+\begin{problem}
+Solve the integro--differential equation
+\[y'-2\int_{0}^{t}e^{t-v}y(v)dv=t,\quad y(0)=2.\]
+\end{problem}
+
+
+
+\topic{Laplace properties}
+\begin{problem}
+Find the Laplace transform of 
+\[\int_{0}^{t}e^{w}cos(t-w)dw.\]
+\end{problem}
+
+
+\begin{problem}
+Find the inverse Laplace transform of 
+\[\tan^{-1} (s).\]
+\end{problem}
+
+
+
+
+\topic{Fourier series on $[-L, L]$.}
+\begin{problem}
+Compute the Fourier series for the given function on the specific interval
+\begin{eqnarray*}
+f(x) = x , \quad -\pi<x<\pi.
+\end{eqnarray*}
+\end{problem}
+
+
+\topic{Fourier series on $[0, L]$.}
+\begin{problem}
+Compute the Fourier sine and cosine series for
+\begin{equation*}
+f(x) = x-x^2, \quad 0<x<1
+\end{equation*}
+\end{problem}
+
+
+
+\topic{Eigenvalue problem with zero boundary conditions.}
+\begin{problem}
+Find nontrivial solutions to the eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<L \,, \qquad y(0)=0  \,,\qquad y(L) =0. 
+\end{equation*}
+\end{problem}
+
+
+\topic{Eigenvalue problem with zero derivative BC's.}
+\begin{problem}
+Find nontrivial solutions to the eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<L \,, \qquad y'(0)=0  \,,\qquad y'(L) =0. 
+\end{equation*}
+\end{problem}
+
+\topic{Eigenvalue problems (mixed boundary conditions)}
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0) - y'(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+
+
+
+\topic{More complicated eigenvalue problem.}
+\begin{problem}
+ Find nontrivial solutions to the eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} + 4 y' + \lambda y =0\,; \qquad  0<x<\pi/2 \,, \qquad y(0)=0  \,,\qquad y(\pi/2) =0. 
+\end{equation*}
+\end{problem}
+
+
+
+
+\topic{Heat equation with zero BC's.}
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& u(0,t) = u(1,t)=0, \qquad t>0, \\
+& u(x,0) = x(1-x), \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+
+\topic{Heat equation with zero derivative BC's.}
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& \dfrac{\partial u }{\partial x } (0,t) = \dfrac{\partial u }{\partial x } (1,t)=0, \qquad t>0, \\
+& u(x,0) = x(1-x), \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+
+\topic{Heat equation with non-zero BC's.}
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& u(0,t) = 0, \quad u(\pi,t)= 3\pi, \qquad t>0, \\
+& u(x,0) = 0, \qquad 0<x<\pi.
+\end{split}\end{equation*}
+\end{problem}
+
+
+\topic{Heat equation with non-zero BC's and external force.}
+\begin{problem}
+Find a formal solution to the initial value problem,
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t) + 6 x -2, \qquad 0<x<1, \quad t>0, \\
+& u(0,t) = 0, \quad u(1,t)= -1, \qquad t>0, \\
+& u(x,0) = -x^{3}, \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\LabSolutions
+
+
+Theory and problems from: Nagel, Saff \& Sneider, \textit{Fundamentals of Differential Equations}, Eighth Edition, Adisson--Wesley.
+
+\vspace{20pt}
+
+
+\begin{preamble}
+
+\textbf{Formulas to remember}
+
+\begin{formulaitem}
+ 
+% $\rightarrow$ \textsl{Laplace transform.}
+% \begin{table}[ht]
+% \renewcommand{\arraystretch}{1.5}
+% \setlength{\tabcolsep}{10pt}
+% \begin{center}
+% \begin{tabular}{|ll|ll|}
+% \hline
+% $f(t)$ & $F(s)=\mathcal{L}\{f\}(s)$ & $f(t)$ & $F(s)=\mathcal{L}\{f\}(s)$ \\
+% \hline
+% $e^{at}f(t)$ & $F(s-a)$                             &  $e^{at}$ & $\frac{1}{s-a} \qquad s>a$\\ 
+% $f'(t)$ & $sF(s)-f(0)$                              &  $t^{n}$ & $\frac{n!}{s^{n+1}}$ \\
+% $f''(t)$ & $s^{2}F(s)-sf(0)-f'(0)$                  &  $\sin bt$ & $\frac{b}{s^{2}+b^{2}}$ \\
+% $t^{n}f(t)$ & $(-1)^{n}\frac{d^{n}}{ds^{n}}F(s)$    &  $\cos bt$ & $\frac{s}{s^{2}+b^{2}}$ \\
+% $(f*g)(t)$ & $F(s)G(s)$                             &  $e^{at}t^{n}$ & $\frac{n!}{(s-a)^{n+1}} \qquad s>a$ \\
+% $1$ & $\frac{1}{s}$                                 &  $e^{at}\sin bt$ & $\frac{b}{(s-a)^{2}+b^{2}} \qquad s>a$ \\
+% $u(t-a)$ & $\frac{e^{-as}}{s}$                      &  $e^{at}\cos bt$ & $\frac{s-a}{(s-a)^{2}+b^{2}} \qquad s>a$ \\
+% $f(t-a)u(t-a)$ & $e^{-as}F(s)$                      &  $\sinh bt$ & $\frac{b}{s^{2}-b^{2}}$ \\
+% $\delta(t-a)$ & $e^{-as}$                           &  $\cosh bt$ & $\frac{s}{s^{2}-b^{2}}$ \\
+% \hline 
+% \end{tabular}
+% \end{center}
+% \end{table}
+% 
+% 
+
+\item Brief \textbf{table of Laplace Transforms}.
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{10pt}
+\begin{center}
+\begin{tabular}{|ll|ll|}
+\hline
+$f(t)$ & $F(s)=\mathcal{L}\{f\}(s)$ & $f(t)$ & $F(s)=\mathcal{L}\{f\}(s)$ \\
+\hline
+$e^{at}f(t)$ & $F(s-a)$                                   &  $1$ & $\frac{1}{s}$ \\
+$f'(t)$ & $sF(s)-f(0)$                                    &  $e^{at}$ & $\frac{1}{s-a} \qquad s>a$\\ 
+$f''(t)$ & $s^{2}F(s)-sf(0)-f'(0)$                        &  $t^{n}$ & $\frac{n!}{s^{n+1}}$ \\
+$t^{n}f(t)$ & $(-1)^{n}F^{(n)}(s)$                        &  $\sin bt$ & $\frac{b}{s^{2}+b^{2}}$ \\
+$(f*g)(t)$ & $F(s)G(s)$                                   &  $\cos bt$ & $\frac{s}{s^{2}+b^{2}}$ \\
+$u(t-a)$ & $\frac{e^{-as}}{s}$                            &  $e^{at}t^{n}$ & $\frac{n!}{(s-a)^{n+1}} \qquad s>a$ \\
+$f(t-a)u(t-a)$ & $e^{-as}F(s)$                            &  $e^{at}\sin bt$ & $\frac{b}{(s-a)^{2}+b^{2}} \qquad s>a$ \\
+$\delta(t-a)$ & $e^{-as}$                                 &  $e^{at}\cos bt$ & $\frac{s-a}{(s-a)^{2}+b^{2}} \qquad s>a$ \\
+$\int_{0}^{s}f(\tau)d\tau$ & $\frac{1}{s}F(s)$            &  $\sinh bt$ & $\frac{b}{s^{2}-b^{2}}$ \\
+$\frac{1}{t}f(t)$ & $\int_{s}^{\infty}F(\sigma)d\sigma$   &  $\cosh bt$ & $\frac{s}{s^{2}-b^{2}}$ \\
+\hline 
+\end{tabular}
+\end{center}
+
+
+\item \textsl{Unit step function.}
+\begin{equation*}
+u_{a}(t) = u(t-a)=\left\{\begin{array}{ll}
+             0, & t<a, \\
+             1, & a<t.
+            \end{array} \right. 
+\end{equation*}
+
+
+\item \textsl{Convolution.} 
+\begin{equation*}
+(f*g)(t)=\int_{0}^{t}f(t-v)g(v)dv=\int_{0}^{t}f(v)g(t-v)dv.
+\end{equation*}
+
+
+
+\item \textsl{Fourier series.} $f(x)$ on $[-L, L]$
+\[F(x) = \frac{a_{0}}{2}+\sum_{n=1}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right) + b_{n}\sin \left(\frac{n\pi x}{L}\right),\]
+where
+\[a_{n} = \frac{1}{L}\int_{-L}^{L}f(x)\cos \left(\frac{n\pi x}{L}\right) dx, \qquad b_{n}  = \frac{1}{L}\int_{-L}^{L}f(x)\sin \left(\frac{n\pi x}{L}\right) dx.\]
+
+This sum converges to
+\begin{equation*}
+F(x) = \begin{cases} f(x) & \text{if $-L<x<L$ and $f$ is continuous at $x$,} \\[0.5em]
+                                 \dfrac{f(x-)+f(x+)}{2} & \text{if $-L<x<L$ and $f$ is discontinuous at $x$,} \\[0.5em]
+                                 \dfrac{f(-L+)+f(L-)}{2} & \text{if $x=L$ or $x=-L$.} \end{cases} 
+\end{equation*}
+
+\item \textsl{Fourier cosine series.} $f(x)$ on $[0, L]$ (even extension)
+\[C(x) = \frac{a_{0}}{2}+\sum_{n=1}^{\infty}a_{n}\cos\left(\frac{n\pi x}{L}\right), \quad a_{n} = \frac{2}{L}\int_{0}^{L}f(x)\cos \left(\frac{n\pi x}{L}\right) dx.\]
+
+\item \textsl{Fourier sine series.} $f(x)$ on $[0, L]$ (odd extension)
+\[S(x) = \sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{L}\right), \quad b_{n} = \frac{2}{L}\int_{0}^{L}f(x)\sin \left(\frac{n\pi x}{L}\right) dx.\]
+
+\item \textsl{Eigenvalue problems.} 
+\[\frac{X''}{X}=\lambda, \,\, X(0)=X(L)=0, \quad \Rightarrow \quad \boxed{\lambda_{n}=-\frac{n^{2}\pi^{2}}{L^{2}}, \,\, X_{n}(x)=\sin \left( \frac{n\pi x}{L} \right)}, \,\, n\geq1.\]
+\[\frac{X''}{X}=\lambda, \,\, X'(0)=X'(L)=0, \quad \Rightarrow \quad \boxed{\lambda_{n}=-\frac{n^{2}\pi^{2}}{L^{2}}, \,\, X_{n}(x)=\cos \left( \frac{n\pi x}{L} \right)},\,\, n\geq0.\]
+On the other hand, if we use $\frac{X''}{X}=-\lambda$ instead, the eigenvalues are $\lambda_{n}=\frac{n^{2}\pi^{2}}{L^{2}}$, and the eigenfunctions remain the same.
+
+\item For the heat equation with \textbf{non-zero boundary conditions and external force}
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha\dfrac{\partial^2 u}{\partial x^2}(x,t) + g(x), \qquad 0<x<L, \quad t>0, \\
+& u(0,t) = U_{1}, \quad u(L,t)= U_{2}, \qquad t>0, \\
+& u(x,0) = f(x), \qquad 0<x<L,
+\end{split}\end{equation*}
+we apply the change of variable
+\[u(x,t)=v(x)+w(x,t), \,\, \Rightarrow w(x,t)=u(x, t)-v(x),\]
+to arrive the zero BC's problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial w }{\partial t } (x,t) = \alpha\dfrac{\partial^2 w}{\partial x^2}(x,t), \qquad 0<x<L, \quad t>0, \\
+& w(0,t) = w(L,t)= 0, \qquad t>0, \\
+& w(x,0) = f(x) - v(x), \qquad 0<x<L,
+\end{split}\end{equation*}
+and the second order problem
+\begin{equation*} \begin{split}
+& v''(x) = -\tfrac{1}{\alpha}g(x) \qquad 0<x<L, \\
+& v(0) = U_{1}, \quad v(L)= U_{2}.
+\end{split}\end{equation*}
+We first solve for $v(x)$, then solve $w(x,t)$, and finally write the solution in terms of $u(x,t)$.
+
+If $g(x)=0$, then, clearly
+\[v(x)=(U_{2}-U_{1})\frac{x}{L}+U_{1}.\]
+
+The functions $w(x, t)$ and $v(x)$ are called \textbf{transient} and \textbf{steady state} solutions of $u(x,t)$.
+\end{formulaitem}
+\end{preamble}
+
+
+
+
+
+
+
+\begin{problem}
+Determine the current as a function of time t for the given RLC series circuit. Plot the solution. The current $I(t)$ in a RLC series circuit is governed by the initial value problem
+\begin{equation*}
+I^{\prime \prime}(t)+2I^{\prime}(t) +2I(t)=g(t); \quad I(0)=10, \quad I^{\prime}(0) = 0,
+\end{equation*}
+where,
+\begin{equation*}
+g(t) = \begin{cases} 
+20, &\quad t<3\pi \\
+0, &\quad 3\pi<t<4\pi \\
+20, &\quad 4\pi<t
+\end{cases}.
+\end{equation*}
+\end{problem}
+\begin{solution}
+We can rewrite the function $g(t)$ using unit step function as follows:
+
+\begin{equation*}
+g(t) = 20-20 u(t-3\pi) +20 u(t-4\pi) = 20(1-u(t-3\pi) + u(t-4\pi))
+\end{equation*}
+
+Hence our IVP can be rewritten as:
+
+\begin{equation*}
+I^{\prime \prime}(t)+2I^{\prime}(t) +2I(t)=20(1-u(t-3\pi) + u(t-4\pi)); \quad I(0)=10, \quad I^{\prime}(0) = 0,
+\end{equation*}
+
+Taking the Laplace transform on both sides of this equation, we obtain:
+\begin{equation*}
+{\cal L}^{}\{ I^{\prime \prime}(t) \} + 2{\cal L}^{}\{ I^{\prime }(t) \}+2 {\cal L}^{}\{ I(t) \} =20 ( {\cal L}^{}\{ 1 \}- {\cal L}^{}\{ u(t-3\pi) \} + {\cal L}^{}\{ u(t-4\pi) \})
+\end{equation*}
+Expanding, we obtain:
+
+\begin{eqnarray*}
+(s^2J(s)-sI(0)-I^{\prime}(0)) + 2 ( sJ(s)-I(0))+2 J(s) & = & 20 \left( \dfrac{1}{s}- \dfrac{e^{-3\pi s}}{s} + \dfrac{e^{-4\pi s}}{s}\right) \\
+s^2J(s)-10s + 2sJ(s)-20+2 J(s) & = & \dfrac{20}{s}- \dfrac{20e^{-3\pi s}}{s} + \dfrac{20e^{-4\pi s}}{s} \\
+\end{eqnarray*}
+Isolating for $J(s)$, we obtain:
+\begin{eqnarray*}
+J(s)  =   \dfrac{20}{s(s^2+2s+2)}- \dfrac{20e^{-3\pi s}}{s(s^2+2s+2)} + \dfrac{20e^{-4\pi s}}{s(s^2+2s+2)} + \dfrac{10s+20}{s^2+2s+2}\\
+\end{eqnarray*}
+We need to find the partial fraction decomposition of  $F(s)=\dfrac{20}{s(s^2+2s+2)}$.
+
+\begin{eqnarray*}
+F(s)=\dfrac{20}{s(s^2+2s+2)} & = & \dfrac{As+B}{s^2+2s+2} + \dfrac{C}{s} \\
+ & = & \dfrac{(As+B)s+ C(s^2+2s+2)}{s(s^2+2s+2)} \\
+ & = & \dfrac{s^2(A+C) + s(B+2C) + 2C }{s(s^2+2s+2)}
+\end{eqnarray*}
+This leads to the following system of equations:
+
+\begin{eqnarray*}
+A+C &= &0\\
+B+2C & = & 0\\
+2C & = & 20
+\end{eqnarray*}
+This can easily be solve. $A=-10$,$B=-20$ and $C=10$
+Hence:
+
+\begin{eqnarray*}
+J(s)  & = &   -\dfrac{10s+20}{s^2+2s+2} + \dfrac{10}{s} -F(s)e^{-3\pi s} +F(s)e^{-4\pi s} + \dfrac{10s+20}{s^2+2s+2} \\
+& = &    \dfrac{10}{s} -F(s)e^{-3\pi s} +F(s)e^{-4\pi s} \\
+\end{eqnarray*}
+
+The inverse Laplace transform of $F(s)$ is given by:
+
+\begin{eqnarray*}
+f(t) = {\cal L}^{-1}\{ F(s) \} & = & {\cal L}^{-1}\left\{ -\dfrac{10s+20}{s^2+2s+2} + \dfrac{10}{s} \right\} \\
+& = & {\cal L}^{-1}\left\{ \dfrac{-10(s+1)-10}{(s+1)^2+1}\right\} +10 {\cal L}^{-1}\left\{ \dfrac{1}{s}\right\}\\
+& = & -10{\cal L}^{-1}\left\{ \dfrac{s+1}{(s+1)^2+1}\right\} -10 {\cal L}^{-1}\left\{ \dfrac{1}{(s+1)^2+1}\right\} +10 {\cal L}^{-1}\left\{ \dfrac{1}{s}\right\}\\
+&=& -10e^{-t}\cos(t)-10e^{-t}\sin(t) +10
+\end{eqnarray*}
+We can now find the function $I(t)$ via the property $ {\cal L}^{-1}\{ e^{-as}F(s) \}(t) = f(t-a)u(t-a)$. Taking the inverse Laplace transform of our function $J(s)$, we obtain:
+
+\begin{eqnarray*}
+I(t) & = & {\cal L}^{-1}\{ J(s) \}  \\
+&=& 10 {\cal L}^{-1}\left\{ \dfrac{1}{s}\right\}  -{\cal L}^{-1}\left\{ e^{-3\pi s} F(s)\right\} + {\cal L}^{-1}\left\{ e^{-4\pi s} F(s)\right\} \\
+& = & 10 - \left(-10e^{-(t-3\pi)}\cos(t-3\pi)-10e^{-(t-3\pi)}\sin(t-3\pi) +10\right)u(t-3\pi) \\
+& & + \left(-10e^{-(t-4\pi)}\cos(t-4\pi)-10e^{-(t-4\pi)}\sin(t-4\pi) +10\right)u(t-4\pi) \\
+& = & 10 - \left(10e^{-(t-3\pi)}\cos(t)+10e^{-(t-3\pi)}\sin(t) +10\right)u(t-3\pi) \\
+& & + \left(-10e^{-(t-4\pi)}\cos(t)-10e^{-(t-4\pi)}\sin(t) +10\right)u(t-4\pi) 
+\end{eqnarray*} 
+Hence,
+\begin{gather*}
+\boxed{I(t) = 10 - 10 u(t-3\pi) \left[ 1+e^{-(t-3\pi )} \left(\cos t+\sin t\right)\right] + 10 u(t-4\pi) \left[1-e^{-(t-4\pi)}(\cos t+\sin t)\right]}.
+\end{gather*}
+
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Solve the initial value problem
+\begin{equation*}
+y^{\prime \prime}(t)+4y(t)=f(t); \quad y(0)=0, \quad y^{\prime}(0) = 0,
+\end{equation*}
+where,
+\begin{equation*}
+f(t) = \begin{cases} 
+2t, &\quad 0\leq t<2 \\
+4, &\quad 2 \leq t 
+\end{cases}.
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+The first step is to write $f(t)$ in terms of unit step functions
+\[f(t)=2t+ (4 - 2t)u(t-2).\]
+Note that $h(t)=4 -2t$ is not of the form $f(t-2)$ so using the property for $f(t-a)u(t-a)$ is not straight forward. A trick that will always work is to evalute $h(t+2)$\footnote{For the property $\mathcal{L}\{f(t-a)u(t-a)\}=F(s)e^{-as}$, we need the Laplace of $f(t)$, not the Laplce of $f(t-a)$. If we have $h(t)u(t-2)$, let $f(t-a)=h(t)$, then $f(t)=h(t+a)$. So $\mathcal{L}\{h(t)u(t-a)\}=\mathcal{L}\{f(t-a)u(t-a)\}=\mathcal{L}\{f(t)\}e^{-as}=\mathcal{L}\{h(t+a)\}e^{-as}$.},
+\[h(t+2)=4-2(t+2)=-2t,\quad  \Rightarrow \quad \mathcal{L}\{h(t+2)\}=-\frac{2}{s^2},\]
+and multiply by $e^{-2s}$
+\[\mathcal{L}\{(4-2t)u(t-2)\} = -\frac{2}{s^2}e^{-2s}.\]
+Then,
+\[F(s)= \mathcal{L}\{2t\} + \mathcal{L}\{(4-2t)u(t-2)\}= \frac{2}{s^2} - \frac{2}{s^{2}}e^{-2s}=2\left( \frac{1}{s^2} - \frac{e^{-2s}}{s^{2}} \right)\]
+
+Alternatively, we can write 
+\[f(t)=2t(u(t)-u(t-2))+4u(t-2),\]
+then, its Laplace transform (using the property for $tf(t)$) is, as expected,
+\[F(s)=2(-1)\frac{d}{ds}\left[ \frac{1}{s} - \frac{e^{-2s}}{s} \right] + 4 \frac{e^{-2s}}{s} = 2 \left( \frac{1}{s^{2}} - \frac{e^{-2s}}{s^{2}} \right).\]
+
+
+Next step is to apply Laplace of both side of the ODE
+\[s^{2}Y(s) -0s-0+ 4 Y(s)=2 \left( \frac{1}{s^{2}} - \frac{e^{-2s}}{s^{2}} \right).\]
+Isolating $Y(s)$ we have
+\[Y(s)=\frac{2}{s^{2}(s^{2}+4)}- \frac{2}{s^{2}(s^{2}+4)} e^{-2s}=G(s) -G(s)e^{-2s}.\]
+Is practical to take $e^{-as}$ terms as a common factor, since this only shift the inverse Laplace of $G(s)$.
+
+Now we take the inverse Laplace transform of $G(s)$ using partial fractions
+\[G(s)=\frac{2}{s^{2}(s^{2}+4)}=\frac{As+B}{s^{2}}+\frac{Cs+D}{s^{2}+4}= \frac{1}{2s^{2}}-\frac{1}{2(s^{2}+4)}.\]
+
+Hence,
+\[g(t)=\frac{1}{2}t-\frac{1}{4}\sin 2t\]
+
+Finally,
+\[y(t)=g(t)-g(t-2)u(t-2)\]
+\[\Rightarrow \boxed{y(t)=\frac{t}{2}-\frac{\sin 2t}{4}- \left(\frac{t-2}{2}-\frac{\sin 2(t-2)}{4}\right)u(t-2)}.\]
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Solve the given symbolic initial value problem
+\begin{equation*}
+y^{\prime \prime} + 2 y^{\prime} - 3 y = \delta(t-1) - \delta(t-2) , \quad y(0) =2 , \quad y^{\prime}(0) = -2.
+\end{equation*}
+\end{problem}
+\begin{solution}
+Applying a Laplace transform on both sides, we obtain:
+
+\begin{equation*}
+s^2 Y(s) -sy(0) - y^{\prime}(0) + 2sY(s) - 2y(0) - 3 Y(s) = e^{-s} - e^{-2s}
+\end{equation*}
+Subbing in our initial conditions, we obtain:
+
+\begin{equation*}
+s^2 Y(s) -2s +2 + 2sY(s) - 4 - 3 Y(s) = e^{-s} - e^{-2s}
+\end{equation*}
+Isolating $Y(s)$, we obtain:
+
+\begin{eqnarray*}
+Y(s) & = & \dfrac{2s+2}{s^2+2s-3}+ \dfrac{e^{-s}}{s^2+2s-3} - \dfrac{e^{-2s}}{s^2+2s-3}  \\
+& = & \dfrac{2s+2}{(s+3)(s-1)}+\dfrac{e^{-s}}{(s+3)(s-1)} - \dfrac{e^{-2s}}{(s+3)(s-1)}  \\
+\end{eqnarray*}
+Decomposing these functions into partial fractions,we obtain:
+\begin{eqnarray*}
+Y(s) & = & \left( \dfrac{1}{s-1} + \dfrac{1}{s+3} \right)+ \dfrac{1}{4}\left( \dfrac{1}{s-1} - \dfrac{1}{s+3} \right) e^{-s}  -\dfrac{1}{4} \left( \dfrac{1}{s-1} - \dfrac{1}{s+3} \right) e^{-2s} \\
+\end{eqnarray*}
+Taking the inverse Laplace transform using the identity ${\cal L} \left\{ G(s)e^{-as} \right\}(t) = g(t-a)u(t-a)$, we have
+\begin{equation*}
+\boxed{y(t) = e^{t}+e^{-3t}   + \tfrac{1}{4} \left( e^{t-1}-e^{-3(t-1)} \right)u(t-1) - \tfrac{1}{4} \left( e^{t-2}-e^{-3(t-2)} \right)u(t-2)}.
+\end{equation*}
+\end{solution}
+
+
+
+
+
+
+\begin{problem}
+Solve the integro--differential equation
+\[y'-2\int_{0}^{t}e^{t-v}y(v)dv=t,\quad y(0)=2.\]
+\end{problem}
+\begin{solution}
+We can rewrite the integro--differential as
+\[y'-2e^{t}*y=t,\]
+and take Laplace transform to get (recall the convolution theorem here)
+\[sY(s)-2-2\frac{1}{s-1}Y(s)=\frac{1}{s^{2}},\]
+where
+\[Y(s)=\frac{(2s^{2}+1)(s-1)}{s^{2}(s+1)(s-2)}=\frac{2s^{3}-2s^{2}+s-1}{s^{2}(s+1)(s-2)}=\frac{A}{s}+\frac{B}{s^{2}}+\frac{C}{s+1}+\frac{D}{s-2}.\]
+Solving the partial fractions we get $A=-\frac{3}{4}$, $B=\frac{1}{2}$, $C=2$ and $D=\frac{3}{4}$.
+Thus, we can take the inverse Laplace transforms right away to get
+\[\boxed{y(t)=-\frac{3}{4}+\frac{1}{2}t+2e^{-t}+\frac{3}{4}e^{2t}}.\]
+\end{solution}
+\begin{solution}
+We can rewrite the equation as
+\[y'-2e^{t}\int_{0}^{t}e^{-v}y(v)dv=t,\]
+take the derivative, and apply the product rule along with the fundamental theorem of calculus to get
+\[y''-2e^{t}\int_{0}^{t}e^{-v}y(v)dv-2e^{t}e^{-t}y(t)=1.\]
+Note that
+\[-2e^{t}\int_{0}^{t}e^{-v}y(v)dv=t-y',\]
+then we obtain the second order differential equation
+\[y''-y'-2y=1-t,\]
+with initial conditions (the second initial condition comes from evaluating the integro--differential equation at $t=0$)
+\[y(0)=2,\quad y'(0)=0.\]
+Apply Laplace transform we have
+\[Y(s)=\frac{2s-2}{s^{2}-s-2}+\frac{1}{s(s^{2}-s-2)}-\frac{1}{s^{2}(s^{2}-s-2)}=\frac{2s^{3}-2s^{2}+s-1}{s^{2}(s+1)(s-2)},\]
+which is the same partial fractions problem as before. Thus
+\[\boxed{y(t)=-\frac{3}{4}+\frac{1}{2}t+2e^{-t}+\frac{3}{4}e^{2t}}.\]
+\end{solution}
+
+
+
+\begin{problem}
+Find the Laplace transform of 
+\[\int_{0}^{t}e^{w}\cos(t-w)dw.\]
+\end{problem}
+\begin{solution}
+Since
+\[\int_{0}^{t}e^{w}\cos(t-w)dw = e^{t}*\cos(t),\]
+then,
+\[\mathcal{L}\left\{\int_{0}^{t}e^{w}cos(t-w)dw\right\} = \mathcal{L}\left\{e^{t}\right\} \mathcal{L}\left\{\cos(t)\right\} = \frac{1}{s-1}\cdot\frac{2}{s^{2}+1}.\]
+\end{solution}
+
+
+
+\begin{problem}
+Find the inverse Laplace transform of 
+\[\tan^{-1} (s).\]
+\end{problem}
+\begin{solution}
+In problems of inverse Laplace transform of trigonometric or trascendental functions that are not in the table, usually one of its derivatives is a fraction. In this case
+\[(\tan^{-1}s)'=\frac{1}{1+s^{2}},\]
+which looks like the Laplace transform of $\sinh$. For this problem we will use the property
+\[\mathcal{L}\{t^{n}f(t)\}=(-1)^{n}F^{(n)}(s).\]
+Let $F(s)=\tan^{-1}(s)$, then
+\[-F'(s)=-\frac{1}{1+s^{2}}=-\frac{1}{s^{2}+1}.\]
+Using the property
+\[tf(t) =\mathcal{L}^{-1}\left\{-\frac{1}{s^{2}+1}\right\}=-\sin t.\]
+Isolating $f(t)$, we have
+\[\boxed{f(t)=-\frac{\sin t}{t}}\]
+\end{solution}
+
+
+
+
+\begin{problem}
+Compute the Fourier series for the given function on the specific interval
+\begin{eqnarray*}
+f(x) = x , \quad -\pi<x<\pi.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+First, note that $f(x)$ is \textsl{odd}, and $L=\pi$.
+We want to write $f(x)$ in the form
+\begin{eqnarray*}
+f(x) = \dfrac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[ a_{n}\cos\left(n x\right)+b_{n}\sin\left(n x\right) \right]
+\end{eqnarray*}
+Since $f(x)$ is an odd function, we know that
+\begin{eqnarray*}
+a_{n} = \dfrac{1}{\pi} \int_{-\pi}^{\pi} x\cos\left(n x\right) dx =0, \quad {\rm for} \quad n =1,2,3,\ldots,
+\end{eqnarray*}
+and
+\begin{eqnarray*}
+a_{0} = \dfrac{1}{\pi} \int_{-\pi}^{\pi} x dx =0.
+\end{eqnarray*}
+For $b_{n}$ we use one integration by parts.
+\begin{align*}
+b_{n}& = \frac{1}{\pi}\int_{-\pi}^{\pi} x\sin\left(n x\right) dx = \frac{2}{\pi}\int_{0}^{\pi} x\sin\left(n x\right) dx \\
+     & = \frac{2}{\pi}\left[ -\frac{x}{n}\cos (nx) |^{\pi}_{0} + \frac{1}{n}\int_{0}^{\pi} \cos\left(n x\right) dx\right] \\
+     & = \frac{2}{\pi}\left[ -\frac{\pi}{n}\cos (n\pi)  + \frac{1}{n^{2}}\sin (nx)|^{\pi}_{0} \right] = \frac{(-1)^{n+1}2}{n}.
+\end{align*}
+Thus,
+\[\boxed{f(x) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}2}{n}\sin(nx)}.\]
+\end{solution}
+
+
+
+\begin{problem}
+Compute the Fourier sine and cosine series for 
+\begin{equation*}
+f(x) = x-x^2, \quad 0<x<1.
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+\textbf{Note:} the given domain is of the form $[0, L]$ instead of $[-L, L]$. In which case the problem is either to find the Fourier Sine series (also called odd extension of $f(x)$ to $[-L, L]$) or the Fourier Cosine series (also called even extension of $f(x)$ to $[-L, L]$).
+
+1. The Fourier Sine Series of $f(x)$ on $[0,L]$ is
+
+\begin{equation*}
+f(x) = \sum_{n=1}^{\infty} b_{n} \sin \left(\dfrac{n\pi x}{L}\right)
+\end{equation*}
+
+where 
+
+\begin{equation*}
+b_{n} = \dfrac{2}{L} \int_{0}^{L} f(x) \sin \left( \dfrac{n \pi x}{L} \right) {\rm d} x, \quad n=1,2,3,\ldots
+\end{equation*}
+
+In our case, we have $L=1$. Let's compute $b_{n}$ (integration by parts is the most common technique here).
+
+\begin{eqnarray*}
+b_{n} & = & 2 \int_{0}^{1} (x-x^2) \sin \left( n \pi x\right) {\rm d} x \\
+ & = & 2 \left[(x-x^2)\left(- \dfrac{\cos(n \pi x)}{n \pi} \right) \right]_{0}^{1} -2  \int_{0}^{1} (1-2x) \left(- \dfrac{\cos(n \pi x)}{n \pi} \right) {\rm d} x \\
+  & = &0 + \dfrac{2}{n \pi}  \int_{0}^{1} (1-2x)  \cos(n \pi x) {\rm d} x \\
+& = & \dfrac{2}{n \pi} \left[  (1-2x)\left( \dfrac{\sin(n \pi x)}{n \pi} \right) \right]_{0}^{1} - \dfrac{2}{n \pi} \int_{0}^{1} (-2)  \left( \dfrac{\sin(n \pi x)}{n \pi} \right) {\rm d} x \\
+& = & 0  + \dfrac{4}{n^2 \pi^2} \int_{0}^{1}   \sin(n \pi x) {\rm d} x  = \dfrac{4}{n^2 \pi^2} \left[- \dfrac{\cos(n \pi x)}{n \pi} \right]_{0}^{1} \\
+& = &\dfrac{4}{n^2 \pi^2} \left( \dfrac{1-\cos(n \pi)}{n \pi} \right) = \dfrac{4(1-(-1)^n)}{n^3 \pi^3}.
+\end{eqnarray*}
+
+Hence, our function $f(x) = x - x^2$  on the interval $ [0,1]$ can be written in the following Fourier Sine series
+
+\begin{equation*}
+\boxed{f(x) = \sum_{n=1}^{\infty} \dfrac{4(1-(-1)^n)}{n^3 \pi^3} \sin( n\pi x)}. 
+\end{equation*}
+
+
+\textbf{Note.} The previous is a valid answer, do the following only if you need to \textsl{need} to. The $(-1)^{n}$ term suggests that we can simplify the coefficients, since $b_{n}=0$ for even $n$. That is,
+
+\begin{eqnarray*}
+b_{n} & = & \dfrac{4(1-(-1)^n)}{n^3 \pi^3} \\
+\Rightarrow b_{2n}& = & \dfrac{4(1-(-1)^{2n})}{(2n)^3 \pi^3} = \dfrac{4(1-1)}{(2n)^3 \pi^3} =0 \\
+\Rightarrow b_{2n-1}& = & \dfrac{4(1-(-1)^{2n-1})}{(2n-1)^3 \pi^3} = \dfrac{4(1-(-1))}{(2n-1)^3 \pi^3} = \dfrac{8}{(2n-1)^3 \pi^3} \\
+\end{eqnarray*}
+
+Hence, we can write
+
+\begin{equation*}
+f(x) = \sum_{n=1}^{\infty} \dfrac{8}{(2n-1)^3 \pi^3}\sin( (2n-1)\pi x). 
+\end{equation*}
+
+2. The Fourier Cosine series of $f(x)$ on $[0, L]$ is
+\begin{equation*}
+f(x) = \frac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos \left(\dfrac{n\pi x}{L}\right)
+\end{equation*}
+where
+\[a_{0}=\frac{2}{L}\int_{0}^{L}f(x)dx = \frac{1}{3}\]
+and
+\begin{equation*}
+a_{n}=\frac{2}{L}\int_{0}^{L}f(x)\cos \left(\dfrac{n\pi x}{L}\right) dx =\cdots = \frac{2((-1)^{n+1}-1)}{n^{2}\pi^{2}}.
+\end{equation*}
+Hence, our function $f(x) = x - x^2$  on the interval $[0,1]$ can be written in the following Fourier cosine series
+\begin{equation*}
+\boxed{f(x) = \frac{1}{6}+\sum_{n=1}^{\infty} \frac{2((-1)^{n+1}-1)}{n^{2}\pi^{2}} \cos \left({n\pi x}\right)}.
+\end{equation*}
+
+\textbf{Note.} As before that is a valid answer, if you \textsl{need} to simplify, separate odd and even cases.
+
+\[a_{2n}=-\frac{1}{n^{2}\pi^{2}}, \qquad a_{2n-1}=0.\]
+
+Hence, we can write
+
+\begin{equation*}
+f(x) = \frac{1}{6}-\sum_{n=1}^{\infty} \frac{1}{n^{2}\pi^{2}} \cos \left({2n\pi x}\right).
+\end{equation*}
+\end{solution}
+
+
+
+
+
+
+
+\begin{problem}
+Find nontrivial solutions to the eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} - \lambda y =0\,; \qquad  0<x<L \,, \qquad y(0)=0  \,,\qquad y(L) =0. 
+\end{equation*}
+\end{problem}
+
+\begin{solution}
+\textbf{Note.} \textsl{When you are solving an eigenvalue problem within a heat or wave equation problem \textbf{do not} go through all this cases. Do only the nontrivial solutions case, or use the known solution right away.}
+
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.\\
+
+\par \textsl{Case 1.} $\Delta = \lambda >0.$ Then $r_{1}=\sqrt{\lambda}$, $r_{2}=-\sqrt{\lambda}$ are distinct real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{\sqrt{\lambda}x}+C_{2}e^{-\sqrt{\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rrcc}
+       C_{1} &+C_{2}&=&0\\
+       e^{\sqrt{\lambda}L}C_{1} &+ e^{-\sqrt{\lambda}L}C_{2}&=&0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix}1&1 \\ e^{\sqrt{\lambda}L} & e^{-\sqrt{\lambda}L}\end{matrix}\right|=e^{-\sqrt{\lambda}L}-e^{\sqrt{\lambda}\pi}=0,$$ 
+which implies $e^{\sqrt{\lambda}L}=e^{-\sqrt{\lambda}L}$, and this is a contradiction since the exponential function is always positive and $\lambda\neq 0$. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 2.} $\Delta = \lambda =0.$ Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcc}
+       C_{2} & = &0\\
+       LC_{1} + C_{2} & = &0
+      \end{array}\right. .
+\end{equation*}
+Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = \lambda <0.$ Then $r_{1}=i\sqrt{-\lambda}$, $r_{2}=-i\sqrt{-\lambda}$ are complex roots, and the solution to ODE is
+\[y(x)=C_{1}\cos\sqrt{-\lambda}x+C_{2}\sin\sqrt{-\lambda}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rrcc}
+       C_{1} & & = & 0\\
+       \cos(\sqrt{-\lambda}L)C_{1} &+ \sin(\sqrt{-\lambda}L)C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[\sin(\sqrt{-\lambda}L)C_{2}=0 \,\Leftrightarrow\, C_{2} = 0 \text{ or } \sin(\sqrt{-\lambda}L)=0.\]
+For nontrivial solutions we need 
+\[\sin(\sqrt{-\lambda}L)=0 \,\Leftrightarrow \, \sqrt{-\lambda}L=n\pi.\] 
+Thus, the eigenvalues are
+\[\boxed{\lambda_{n}=-\frac{n^{2}\pi^{2}}{L^{2}}, \quad n\geq 1},\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\sin\left( \frac{n\pi x}{L} \right)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+
+\noindent \textbf{Note.} $y''-\lambda y = 0$ comes from $\frac{y''}{y}=\lambda$ when solving the heat or wave equation.
+
+\noindent \textbf{Note.} $y'' + \lambda y = 0$ only changes the eigenvalue to $\lambda_{n}=\frac{n^{2}\pi^{2}}{L^{2}}$ in the solution.
+
+\end{solution}
+
+
+
+
+
+
+
+
+\begin{problem}
+Find nontrivial solutions to the eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<L \,, \qquad y'(0)=0  \,,\qquad y'(L) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{-\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.\\
+
+\par \textsl{Case 1.} $\Delta = -\lambda >0 \,\, \Rightarrow \, \lambda<0.$ Then $r_{1}=\sqrt{-\lambda}$, $r_{2}=-\sqrt{-\lambda}$ are distinct real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{\sqrt{-\lambda}x}+C_{2}e^{-\sqrt{-\lambda}x}.\]
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=C_{1}\sqrt{-\lambda}e^{\sqrt{-\lambda}x}-C_{2}\sqrt{-\lambda}e^{-\sqrt{-\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rrcc}
+       \sqrt{-\lambda}C_{1} & - \sqrt{-\lambda}C_{2}&=&0\\
+       \sqrt{-\lambda}e^{\sqrt{-\lambda}L}C_{1} &- \sqrt{-\lambda}e^{-\sqrt{-\lambda}L}C_{2}&=&0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix} \sqrt{-\lambda} & - \sqrt{-\lambda}\\ \sqrt{-\lambda}e^{\sqrt{-\lambda}L} & -\sqrt{-\lambda}e^{-\sqrt{-\lambda}L}\end{matrix}\right|=\lambda e^{-\sqrt{-\lambda}L} + \lambda e^{\sqrt{-\lambda}L}=0,$$ 
+which implies $e^{\sqrt{-\lambda}L}=-e^{-\sqrt{-\lambda}L}$, which is a contradiction since the exponential function is always positive and $\lambda\neq 0$. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 2.} $\Delta = -\lambda =0 \,\, \Rightarrow \, \lambda=0.$ Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=C_{1}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcc}
+       C_{1} & = &0\\
+       C_{1} & = &0
+      \end{array}\right. .
+\end{equation*}
+Hence, \[\boxed{\lambda=0}\] is an eigenvalue with eigenfunction \[\boxed{y(x)=C},\]
+for some constant $C$.
+
+\par \textsl{Case 3.} $\Delta = -\lambda <0 \,\, \Rightarrow \, \lambda>0.$ Then $r_{1}=i\sqrt{\lambda}$, $r_{2}=-i\sqrt{\lambda}$ are complex roots, and the solution to ODE is
+\[y(x)=C_{1}\cos\sqrt{\lambda}x+C_{2}\sin\sqrt{\lambda}x.\]
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=-\sqrt{\lambda}C_{1}\sin\sqrt{\lambda}x+\sqrt{\lambda}C_{2}\cos\sqrt{\lambda}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rrcc}
+        & \sqrt{\lambda}C_{2} & = & 0\\
+       -\sqrt{\lambda}\sin(\sqrt{\lambda}L)C_{1} &+ \sqrt{\lambda}\cos(\sqrt{\lambda}L)C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[\sin(\sqrt{\lambda}L)C_{1}=0 \,\Leftrightarrow\, C_{1} = 0 \text{ or } \sin(\sqrt{\lambda}L)=0.\]
+For nontrivial solutions we need 
+\[\sin(\sqrt{\lambda}L)=0 \,\Leftrightarrow \, \sqrt{\lambda}L=n\pi.\] 
+Thus, the eigenvalues are
+\[\boxed{\lambda_{n}=\frac{n^{2}\pi^{2}}{L^{2}}}, \quad n\geq 1,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\cos\left( \frac{n \pi x}{L} \right)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+
+\textsl{Combining 2 and 3.} We can combine \textsl{2} and \textsl{3} since $\cos(0)=1$. Hence, the eigenvalues are
+\[\boxed{\lambda_{n}=\frac{n^{2}\pi^{2}}{L^{2}}}, \quad n\geq 0,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\cos\left( \frac{n \pi x}{L} \right)}, \quad n\geq 0,\]
+for some arbitrary constants $C_{n}$.
+\end{solution}
+
+
+
+\begin{problem}
+ Find the eigenvalues $\lambda$ for which the given problem has a nontrivial solution. Also determine the corresponding eigenfunctions.
+\begin{equation*}
+y^{\prime \prime} + \lambda y =0\,; \qquad  0<x<\pi \,, \qquad y(0) - y'(0)=0  \,,\qquad y(\pi) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=\pm\sqrt{-\lambda}=\pm\sqrt{\Delta}.\]
+We consider the three cases.
+
+\par \textsl{Case 1.} $\Delta = -\lambda >0 \,\, \Rightarrow \, \lambda<0.$ Then $r_{1}=\sqrt{-\lambda}$, $r_{2}=-\sqrt{-\lambda}$ are distinct real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{\sqrt{-\lambda}x}+C_{2}e^{-\sqrt{-\lambda}x}.\]
+We need $y'(x)$ in order to use the first initial conditions
+\[y'(x)=\sqrt{-\lambda}C_{1}e^{\sqrt{-\lambda}x}-\sqrt{-\lambda}C_{2}e^{-\sqrt{-\lambda}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       (1-\sqrt{-\lambda})C_{1} + (1+\sqrt{-\lambda})C_{2}&=&0\\
+       e^{\sqrt{-\lambda}\pi}C_{1} +e^{-\sqrt{-\lambda}\pi}C_{2}&=&0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix}1-\sqrt{-\lambda} & 1+\sqrt{-\lambda} \\ e^{\sqrt{-\lambda}\pi} & e^{-\sqrt{-\lambda}\pi}\end{matrix}\right|=(1-\sqrt{-\lambda})e^{-\sqrt{-\lambda}\pi}-(1+\sqrt{-\lambda})e^{\sqrt{-\lambda}\pi}=0.$$ 
+Or 
+\[1-\sqrt{-\lambda}-(1+\sqrt{-\lambda})e^{2\sqrt{-\lambda}\pi}=0\]
+Since $\lambda <0$, then $-e^{2\sqrt{-\lambda}\pi}<1$, and
+\[1-\sqrt{-\lambda}-(1+\sqrt{-\lambda})e^{2\sqrt{-\lambda}\pi}<1-\sqrt{-\lambda}-1-\sqrt{-\lambda}=-2\sqrt{-\lambda}<0,\]
+which is a contradiction. Thus, no non-trivial solution.
+
+\par \textsl{Case 2.} $\Delta = -\lambda =0 \,\, \Rightarrow \, \lambda=0.$ Then $r_{1}=r_{2}=0$ are repeated real roots, and the solution to ODE is
+\[y(x)=C_{1}x+C_{2}.\]
+We need $y'(x)$ in order to use the first initial conditions
+\[y'(x)=C_{1}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{2} -C_{1}& = &0\\
+       C_{1}\pi+C_{2} & = &0
+      \end{array}\right. \quad \Leftrightarrow \quad C_{1}=C_{2}=0.
+\end{equation*}
+Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = -\lambda <0 \,\, \Rightarrow \, \lambda>0.$ Then $r_{1}=i\sqrt{\lambda}$, $r_{2}=-i\sqrt{\lambda}$ are complex roots, and the solution to ODE is
+\[y(x)=C_{1}\cos\sqrt{\lambda}x+C_{2}\sin\sqrt{\lambda}x.\]
+We need $y'(x)$ in order to use the initial conditions
+\[y'(x)=-\sqrt{\lambda}C_{1}\sin\sqrt{\lambda}x+\sqrt{\lambda}C_{2}\cos\sqrt{\lambda}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rcl}
+       C_{1}-\sqrt{\lambda}C_{2}  & = & 0\\
+       \cos(\sqrt{\lambda}\pi)C_{1} + \sin(\sqrt{\lambda}\pi)C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[C_{1}=\sqrt{\lambda}C_{2}\Rightarrow \sqrt{\lambda}\cos(\sqrt{\lambda}\pi)C_{2}+\sin(\sqrt{\lambda}\pi)C_{2}=0 \,\Rightarrow\, \sqrt{\lambda} + \tan(\sqrt{\lambda}\pi)=0,\]
+which has infinite solutions. Thus, the eigenvalues are given by the implicit equation
+\[\boxed{\lambda_{n}+ \tan\left(\sqrt{\lambda_{n}}\pi\right)=0}, \quad n\geq 1,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}\left(\sqrt{\lambda_{n}}\cos \left(\sqrt{\lambda_{n}}x\right)+ \sin \left(\sqrt{\lambda_{n}}x\right)\right)}, \quad n\geq 1,\]
+for some arbitrary constants $C_{n}$.
+\end{solution}
+
+
+
+
+
+\begin{problem}
+ Find nontrivial solutions to the eigenvalue problem
+\begin{equation*}
+y^{\prime \prime} + 4 y' + \lambda y =0\,; \qquad  0<x<\pi/2 \,, \qquad y(0)=0  \,,\qquad y(\pi/2) =0. 
+\end{equation*}
+\end{problem}
+\begin{solution}
+First we find the roots of the auxiliary equation.
+\[r=-2\pm\sqrt{4-\lambda}=2\pm\sqrt{\Delta}.\]
+We consider the three cases.\\
+
+\par \textsl{Case 1.} $\Delta = 4-\lambda >0 \,\, \Rightarrow \, \lambda<4.$ Then $r_{1}=-2+\sqrt{4-\lambda}$, $r_{2}=-2-\sqrt{4-\lambda}$ are distinct real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{r_{1}x}+C_{2}e^{r_{2}x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rrcc}
+       C_{1} &+C_{2}&=&0\\
+       e^{r_{1}\pi/2}C_{1} &+ e^{r_{2}\pi/2}C_{2}&=&0
+      \end{array}\right. .
+\end{equation*}
+For nontrivial solutions we need 
+$$\det(A)=\left|\begin{matrix} 1 & 1 \\ e^{r_{1}\pi/2} & e^{r_{2}\pi/2}\end{matrix}\right|=e^{r_{1}\pi/2}-e^{r_{2}\pi/2}=0,$$ 
+which implies $r_{1}=r_{2}$, which is a contradiction since the roots are different. Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 2.} $\Delta = 4-\lambda =0 \,\, \Rightarrow \, \lambda=4.$ Then $r_{1}=r_{2}=-2$ are repeated real roots, and the solution to ODE is
+\[y(x)=C_{1}e^{-2x}+C_{2}xe^{-2x}.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rrcc}
+       C_{1} & &= &0\\
+       e^{-\pi}C_{1} & +\tfrac{\pi}{2}e^{\pi}C_{2} &= &0
+      \end{array}\right. \quad \Leftrightarrow \quad C_{1}=C_{2}=0.
+\end{equation*}
+Hence, \textsl{there is no nontrivial solution}.
+
+\par \textsl{Case 3.} $\Delta = 4-\lambda <0 \,\, \Rightarrow \, \lambda>4.$ Then $r_{1}=-2+i\sqrt{\lambda-4}$, $r_{2}=-2-i\sqrt{\lambda-4}$ are complex roots, and the solution to ODE is
+\[y(x)=C_{1}e^{-2x}\cos\sqrt{\lambda-4}x+C_{2}e^{-2x}\sin\sqrt{\lambda-4}x.\]
+Using the BC's,
+\begin{equation*}
+\left\{\begin{array}{rrcc}
+       C_{1} & & = & 0\\
+       e^{-\pi}\cos(\sqrt{\lambda-4}\tfrac{\pi}{2})C_{1} &+ e^{-\pi}\sin(\sqrt{\lambda-4}\tfrac{\pi}{2})C_{2}&=&0
+      \end{array}\right. ,
+\end{equation*}
+which implies 
+\[\sin(\sqrt{\lambda-4}\tfrac{\pi}{2})C_{2}=0 \,\Leftrightarrow\, C_{2} = 0 \text{ or } \sin(\sqrt{\lambda-4}\tfrac{\pi}{2})=0.\]
+For nontrivial solutions we need 
+\[\sin(\sqrt{\lambda-4}\tfrac{\pi}{2})=0 \,\Leftrightarrow \, \sqrt{\lambda-4}\tfrac{\pi}{2}=n\pi \,\Leftrightarrow \, \sqrt{\lambda-4}=2n.\] 
+Thus, the eigenvalues are
+\[\boxed{\lambda_{n}=4n^{2}+4}, \quad n > 0,\]
+with eigenfunctions
+\[\boxed{y_{n}(x)=C_{n}e^{-2x}\sin(2nx)}, \quad n > 0,\]
+for some arbitrary constants $C_{n}$.
+\end{solution}
+
+
+
+
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& u(0,t) = u(1,t)=0, \qquad t>0, \\
+& u(x,0) = x(1-x), \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+\begin{solution}
+Using the separation of variables method
+\begin{eqnarray*}
+u(x,t) = X(x)T(t), \qquad
+\dfrac{\partial u }{\partial t }(x,t) = X(x)T^{\prime}(t), \qquad
+\dfrac{\partial^2 u}{\partial x^2}(x,t) = X^{\prime \prime}(x)T(t).
+\end{eqnarray*}
+Using the partial differential equation
+\begin{eqnarray*}
+X(x)T^{\prime}(t) = \alpha X^{\prime \prime}(x)T(t) \quad 
+\Rightarrow \quad \dfrac{T^{\prime}(t)}{\alpha T(t)} = \dfrac{X^{\prime \prime}(x)}{X(x)} = \lambda.
+\end{eqnarray*}
+The last trick is the key to solve heat (and wave) equation. First, we divide over $T$ and $X$ to find out that the equation has only $T$ on one side, and only $X$ on the other. From here we can put every on the $T$ side so the $X$ side becomes simply $\frac{X''}{X}$. Then, we use a constant value $\lambda$ that we need to determine by solving the eigenvalue problem. You can use $\lambda$ or $-\lambda$, but you have to be clear on what is solution to each case. Finally, we can split that equation into two parts
+\[\frac{X''(x)}{X(x)}=\lambda, \qquad \frac{T'(x)}{\alpha T(x)}=\lambda.\]
+
+Then, solving the heat flow problem reduces now to solving the following three problems.
+
+\textsl{1.} The eigenvalue problem
+\begin{eqnarray*}
+X^{\prime \prime}(x) - \lambda X(x) =0, \quad 0<x<1; \qquad
+X(0)=0, \quad & X(1) =0,
+\end{eqnarray*}
+has eigenvalues $$\lambda_{n} = -n^2\pi^{2}, \quad n = 1,2 , \dots$$ with eigenfunctions $$\boxed{X_{n}(x) = C_{n} \sin(n\pi x)},\quad n = 1,2 , \dots.$$
+for some constants $C_{n}$.
+
+
+\textsl{2. } Using the eigenvalue $\lambda = -n^2\pi^{2}$ found in \textsl{1}, is easy to see that the first order differential equations
+\begin{eqnarray*}
+T_{n}^{\prime}(t) = - \alpha n^{2}\pi^{2} T_{n}(t),
+\end{eqnarray*}
+has solution
+\begin{eqnarray*}
+\boxed{T_{n}(t) = A_{n}e^{-\alpha n^{2}\pi^{2} t}},\quad n = 1,2 , \dots
+\end{eqnarray*}
+for some constants $A_{n}$. Recall that, this is the simplest first order ODE.
+
+Note now that we $n$ solutions of the form $u_{n}(x,t)=X_{n}(x)T_{n}(t)$. The superposition principle says that a general solution is
+
+\[u(x,t)=\sum_{n=1}^{\infty} B_{n}X(x)T(t)=\sum_{n=1}^{\infty} b_{n} \sin (n\pi x) e^{-\alpha n^{2}\pi^{2} t}.\]
+
+The constants $A_{n}$, $B_{n}$ and $C_{n}$ where combined into a single constant $b_{n}$. Actually, the only constant that is important is $b_{n}$ (we can ignore $C_{n}$ and $A_{n}$), because when we use the initial condition $u(x,0)=x(1-x)$ we have
+
+\[u(x,0)= x(1-x) = \sum_{n=1}^{\infty} b_{n} \sin (n\pi x).\]
+Which is nothing but the Fourier since series of $x(1-x)$, the third problem.
+
+\textsl{3. } The Fourier sine series representation for the function $f(x)=x(1-x)$ 
+\begin{eqnarray*}
+x(1-x) = \sum_{n=1}^{\infty} b_{n} \sin(n\pi x),
+\end{eqnarray*}
+has coefficients (see a previous problem in this notes)
+\begin{eqnarray*}
+\boxed{b_{n} = \dfrac{4(1-(-1)^n)}{n^3 \pi^3}}.
+\end{eqnarray*}
+Besides we can separate $b_{n}$ in odd and even cases, there is no need to (plus we save time).
+
+Putting the three previous results together, the solution to the heat flow problem is then given by
+\begin{eqnarray*}
+\boxed{u(x,t) = \sum_{n=1}^{\infty}\frac{4(1-(-1)^{n})}{n^{3}\pi^{3}}e^{-\alpha n^{2}\pi^{2}t}\sin (n\pi x)}.
+\end{eqnarray*}
+
+\textbf{Note.} The steps the I used are slightly different from the same problem in Lab 11, however this is more clear to deal with the wave equation.
+
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \alpha \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& \dfrac{\partial u }{\partial x } (0,t) = \dfrac{\partial u }{\partial x } (1,t)=0, \qquad t>0, \\
+& u(x,0) = x(1-x), \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+\begin{solution}
+\textbf{Note.} The solution for this problem will be straight forward since the steps are explained in the previous problem.
+
+Using the separation of variables method
+\begin{eqnarray*}
+u(x,t) = X(x)T(t), \qquad
+\dfrac{\partial u }{\partial t }(x,t) = X(x)T^{\prime}(t), \qquad
+\dfrac{\partial^2 u}{\partial x^2}(x,t) = X^{\prime \prime}(x)T(t),
+\end{eqnarray*}
+in the partial differential equation
+\begin{eqnarray*}
+X(x)T^{\prime}(t) = \alpha X^{\prime \prime}(x)T(t) \quad 
+\Rightarrow \quad \dfrac{T^{\prime}(t)}{\alpha T(t)} = \dfrac{X^{\prime \prime}(x)}{X(x)} = \lambda.
+\end{eqnarray*}
+
+Then, solving the heat flow problem reduces now to solving the following three problems.
+
+\textsl{1.} The eigenvalue problem
+\begin{eqnarray*}
+X^{\prime \prime}(x) - \lambda X(x) =0, \quad 0<x<1; \qquad
+X'(0)=0, \quad & X'(1) =0,
+\end{eqnarray*}
+has eigenvalues 
+$$\lambda_{n} = -n^2\pi^{2}, \quad n = 0,1,2 , \dots$$ 
+with eigenfunctions 
+$$\boxed{X_{n}(x) = B_{n}\cos(n\pi x)},\quad n = 0,1,2 , \dots$$
+
+
+\textsl{2. } Using the eigenvalue $\lambda = -n^2\pi^{2}$ found in \textsl{1}, is easy to see that 
+\begin{eqnarray*}
+T_{n}^{\prime}(t) = - \alpha n^{2}\pi^{2} T_{n}(t),
+\end{eqnarray*}
+has solution
+\begin{eqnarray*}
+\boxed{T_{n}(t) = A_{n}e^{-\alpha n^{2}\pi^{2} t}},\quad n = 0,1,2 , \dots
+\end{eqnarray*}
+
+\textbf{Note.} The eigenfunction $X_{n}=\cos(n\pi x)$ implies that we need the Fourier \textsl{cosine} series.
+
+\textsl{3. } The Fourier cosine series representation for the function $f(x)=x(1-x)$ 
+\begin{eqnarray*}
+x(1-x) = \sum_{n=1}^{\infty} b_{n} \sin(n\pi x),
+\end{eqnarray*}
+has coefficients (see a previous problem in this notes)
+\begin{eqnarray*}
+\boxed{b_{0} = \frac{1}{3}, \quad b_{n} = \frac{2((-1)^{n+1}-1)}{n^{2}\pi^{2}}}, \quad n = 1,2,\dots
+\end{eqnarray*}
+
+Putting the three previous results together, the solution to the heat flow problem is then given by
+\begin{eqnarray*}
+\boxed{u(x,t) = \frac{1}{6} + \sum_{n=1}^{\infty}\frac{2((-1)^{n+1}-1)}{n^{2}\pi^{2}}e^{-\alpha n^{2}\pi^{2}t}\cos (n\pi x)}.
+\end{eqnarray*}
+
+
+\end{solution}
+
+
+
+
+
+
+\begin{problem}
+Solve the heat flow problem
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& u(0,t) = 0, \quad u(\pi,t)= 3\pi, \qquad t>0, \\
+& u(x,0) = 0, \qquad 0<x<\pi.
+\end{split}\end{equation*}
+\end{problem}
+
+\begin{solution}
+Note that we have non-zero boundary conditions. So, we apply the appropriate change of variable
+\[u(x,t)=v(x)+w(x, t)=3x + w(x,t),\]
+since
+\[v(x)=(3\pi-0)\frac{x}{\pi}+0=3x.\]
+
+Then, the new problem is to solve the alternate Heat equation \textsl{with zero boundary conditions}
+\begin{equation*} \begin{split}
+& \dfrac{\partial w }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<\pi, \quad t>0, \\
+& w(0,t) = 0, \quad w(\pi,t)= 0, \qquad t>0, \\
+& w(x,0) = -3x, \qquad 0<x<\pi.
+\end{split}\end{equation*}
+Now, we use separation of variables
+\[w(x,t)=X(x)T(t),\]
+\[\Rightarrow\, \frac{\partial w}{\partial t}(x,t)=X(x)T'(t),\quad \frac{\partial^{2} w}{\partial x^{2}}(x,t)=X''(x)T(t).\]
+Then 
+\[X(x)T'(t)=X''(x)T(t) \,\,\Rightarrow\,\, \frac{T'(t)}{T(t)}=\frac{X''(x)}{X(x)}=\lambda.\]
+Which becomes
+\[\begin{split}T'(t)-\lambda T(t)&=0 \\ X''(x)-\lambda X(x)&=0 \end{split}.\]
+
+\textsl{1. } First, the eigenvalue problem
+\[X''(x)-\lambda X(x)=0, \qquad 0<x<\pi, \qquad  X(x)=X(\pi)=0,\]
+has solution 
+\[\begin{split}
+  \lambda_{n}=-n^{2}, \,\, n=1, 2, \dots, \\
+  \boxed{X_{n}(x)=B_{n}\sin(nx)}, \,\, n=1, 2, \dots.
+  \end{split}
+\]
+
+\textsl{2. } Now, we use the previous $\lambda$ to solve the first order differential equation
+\[T'(t) + n^{2} T(t)=0\]
+with solution
+\[\boxed{T_{n}(t)=A_{n}e^{-n^{2}t}}.\]
+
+Now, the eigenvalues will be used in the other differential equation (eigenvalue problem) for $T(t)$, while the coefficients $b_{n}$ will be determined by the initial condition $w(x,0)=-3x$. 
+
+\textsl{3.} We require
+\[-3x=\sum_{i=1}^{\infty}b_{n}\sin(nx),\]
+the Fourier sine series of $-3x$. The coefficients are given by
+\begin{align*}
+\boxed{b_{n}=\frac{2}{\pi}\int_{0}^{\pi}(-3x)\sin(nx)dx=-\frac{6}{\pi}\left[ -\frac{1}{c}x\cos(nx)|^{\pi}_{0} + \frac{1}{n^{2}}\sin(nx)|^{\pi}_{0} \right] = \frac{6(-1)^{n}}{n}}.
+\end{align*}
+
+Putting the three previous steps together 
+\[w(x,t)=\sum_{n=1}^{\infty}X_{n}(x)T_{n}(t),\]
+that is 
+\[\boxed{w(x, t) =  \sum_{n=1}^{\infty}\frac{6(-1)^{n}}{n}\sin(nx)e^{-n^{2}t}}.\]
+
+Finally, changing back to $u(x,t)$
+\[\boxed{u(x, t) = 3x + 6 \sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}\sin(nx)e^{-n^{2}t}}.\]
+\end{solution}
+
+
+
+
+\begin{problem}
+Find a formal solution to the initial value problem,
+\begin{equation*} \begin{split}
+& \dfrac{\partial u }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t) + 6 x -2, \qquad 0<x<1, \quad t>0, \\
+& u(0,t) = 0, \quad u(1,t)= -1, \qquad t>0, \\
+& u(x,0) = -x^{3}, \qquad 0<x<1.
+\end{split}\end{equation*}
+\end{problem}
+
+\begin{solution}
+Note that we have non-zero boundary conditions and external force. So, we apply the appropriate change of variable
+\[u(x,t)=w(x, t)+v(x).\]
+
+Then,
+\[\frac{\partial u}{\partial t}(x,t) = \frac{\partial w}{\partial t}, \qquad \frac{\partial^{2} u}{\partial x^{2}}(x, t) = \frac{\partial^{2} w}{\partial x^{2}}+v''(x).\]
+
+Using the Heat equation we have
+\[\frac{\partial w}{\partial t}(x,t) = \frac{\partial^{2} w}{\partial x^{2}}(x,t) + v''(x) + 6x -2,\]
+where we want $v(x)$ to absorbe the external force (see the second order equation later).
+
+Using the boundary conditions we have
+\[w(0, t) + v(0) = 0, \qquad w(1, t) + v(1) = -1,\]
+where we want $v(x)$ to absorbe the non-zero boundary conditions (see second order equation later).
+
+Using the initial value we have
+\[w(x, 0) + v(x) = -x^{3} \quad \Rightarrow \quad  w(x, 0) = -x^{2} - v(x),\]
+where we relate $v(x)$ to $w(x,t)$ (see initial conditions in the Heat equation later).
+
+
+Then, the new two problem is to solve the alternate Heat equation \textsl{with zero boundary conditions}
+\begin{equation*} \begin{split}
+& \dfrac{\partial w }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& w(0,t) = 0, \quad w(1,t)= 0, \qquad t>0, \\
+& w(x,0) = -x^{3} - v(x), \qquad 0<x<1,
+\end{split}\end{equation*}
+
+after solving the second order equation \textsl{with non-zero boundary conditions}
+\begin{equation*} 
+\begin{split}
+&v'' = -6x+2, \quad 0< x< 1\\
+&v(0) = 0,\quad v(1) = -1.
+\end{split}
+\end{equation*}
+
+First, we solve the second order problem, to then solve the new Heat equation problem.
+
+\textsl{1. } The solution to $v(x)$ is (verify it)
+\[\boxed{v(x) = -x^{3} + x^{2} - x}.\]
+Using this $v(x)$, the previous Heat equation problem in $w(x, t)$ changes to
+
+
+\begin{equation*} \begin{split}
+& \dfrac{\partial w }{\partial t } (x,t) = \dfrac{\partial^2 u}{\partial x^2}(x,t), \qquad 0<x<1, \quad t>0, \\
+& w(0,t) = 0, \quad w(1,t)= 0, \qquad t>0, \\
+& w(x,0) = x(1-x), \qquad 0<x<1,
+\end{split}\end{equation*}
+
+\textsl{2. } The solution to this problem is (see a previous problem in this notes)
+
+\begin{eqnarray*}
+\boxed{w(x,t) = \sum_{n=1}^{\infty}\frac{4(1-(-1)^{n})}{n^{3}\pi^{3}}e^{-\alpha n^{2}\pi^{2}t}\sin (n\pi x)}.
+\end{eqnarray*}
+
+Finally, combining the two previous solutions we get
+\[\boxed{u(x, t) = -x^{3} + x^{2} - x + \sum_{n=1}^{\infty}\frac{4(1-(-1)^{n})}{n^{3}\pi^{3}}e^{-\alpha n^{2}\pi^{2}t}\sin (n\pi x)}.\]
+\end{solution}
+
+
+
+\end{document}

@@ -1,0 +1,284 @@
+\documentclass[10pt,leqno]{article}
+\usepackage[left=.25in,right=.25in,top=.5in,bottom=.75in]{geometry} 
+%\geometry{paperwidth=11in,paperheight=8.5in}  
+%\setlength{\paperheight}{9in}
+%\setlength{\paperwidth}{6in}
+%\setlength{\paperheight}{9in}
+%\setlength{\paperwidth}{6in}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage{scalefnt}
+\usepackage{hyperref}
+% \usepackage{showframe}
+\hypersetup{%
+    pdftitle={Applied Differential Equations},    % title
+    pdfauthor={Shapiro},     % author
+    pdfsubject={Differential Equations},   % subject of the document
+    pdfcreator={pdftex},   % creator of the document
+    pdfproducer={Texmaker}, % producer of the document
+    pdfkeywords={Differential Equations}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+\allowdisplaybreaks%
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+\begin{LARGE}\textbf{MATH 201\footnote{MATH 201 - Differential Equations -- University of Alberta} -- Final exam summary study guide}\footnote{Carlos Contreras {\scriptsize \textcopyleft \hspace{.5ex} 2018 \url{https://sites.ualberta.ca/~ccontrer/} This work is licensed under the Creative Commons Attribution --  Noncommercial -- No Derivative Works 3.0 United States License. To view a copy of this license, visit:  \url{http://creativecommons.org/licenses/by-nc-nd/3.0/us/}}. Inspired by: \textit{Differential Equations Study Guide} {\scriptsize \textcopyleft \hspace{.5ex} 2014 \hspace{.5ex} \url{http://integral-table.com}. }
+ }\end{LARGE}
+
+\section*{Laplace transform}
+
+\begin{minipage}{4in}
+For $f(t)$ piecewise continuous and of exponential order
+\begin{equation}
+\mathcal{L}\{f(t)\}(s)=F(s)=\int_{0}^{\infty}f(t)e^{-st} dt 
+\end{equation}
+\end{minipage}
+
+\end{center}
+% \vspace{1em}
+
+\begin{multicols}{2}
+
+\subsection*{Properties and definitions}
+\begin{align}
+    \textbf{Linearity:\ }& \mathcal{L}\{af+bg\}=aF(s)+bG(s) \\ 
+    \textbf{Inverse:\ }& \mathcal{L}^{-1}\{\mathcal{L}\{f(t)\}(s)\}(t)=f(t) \\
+    \textbf{Unit step function:\ }& u_{a}(t)=u(t-a)=\left\{
+        \begin{array}{ll}
+            0, & t<a \\
+            1, & a<t
+        \end{array} \right. \\
+    \textbf{Dirac delta function:\ }& \delta(t-a) = 
+    \begin{cases}
+        \infty, & t = a \\ 
+        0 , & t \neq a
+    \end{cases} \\
+    & \int_{-\infty}^{\infty} f(t) \delta(t-a) d t = f(a) \\
+    \textbf{Convolution:\ }& (f*g)(t)=\int_{0}^{t}f(t-v)g(v)dv \\
+    & \phantom{(f*g)(t)}=\int_{0}^{t}f(v)g(t-v)dv \nonumber
+\end{align}
+
+\subsection*{Table of Laplace Transforms}
+
+\begin{align}
+\mathcal{L}\left\{ 1 \right\} & = \frac{1}{s} \label{equ:laplace:1} \\
+\mathcal{L}\left\{ e^{at} \right\} & = \frac{1}{s-a}, \quad s>a  \label{equ:laplace:exp} \\
+\mathcal{L}\left\{ t^{n} \right\} & = \frac{n!}{s^{n+1}} \\
+\mathcal{L}\left\{ \sin bt \right\} &= \frac{b}{s^{2}+b^{2}} \label{equ:laplace:sin} \\
+\mathcal{L}\left\{ \cos bt \right\} &= \frac{s}{s^{2}+b^{2}} \label{equ:laplace:cos} \\
+\mathcal{L}\left\{ \sinh bt \right\} &= \frac{b}{s^{2}-b^{2}}  \quad s>|a| \\
+\mathcal{L}\left\{ \cosh bt \right\} &= \frac{s}{s^{2}-b^{2}}  \quad s>|a| \\
+\mathcal{L}\left\{ e^{at}\sin bt \right\} &= \frac{b}{(s-a)^{2}+b^{2}} \quad s>a \label{equ:laplace:expsin} \\
+\mathcal{L}\left\{ e^{at}\cos bt \right\} &= \frac{s-a}{(s-a)^{2}+b^{2}} \quad s>a \label{equ:laplace:expcos} \\
+\mathcal{L}\left\{ te^{at} \right\} &= \dfrac{1}{(s-a)^{2}} \quad s>a \label{equ:laplace:texp} \\
+\mathcal{L}\left\{ t^{n}e^{at} \right\} &= \dfrac{n!}{(s-a)^{n+1}} \quad s>a \\
+\mathcal{L}\left\{ e^{at}f(t) \right\} &= F(s-a) \\
+\mathcal{L}\left\{ u(t-a) \right\} &= \frac{1}{s}e^{-as} \\
+\mathcal{L}\left\{ f(t-a)u(t-a) \right\} &= e^{-as}F(s) \label{equ:laplace:unit} \\
+\mathcal{L}\left\{ \delta(t-a) \right\} &= e^{-as} \label{equ:laplace:delta} \\
+\mathcal{L}\left\{ f(x)\delta(t-a) \right\} &= f(a)e^{-as} \\
+\mathcal{L}\left\{ f'(t) \right\} &= sF(s)-f(0) \\
+\mathcal{L}\left\{ f''(t) \right\} &= s^{2}F(s)-sf(0)-f'(0) \\
+% \mathcal{L}\left\{ f^{n}(t) \right\} &= s^{n}F(s)-s^{n-1}f(0)-\cdots-f^{(n-1)}(0) \\
+\mathcal{L}\left\{ t^{n}f(t) \right\} &= (-1)^{n}F^{(n)}(s) \\
+\mathcal{L}\left\{ \int_{0}^{s}f(\tau)d\tau \right\} &= \frac{1}{s}F(s) \\
+\mathcal{L}\left\{ \frac{1}{t}f(t) \right\} &= \int_{s}^{\infty}F(\sigma)d\sigma \\
+\mathcal{L}\left\{ (f*g)(t) \right\} &= F(s)G(s) \label{equ:laplace:convolution} \\
+\mathcal{L}\left\{ f(ct) \right\} &= \frac{1}{c}F\left(\frac{s}{c}\right)  \quad c>0 \\
+\mathcal{L}\left\{ f(t)u(t-a) \right\} &= \mathcal{L}\{f(t+a)\}e^{-as} 
+\end{align}
+\textbf{Periodic function} $f(t)$ with period $T$
+\begin{equation}
+\mathcal{L}\{f\}(s)=\frac{1}{1-e^{-Ts}}\int_{0}^{T}e^{-st}f(t)dt
+\end{equation}
+
+\subsection*{Laplace transform of an IVP}
+For the IVP
+\begin{equation}
+ay''+by' +cy = g(t),\quad y(0)=y_{0}, \quad y'(0)=y'_{0},
+\end{equation}
+the Laplace transform of the solution $y(t)$ is
+\begin{equation}Y(s)= \underbrace{\frac{(as+b)y_{0}+ay'_{0}}{as^{2}+bs+c}}_{\text{initial conditions}}+\underbrace{\frac{G(s)}{as^{2}+bs+c}}_{\text{particular sol.}}.                          
+\end{equation}
+Use partial fractions and complete squares methods along with entries in the table (mainly \eqref{equ:laplace:1}--\eqref{equ:laplace:cos}, \eqref{equ:laplace:expsin}--\eqref{equ:laplace:texp}, \eqref{equ:laplace:unit}--\eqref{equ:laplace:delta}, and \eqref{equ:laplace:convolution}), to find $y(t)$.
+
+Some important functions
+\begin{align}
+\textbf{Transfer function:\ }& H(s)=\frac{1}{as^{2}+bs+c} \\
+\textbf{Impulse function:\ }& h(t)=\mathcal{L}^{-1}\{H(s)\}(t)
+\end{align}
+
+
+
+
+\end{multicols}
+
+\newpage
+
+\begin{center}
+\section*{Heat Equation Problem}
+\end{center}
+
+\begin{multicols}{2}
+
+\subsection*{Eigenvalue problem}
+
+\textbf{Homogeneous Dirichlet boundary conditions}
+\begin{equation}
+    \left\{
+    \begin{array}{ll}
+        X^{\prime \prime} - \lambda X =0 & 0<x<L \\
+        X(0)= X(L) =0 &
+    \end{array}
+    \right.
+    \label{equ:eig:zero}
+\end{equation}
+has eigenvalues and eigenfunctions solution
+\begin{align}
+    \textbf{Eigenvalues:\ } & \lambda_{n} = -\left( \frac{n\pi}{L}\right)^{2}, \\
+    \textbf{Eigenfunctions:\ } & X_{n}(x) = B_{n}\sin\left( \frac{n\pi x}{L} \right), \quad  n\geq 1
+\end{align}
+
+\textbf{Homogeneous Newman boundary conditions}
+\begin{equation}
+    \left\{
+    \begin{array}{ll}
+        X^{\prime \prime} - \lambda X =0 & 0<x<L \\
+        X'(0)= X'(L) =0 &
+    \end{array}
+    \right.
+    \label{equ:eig:zeroder}
+\end{equation}
+has eigenvalues and eigenfunctions solution
+\begin{align}
+    \textbf{Eigenvalues:\ } & \lambda_{n} = -\left( \frac{n\pi}{L}\right)^{2}, \\
+    \textbf{Eigenfunctions:\ } & X_{n}(x) = B_{n}\cos\left( \frac{n\pi x}{L} \right), \quad  n\geq 0
+\end{align}
+
+
+\subsection*{Fourier series}
+For $f(x)$ piecewise continuous on $[-L, L]$
+\begin{align}
+    F(x) &= \dfrac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[ a_{n}\cos\left(\dfrac{n\pi x}{L}\right)+b_{n}\sin\left(\dfrac{n\pi x}{L}\right) \right] \\
+    a_{n} &= \dfrac{1}{L} \int_{-L}^{L} f(x)\cos\left(\dfrac{n\pi x}{L}\right) dx, \qquad n\geq 0 \\
+    b_{n} &= \dfrac{1}{L} \int_{-L}^{L} f(x)\sin\left(\dfrac{n\pi x}{L}\right) dx, \qquad n\geq 1
+\end{align}
+For all $|x|\leq L$, $F(x)$ \textbf{converges} to
+\begin{equation}
+    F(x) = \begin{cases} f(x) & \text{if $f$ is continuous at $x$,} \\[0.5em]
+        \tfrac{f(x{-})+f(x{+})}{2} & \text{if $f$ is discontinuous at $x$,} \\[0.5em]
+        \tfrac{f(-L{+})+f(L{-})}{2} & \text{if $x=L$ or $x=-L$.} \end{cases} 
+\end{equation}
+% \begin{equation*}
+% S(x) = \sum_{n=1}^{\infty} b_{n} \sin \left(\dfrac{n\pi x}{L}\right)
+% \end{equation*}
+% 
+% \begin{equation*}
+% C(x) = \frac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos \left(\dfrac{n\pi x}{L}\right)
+% \end{equation*}
+\textbf{Properties of even and odd functions}
+\begin{enumerate}
+    \item[0.] even: $f(-x)=f(x)$, odd: $-f(-x)=f(x)$
+     \item even $\pm$ even = even, \quad even $\times$ even = even
+     \item odd $\pm$ odd = odd, \quad odd $\times$ odd = even
+     \item odd $\pm$ even = none, \quad odd $\times$ even = odd
+     \item $f(x)$ even, then $\int_{-L}^{L}f(x)dx= 2\int_{0}^{L}f(x)dx$
+     \item $f(x)$ odd, then $\int_{-L}^{L}f(x)dx= 0$
+     \item $f(x)$ even, then $b_{n}=0$, and $a_{n}=\frac{2}{L}\int_{0}^{L}f(x)\cos\left( \tfrac{n\pi x}{L} \right)dx$. \label{enu:fourier:even}
+     \item $f(x)$ odd, then  $a_{n}=0$, and $b_{n}=\frac{2}{L}\int_{0}^{L}f(x)\sin\left( \tfrac{n\pi x}{L} \right)dx$. \label{enu:fourier:odd}
+\end{enumerate}
+\textbf{Fourier cosine (sine) series} of $f(x)$ defined on $[0,L]$ is an even (odd) extension of $f(x)$ to $[-L,L]$, using property \ref{enu:fourier:even} (\ref{enu:fourier:odd}).
+
+\subsection*{Heat equation}
+
+The Heat equation can be solved using separation of variable
+\begin{align}
+    \textbf{Heat equation:\ }& u_{t}=\alpha u_{xx} \\
+    \textbf{Sep. of variables:\ }& u(x,t)=X(x)T(t) \label{equ:heat:separation} \\
+    & \Rightarrow \frac{X''}{X} = \frac{T'}{\alpha T} = \lambda \label{equ:heat:normal}
+\end{align}
+For eigenvalue $\lambda_{n}$, the ODE for $T(t)$ in \eqref{equ:heat:normal} has solution
+\begin{equation}
+\frac{T'_{n}}{\alpha T_{n}} = \lambda_{n} \quad \Rightarrow \quad T_{n}(t)=A_{n}e^{\alpha\lambda_{n}t}
+\end{equation}
+By superposition principle and \eqref{equ:heat:separation}, infinitely many solutions give
+\begin{equation}
+u(x,t)=\sum_{n} X_{n}(x)T_{n}(t) = \sum_{n} X_{n}(x)T_{n}(t)
+\end{equation}
+Use Boundary Conditions and Inital Conditions to determine the asociated eigenvalue and Fourier series problems, respectively.
+
+\textbf{Dirichlet BC:} $u(0,t) = u(L,t)= 0$ result in an eigenvalue pro\-blem of the form \eqref{equ:eig:zero} and a Fourier sine series of $f(x)$
+\begin{align}
+    & \left\{ \begin{array}{ll}
+            u_{t} = \alpha u_{xx}, & 0<x<L, \quad t>0 \\
+            u(0,t) = u(L,t)= 0, & t>0 \\
+            u(x,0) = f(x), & 0<x<L
+    \end{array}\right. \label{equ:heat:dirichlet} \\
+    & \Rightarrow u(x,t)=\sum_{n=1}^{\infty}b_{n}e^{-\alpha \left(\frac{n \pi}{L}\right)^{2}t}\sin\left(\frac{n\pi x}{L}\right)
+\end{align}
+
+\textbf{Newmann BC:} $u_{x}(0,t) = u_{x}(L,t)= 0$ result in an eigenvalue problem of the form \eqref{equ:eig:zeroder} and a Fourier cosine series of $f(x)$
+\begin{align}
+    & \left\{ \begin{array}{ll}
+            u_{t} = \alpha u_{xx}, & 0<x<L, \quad t>0 \\
+            u_{x}(0,t) = u_{x}(L,t)= 0, & t>0 \\
+            u(x,0) = f(x), & 0<x<L
+    \end{array}\right. \label{equ:heat:neuman}\\
+    & \Rightarrow u(x,t)= \frac{a_{0}}{2}+\sum_{n=1}^{\infty}a_{n}e^{-\alpha \left(\frac{n \pi}{L}\right)^{2}t}\cos\left(\frac{n\pi x}{L}\right)
+\end{align}
+
+\textbf{External force $g(x)$ and/or Nonhomogeneous BC:} 
+\begin{align}
+    &\left\{ \begin{array}{ll}
+            u_{t} = \alpha u_{xx} + g(x), & 0<x<L, \quad t>0 \\
+            u(0,t) = U_0, \quad u(L,t)= U_L, & t>0 \\
+            u(x,0) = f(x), & 0<x<L
+    \end{array}\right. \\
+    &\text{use\ } u(x,t)=v(x)+w(x,t)
+\end{align}
+to get a second order problem on $v(x)$ and \eqref{equ:heat:dirichlet} problem on $w(x,t)$ 
+\begin{equation}
+    \left\{ \begin{array}{l}
+        v''(x) = -\tfrac{1}{\alpha}g(x) \\
+        v(0) = U_{0}, \quad v(L)= U_{L}
+    \end{array}\right., \,
+    \left\{ \begin{array}{l}
+            w_{t} = \alpha w_{xx}, \\
+            w(0,t) = w(L,t)= 0, \\
+            w(x,0) = f(x) - v(x)
+    \end{array}\right.
+\end{equation}
+First solve for $v(x)$, then use it to solve for $w(x,t)$
+\begin{equation}
+\text{If}\quad g(x)=0 \quad \Rightarrow \quad v(x)=(U_{2}-U_{1})\frac{x}{L}+U_{1} 
+\end{equation}
+$w(x, t)$ and $v(x)$ are called \textbf{transient} and \textbf{steady state} solutions
+
+\textbf{Reaction-diffusion:} put all constants on the $t$ side of \eqref{equ:heat:normal}
+\begin{align}
+ u_{t}=\alpha u_{xx} + \mu u \quad \Rightarrow \quad \frac{X''}{X} = \frac{T'}{\alpha T} -\mu = \lambda
+\end{align}
+
+
+\end{multicols}
+
+
+
+\end{document}
