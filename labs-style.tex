@@ -1,0 +1,138 @@
+% MATH 201 Lab notes (c) by Carlos Contreras And Philippe Gaudreau
+% MATH 201 Lab notes is licensed under a 
+% Creative Commons Attribution 4.0 International license.
+% CC BY 4.0
+
+% You should have received a copy of the license along with this
+% work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+
+%% libraries
+\usepackage[utf8x]{inputenc}
+\usepackage{xcolor}
+\usepackage[left=1.5cm,right=1.5cm,top=2.0cm,bottom=1.5cm,headheight=110pt]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xifthen}
+\usepackage{sverb}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{textcomp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF compiling
+\usepackage{ifpdf}
+\ifpdf %
+        \DeclareGraphicsExtensions{.pdf}%
+\else %
+        \DeclareGraphicsExtensions{.eps,.ps}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figures path
+\graphicspath{{figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem counter
+\newcounter{Problem}
+\setcounter{Problem}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitions
+\def\LabSolutions{\clearpage \newpage \begin{center} {\Large \it Solutions} \end{center} \setcounter{Problem}{0}}
+\def\QuizSolutions{\newpage \begin{center} {\Large \it Solutions} \end{center} \setcounter{Problem}{0}}
+\def\degree{\textdegree}
+\def\grade#1{\begin{flushright} {\small [#1]}\\ \end{flushright} \vspace{-10pt}}
+\def\codecolor{red!50!black}
+\def\code#1{\textcolor{\codecolor}{\tt #1}}
+\def\examname#1{%
+                \ifnum\value{page}>1%
+                    \newpage%
+                \else%
+                    \vspace*{5pt}%
+                \fi%
+                \large \textbf{#1} \setcounter{Problem}{0}\vspace{10pt}}
+\def\topic#1{\par\needspace{2\baselineskip} \noindent \textsl{\footnotesize #1}}
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+\newenvironment{problem}%
+     {\stepcounter{Problem}%
+      \begin{list}{\textbf{\arabic{Problem}}.~}{}%
+      \item}%
+     {\end{list}\vspace*{5pt}}
+
+\newenvironment{solution}%
+     {\indent \textit{Solution} \newline}%
+     {\begin{flushright}$\blacksquare$\end{flushright}}
+
+\newenvironment{preamble}%
+     {\vspace*{1em}\begin{mdframed}[leftmargin=1cm,rightmargin=1cm]}%
+     {\end{mdframed}\vspace*{1em}}
+
+\newenvironment{multchoice}%
+     {\begin{enumerate} \addtolength{\leftskip}{2em} \renewcommand{\labelenumi}{(\alph{enumi})}}
+     {\end{enumerate}}
+
+\newenvironment{formulaitem}%
+     {\setlength{\leftmargini}{1.5em}\begin{itemize}%
+      \setlength\itemindent{-\itemindent}%
+      \renewcommand{\labelitemi}{$\rightarrow$}}%
+     {\end{itemize}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New theorems
+\newtheorem{theorem}{Theorem}
+
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% New commands
+\newcommand*{\course}[1]{\gdef\@course{#1}}
+\newcommand*{\coursecode}[1]{\gdef\@coursecode{#1}}
+\newcommand*{\term}[1]{\gdef\@term{#1}}
+\newcommand*{\instructor}[1]{\gdef\@instructor{#1}}
+\newcommand*{\lqnumber}[1]{\gdef\@lqnumber{#1}}
+\newcommand*{\labtitle}[1]{\gdef\@labtitle{#1}}
+\newcommand*{\quizversion}[1]{\gdef\@quizversion{#1}}
+\newcommand*{\probleminfo}[1]{\noindent \textsl{\footnotesize #1}}
+
+% Title header for labs
+\newcommand\makelabtitle{%
+  \begin{flushleft}%
+  {\scshape \@coursecode~\@course~-- University of Alberta}\\%
+  {\scshape \@term~-- Labs -- \@instructor}\\%
+  {\scshape Authors: Carlos Contreras and Philippe Gaudreau}%
+  \end{flushleft}%
+  \begin{center}%
+  {\Large \bf \@lqnumber:~\@labtitle}%
+  \end{center}%
+  \thispagestyle{empty}%
+  \global\let\@course\@empty%
+  \global\let\@labtitle\@empty%
+}
+
+% Title header for quizzes
+\newcommand\makequiztitle{%
+  \begin{flushleft}%
+  {\scshape \@coursecode~\@course~-- University of Alberta}\\%
+  {\scshape \@term~-- Labs -- \@instructor}\\%
+  \end{flushleft}%
+  \begin{center}%
+  {\Large \bf \@lqnumber} \marginpar{\tiny\tt [\@quizversion]}%
+  \end{center}%
+  \thispagestyle{empty}%
+  \global\let\@course\@empty%
+  \global\let\@quizversion\@empty%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fancy header package
+\fancyhead[L]{\small {\scshape \@coursecode~-- \@lqnumber~-- \@term~-- \@instructor}}
+\pagestyle{fancy}
+
+\makeatother
+
