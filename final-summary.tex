@@ -19,7 +19,6 @@
 \usepackage[hang,flushmargin]{footmisc} 
 \usepackage{scalefnt}
 \usepackage{hyperref}
-% \usepackage{showframe}
 \hypersetup{%
     pdftitle={Applied Differential Equations},    % title
     pdfauthor={Shapiro},     % author
@@ -214,7 +213,7 @@ The Heat equation can be solved using separation of variable
     \textbf{Sep. of variables:\ }& u(x,t)=X(x)T(t) \label{equ:heat:separation} \\
     & \Rightarrow \frac{X''}{X} = \frac{T'}{\alpha T} = \lambda \label{equ:heat:normal}
 \end{align}
-For eigenvalue $\lambda_{n}$, the ODE for $T(t)$ in \eqref{equ:heat:normal} has solution
+For eigenvalues $\lambda_{n}$, the ODE for $T(t)$ in \eqref{equ:heat:normal} has solution
 \begin{equation}
 \frac{T'_{n}}{\alpha T_{n}} = \lambda_{n} \quad \Rightarrow \quad T_{n}(t)=A_{n}e^{\alpha\lambda_{n}t}
 \end{equation}
@@ -279,6 +278,78 @@ $w(x, t)$ and $v(x)$ are called \textbf{transient} and \textbf{steady state} sol
 
 \end{multicols}
 
+
+\newpage
+
+\begin{center}
+\section*{Wave Equation Problem}
+\end{center}
+
+\begin{center}
+\begin{minipage}{6in}
+The Wave equation can be solved using separation of variable
+\begin{align}
+    \textbf{Wave equation:\ }& u_{tt}=\alpha^{2} u_{xx} \\
+    \textbf{Sep. of variables:\ }& u(x,t)=X(x)T(t) \label{equ:wave:separation} \\
+    & \Rightarrow \frac{X''}{X} = \frac{T''}{\alpha^{2} T} = \lambda \label{equ:wave:normal}
+\end{align}
+For eigenvalues $\lambda_{n}\leq0$, the ODE for $T(t)$ in \eqref{equ:wave:normal} has solution
+\begin{align}
+\textbf{ODE for $T(t)$:\ } & T''_{n} -\lambda_{n} \alpha^{2} T_{n} = 0 \\
+& \Rightarrow T_{n}(t)=a_{n}\cos(\alpha\sqrt{-\lambda_{n}}t)+b_{n}\sin(\alpha\sqrt{-\lambda_{n}}t)
+\end{align}
+By superposition principle and \eqref{equ:wave:separation}, infinitely many solutions give
+\begin{equation}
+u(x,t)=\sum_{n} X_{n}(x)T_{n}(t) = \sum_{n} X_{n}(x)T_{n}(t)
+\end{equation}
+Use Boundary Conditions and Inital Conditions to determine the asociated eigenvalue and Fourier series problems, respectively.
+\end{minipage}
+\end{center}
+
+\begin{multicols}{2}
+    
+\textbf{Dirichlet BC:} $u(0,t) = u(L,t)= 0$ result in an eigenvalue pro\-blem of the form \eqref{equ:eig:zero} and a Fourier sine series
+\begin{align}
+    & \left\{ \begin{array}{ll}
+            u_{tt} = \alpha^{2} u_{xx}, & 0<x<L, \quad t>0 \\
+            u(0,t) = u(L,t)= 0, & t>0 \\
+            u(x,0) = f(x), & 0<x<L \\
+            u_{t}(x,0) = g(x), & 0<x<L
+    \end{array}\right. \label{equ:wave:dirichlet} \\
+    & \Rightarrow u(x,t)= \sum_{n=1}^{\infty}\left[ a_{n}\cos\left( \frac{\alpha n\pi t}{L} \right) \right. \\
+    & \hspace{3cm} \left. + b_{n}\sin\left( \frac{\alpha n\pi t}{L} \right) \right] \sin\left(\frac{n\pi x}{L}\right) \nonumber
+\end{align}
+To find coefficients $a_{n}$, find the Fourier sine series using the first initial condition
+\begin{equation}
+    u(x,0)=f(x)=\sum_{n=1}^{\infty} a_{n} \sin \left(\frac{n\pi x}{L}\right)
+\end{equation}
+To find coefficients $b_{n}$, find the Fourier sine series using the second initial condition and 
+\begin{equation}
+    u_{t}(x,0)=g(x)=\sum_{n=1}^{\infty} \frac{\alpha n\pi}{L} b_{n} \sin \left(\frac{n\pi x}{L}\right)
+\end{equation}
+
+
+\textbf{Newmann BC:} $u(0,t) = u(L,t)= 0$ result in an eigenvalue pro\-blem of the form \eqref{equ:eig:zeroder} and a Fourier cosine series
+\begin{align}
+    & \left\{ \begin{array}{ll}
+            u_{tt} = \alpha^{2} u_{xx}, & 0<x<L, \quad t>0 \\
+            u_{x}(0,t) = u_{x}(L,t)= 0, & t>0 \\
+            u(x,0) = f(x), & 0<x<L \\
+            u_{t}(x,0) = g(x), & 0<x<L
+    \end{array}\right. \label{equ:wave:neumann} \\
+    & \Rightarrow u(x,t)= \sum_{n=0}^{\infty}\left[ a_{n}\cos\left( \frac{\alpha n\pi t}{L} \right) \right. \\
+    & \hspace{3cm} \left. + b_{n}\sin\left( \frac{\alpha n\pi t}{L} \right) \right] \cos\left(\frac{n\pi x}{L}\right) \nonumber
+\end{align}
+To find coefficients $a_{n}$, find the Fourier cosine series using the first initial condition
+\begin{equation}
+    u(x,0)=f(x)=\sum_{n=0}^{\infty} a_{n} \cos \left(\frac{n\pi x}{L}\right)
+\end{equation}
+To find coefficients $b_{n}$, find the Fourier cosine series using the second initial condition and 
+\begin{equation}
+    u_{t}(x,0)=g(x)=\sum_{n=0}^{\infty} \frac{\alpha n\pi}{L} b_{n} \cos \left(\frac{n\pi x}{L}\right)
+\end{equation}
+
+\end{multicols}
 
 
 \end{document}
