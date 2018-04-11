@@ -128,7 +128,7 @@ Consider the first integral. We need to integrate by parts three time, so the fo
 \begin{tabular}{c|c|c}
 sign & derivative & integral \\
 \hline
- &          & $ \cos(n\pi x)$ \\
+    &  -- --   & $ \cos(n\pi x)$ \\
 $+$ & $x^{3}$  & $ \frac{1}{n \pi} \sin(n\pi x)$ \\
 $-$ & $3x^{2}$ & $-\left( \frac{1}{n \pi} \right)^{2} \cos(n\pi x)$ \\
 $+$ & $6x$     & $-\left( \frac{1}{n \pi} \right)^{3} \sin(n\pi x)$ \\
@@ -136,14 +136,14 @@ $-$ & $6$      & $ \left( \frac{1}{n \pi} \right)^{4} \cos(n\pi x)$ \\
 $+$ & $0$      & $ \left( \frac{1}{n \pi} \right)^{5} \sin(n\pi x)$
 \end{tabular}
 \end{center}
-There is no need to compute the last row when you now one term becomes zero. From there is easy to compute all terms of the integral at once by multiplying each row.
+There is actually no need to compute the last row since the derivative becomes zero. From there, is easy to compute all terms of the integral at once by multiplying each row and add all terms.
 \[ \boxed{\int x^{3}\cos(n\pi x)dx = x^{3}\frac{1}{n\pi}\sin(n \pi x) + 3x^{2}\left( \frac{1}{n \pi} \right)^{2} \cos(n\pi x) - 6x\left( \frac{1}{n \pi} \right)^{3} \sin(n\pi x) - 6\left( \frac{1}{n \pi} \right)^{4} \cos(n\pi x)}.\]
 Consider now the second integral. The correspondent integration by parts table is
 \begin{center}
 \begin{tabular}{c|c|c}
 sign & derivative & integral \\
 \hline
-  &          & $ \sin(n\pi x)$ \\
+    &   -- --  & $ \sin(n\pi x)$ \\
 $+$ & $x^{3}$  & $-\frac{1}{n \pi} \cos(n\pi x)$ \\
 $-$ & $3x^{2}$ & $-\left( \frac{1}{n \pi} \right)^{2} \sin(n\pi x)$ \\
 $+$ & $6x$     & $ \left( \frac{1}{n \pi} \right)^{3} \cos(n\pi x)$ \\
@@ -160,7 +160,7 @@ and then separating real and complex part. That is, using the table
 \begin{tabular}{c|c|c}
 sign & derivative & integral \\
 \hline
-  &          & $ e^{i n\pi x}$ \\
+    &   -- --  & $ e^{i n\pi x}$ \\
 $+$ & $x^{3}$  & $-i\left( \frac{1}{n \pi} \right) e^{i n\pi x}$ \\
 $-$ & $3x^{2}$ & $- \left( \frac{1}{n \pi} \right)^{2} e^{i n\pi x}$ \\
 $+$ & $6x$     & $ i\left( \frac{1}{n \pi} \right)^{3} e^{i n\pi x}$ \\
@@ -177,14 +177,16 @@ For constants $a$ and $b$, find the integral
 \[\int_{0}^{\infty} \sin(bt)e^{-at}dt.\]
 \end{problem}
 \begin{solution}
-If we integrate by [arts twice we arrive to the same integral where we can isolate it.
-\[\int_{0}^{\infty} \sin(bt)e^{-at}dt  = \left[ -\frac{1}{a}\sin (bt)e^{-at}\right]^{\infty}_{0} + \left[- \frac{b}{a^{2}}\cos (bt)e^{-at}\right]^{\infty}_{0} - \frac{a^{2}}{b^{2}}\int_{0}^{\infty}\sin(bt)e^{-at}dt.\]
+If we integrate by parts twice we arrive to the same integral.
+\[\int_{0}^{\infty} \sin(bt)e^{-at}dt  = \left[ -\frac{1}{a}\sin (bt)e^{-at}\right]^{\infty}_{0} + \left[- \frac{b}{a^{2}}\cos (bt)e^{-at}\right]^{\infty}_{0} - \frac{b^{2}}{a^{2}}\int_{0}^{\infty}\sin(bt)e^{-at}dt.\]
+Denoting $I=\int_{0}^{\infty} \sin(bt)e^{-at}dt$ and multiplying by $a^{2}$, we get. From there we can isolate the integral.
+\[I = \left[ -\frac{1}{a}\sin (bt)e^{-at}\right]^{\infty}_{0} + \left[- \frac{b}{a^{2}}\cos (bt)e^{-at}\right]^{\infty}_{0} - \frac{b^{2}}{a^{2}}I.\]
 Recall that
 \[\lim_{t\rightarrow{\infty}}\cos(bt)e^{-at}=\lim_{t\rightarrow{\infty}}\sin(bt)e^{-at}=0,\]
 then 
 \[\left[ -\frac{1}{a}\sin (bt)e^{-at}\right]^{\infty}_{0} = 0 , \qquad \left[ -\frac{b}{a^{2}}\cos (bt)e^{-at}\right]^{\infty}_{0} = \frac{b}{a^{2}}.\]
-Denoting $I=\int_{0}^{\infty} \sin(bt)e^{-at}dt$ and multiplying by $a^{2}$, we get
-\[a^{2}I=b - b^{2}I \quad \Rightarrow \quad I= \frac{b}{a^{2}+b^{2}} \quad \Rightarrow \quad  \boxed{\int_{0}^{\infty} \sin(bt)e^{-at}dt= \frac{b}{a^{2}+b^{2}}}.\]
+Using and isolating $I$
+\[I= \frac{b}{a^{2}+b^{2}} \quad \Rightarrow \quad  \boxed{\int_{0}^{\infty} \sin(bt)e^{-at}dt= \frac{b}{a^{2}+b^{2}}}.\]
 \end{solution}
 
 

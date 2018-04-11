@@ -153,7 +153,7 @@ We first solve for $v(x)$, then solve $w(x,t)$, and finally write the solution i
 If $g(x)=0$, then, clearly
 \[v(x)=(U_{2}-U_{1})\frac{x}{L}+U_{1}.\]
 
-The functions $w(x, t)$ and $v(x)$ are called \textbf{transient} and \textbf{steady state} solutions.
+The functions $w(x, t)$ and $v(x)$ are called \textbf{transient} and \textbf{steady state} solutions of $u(x,t)$.
 
 \end{formulaitem}
 \end{preamble}
@@ -467,11 +467,11 @@ has solution
 
 \textsl{3. } The Fourier cosine series representation for the function $f(x)=2+\cos(x)-5\cos(4x)$ has coefficients
 \begin{eqnarray*}
-\boxed{a_{0} = 2, \quad a_{1} = 1, \quad a_{4} = -5}.
+\boxed{\frac{a_{0}}{2} = 2, \quad a_{1} = 1, \quad a_{4} = -5}.
 \end{eqnarray*}
 
 Putting the three previous results together, the solution to the heat flow problem is then given by
-\[u(x,t) = \sum_{n=1}^{\infty}a_{n}e^{-(3+ n^{2})t}\sin (n x).\]
+\[u(x,t) = \frac{a_{0}}{2}e^{-3t}+\sum_{n=1}^{\infty}a_{n}e^{-(3+ n^{2})t}\cos (n x).\]
 \[\Rightarrow
 \boxed{u(x,t) = 2e^{-3t}+e^{-4t}\cos(x)-5e^{-19t}\cos(4x)}.
 \]
